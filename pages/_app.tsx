@@ -1,19 +1,25 @@
 import type { AppProps } from "next/app";
 
-import Head from 'next/head'
-import React, { Fragment } from "react";
+import Head from "next/head";
+import React from "react";
 
-function DavidPortfolioWebsite({ Component, pageProps }: AppProps): JSX.Element {
+import { ChakraProvider } from "@chakra-ui/react";
+import AppTheme from "../theme/AppTheme";
+
+function DavidPortfolioWebsite({
+  Component,
+  pageProps,
+}: AppProps): JSX.Element {
   return (
-    <Fragment>
+    <ChakraProvider theme={AppTheme}>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/logo/favicon/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-    </Fragment>
-  )
+    </ChakraProvider>
+  );
 }
 
 export default DavidPortfolioWebsite;

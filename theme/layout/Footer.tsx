@@ -6,7 +6,7 @@ const Footer = (): JSX.Element => {
       <hr />
       <span>{"I'm here to stay (Footer)"}</span>
     </footer>
-  )
+  );
 };
 
 export default Footer;
