@@ -17,6 +17,14 @@ const AppTheme = extendTheme({
       warning: "#ffbd48",
       danger: "#c50001",
     },
+    gradient: {
+      100: "#3138dc",
+      200: "#0068ff",
+      300: "#0086ff",
+      400: "#009ced",
+      500: "#00aec1",
+      600: "#00bd8e",
+    },
   },
   components: {
     Button,
