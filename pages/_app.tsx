@@ -11,9 +11,9 @@ function DavidPortfolioWebsite({
   return (
     <ChakraProvider theme={AppTheme}>
       <Layout {...pageProps}>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </Layout>
-  </ChakraProvider>
+    </ChakraProvider>
   );
 }
 
