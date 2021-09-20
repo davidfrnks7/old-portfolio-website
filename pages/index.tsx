@@ -1,21 +1,16 @@
-import Head from 'next/head'
-import React, { Fragment } from 'react'
+import { Box } from "@chakra-ui/layout";
+import React from "react";
+import Greeting from "../components/Greeting";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <div>
-      <Head>
-        <title>Lucid Creations Media</title>
-      </Head>
-      <Fragment>
-        <div>
-          <span>
-            Hello world!!
-          </span>
-        </div>
-      </Fragment>
-    </div>
-  )
-}
+    <Box
+      w="100%"
+      h="100%"
+    >
+      <Greeting />
+    </Box>
+  );
+};
 
 export default IndexPage;

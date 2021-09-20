@@ -1,22 +1,27 @@
-import Document, { Html, Main, NextScript, Head } from 'next/document'
-import Footer from '../components/layout/Footer'
 import React from 'react'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import { Box, ColorModeScript } from '@chakra-ui/react';
+import AppTheme from '../theme/AppTheme';
 
-class MyDocument extends Document {
+class Document extends NextDocument {
   render(): JSX.Element {
     return (
       <Html>
         <Head>
-          <meta name="description" content="The new and improved Lucid Creations Media website." />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+          <Box
+            w="100vw"
+            h="100vh"
+          >
+            <ColorModeScript initialColorMode={AppTheme.config.initialColorMode} />
+            <Main />
+            <NextScript />
+          </Box>
         </body>
-        <Footer />
       </Html>
     )
   }
 }
 
-export default MyDocument
+export default Document;
