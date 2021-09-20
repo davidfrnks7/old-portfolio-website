@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
 import React from "react";
 import Greeting from "../components/Greeting";
 
