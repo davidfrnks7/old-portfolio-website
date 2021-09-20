@@ -4901,6 +4901,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"performance-now@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "performance-now@npm:2.1.0"
+  checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
@@ -4991,6 +4998,7 @@ fsevents@~2.3.1:
     react: 17.0.2
     react-dom: 17.0.2
     typescript: 4.4.3
+    typewriter-effect: ^2.18.2
   languageName: unknown
   linkType: soft
 
@@ -5139,6 +5147,15 @@ fsevents@~2.3.1:
   dependencies:
     inherits: ~2.0.3
   checksum: ebc23639248e4fe40a789f713c20548e513e053b3dc4924b6cb0ad741e3f264dcff948225c8737834dd4f9ec286dbc06a1a7c13858ea382d9379f4303bcc0916
+  languageName: node
+  linkType: hard
+
+"raf@npm:^3.4.0":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 50ba284e481c8185dbcf45fc4618ba3aec580bb50c9121385d5698cb6012fe516d2015b1df6dd407a7b7c58d44be8086108236affbce1861edd6b44637c8cd52
   languageName: node
   linkType: hard
 
@@ -6231,6 +6248,19 @@ typescript@4.4.3:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 28ab98313afab46788ff41014fdb5932430ada6e03cf9e92ac47f406526a2cac1ae2894834e7da61e46b7429318e9c47f45ba8de323332f0cb9af99b72ebae74
+  languageName: node
+  linkType: hard
+
+"typewriter-effect@npm:^2.18.2":
+  version: 2.18.2
+  resolution: "typewriter-effect@npm:2.18.2"
+  dependencies:
+    prop-types: ^15.6.2
+    raf: ^3.4.0
+  peerDependencies:
+    react: 17.x
+    react-dom: 17.x
+  checksum: a1930f6288dd65ba8fcc7d13012d98943ab80bc237a7d45fc660125b2c66a8a257834b3ad5aba9b5fbce5c07ad59e51548a38d7c57da2d7c1af6c65af9647b34
   languageName: node
   linkType: hard
 

@@ -1,5 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
+import TypeWriter from "./TypeWriter";
 
 const Greeting = (): JSX.Element => {
   return (
@@ -11,20 +12,21 @@ const Greeting = (): JSX.Element => {
       bgGradient="linear(to-b, gradient.100, gradient.200, gradient.300, gradient.400, gradient.500, gradient.600)"
     >
       <Heading
-        pt="15vh"
+        pt="20%"
         as="h2"
         size="lg"
       >
         Hello, I am David Franks
       </Heading>
-      <Heading
+      {/* <Heading
         mt="3rem"
         pb="10vh"
         as="h2"
         size="lg"
       >
         Software Engineer
-      </Heading>
+      </Heading> */}
+      <TypeWriter />
     </Box>
   );
 };
