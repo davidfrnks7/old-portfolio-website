@@ -7,8 +7,8 @@ on:
   # Trigger the workflow on push or pull request,
   push:
     branches:
-      # Only on the main branch
-      - main
+      # All branches
+      - '**'
   pull_request:
     # These types of PRs
     types: [opened, synchronize, reopened]
