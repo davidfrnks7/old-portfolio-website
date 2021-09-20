@@ -1,15 +1,10 @@
-import React from 'react';
-import { Heading } from '@chakra-ui/layout';
-import Typewritter from "typewriter-effect"
+import React from "react";
+import { Heading } from "@chakra-ui/layout";
+import Typewritter from "typewriter-effect";
 
 const TypeWriter = (): JSX.Element => {
   return (
-    <Heading
-        mt="1rem"
-        pb="10vh"
-        as="h2"
-        size="xl"
-      >
+    <Heading mt="1rem" pb="10vh" as="h2" size="xl">
       <Typewritter
         options={{
           strings: [
@@ -17,15 +12,15 @@ const TypeWriter = (): JSX.Element => {
             "Full Stack Developer",
             "React.js Developer",
             "Creative Writer",
-            "Gamer"
+            "Gamer",
           ],
           autoStart: true,
           loop: true,
-          cursor: "_"
+          cursor: "_",
         }}
       />
     </Heading>
-  )
+  );
 };
 
 export default TypeWriter;

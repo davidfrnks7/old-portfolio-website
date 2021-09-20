@@ -4,10 +4,7 @@ import Greeting from "../components/Greeting";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <Box
-      w="100%"
-      h="100%"
-    >
+    <Box w="100%" h="100%">
       <Greeting />
     </Box>
   );

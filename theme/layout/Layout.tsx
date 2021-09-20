@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-import type { AppProps } from 'next/app'
-import Header from "../layout/Header"
-import { Box } from '@chakra-ui/layout';
+import type { AppProps } from "next/app";
+import Header from "../layout/Header";
+import { Box } from "@chakra-ui/layout";
 
 interface Props {
   children: ReactNode;
@@ -11,14 +11,10 @@ interface Props {
 
 function Layout({ children }: Props, { pageProps }: AppProps): JSX.Element {
   return (
-    <Box
-      w="100%"
-    >
+    <Box w="100%">
       <Header {...pageProps} />
-      <main>
-        {children}
-      </main>
-    </Box >
+      <main>{children}</main>
+    </Box>
   );
 }
 export default Layout;
