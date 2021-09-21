@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import {
   darken,
   mode,
@@ -13,7 +14,7 @@ export const ButtonStyles = {
   sizes: {},
   // styles for different visual variants ("outline", "solid")
   variants: {
-    primary: (props: Dict<any> | StyleFunctionProps) => ({
+    primary: (props: Dict<never> | StyleFunctionProps) => ({
       bg: "primary", // Notice the use of color directly here
       color: "white",
       _hover: {
@@ -21,6 +22,17 @@ export const ButtonStyles = {
         // based on theme color mode
         bg: mode(whiten("primary", 20), darken("primary", 20))(props),
         boxShadow: "md",
+      },
+    }),
+    contactPrimary: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "xl",
+      p: "2",
+      _hover: {
+        bg: mode(
+          whiten("brand.primary", 20),
+          darken("brand.primary", 20)
+        )(props),
       },
     }),
     // default values for `size` and `variant`
