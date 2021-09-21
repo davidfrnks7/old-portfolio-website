@@ -12,7 +12,11 @@ const Greeting = (): JSX.Element => {
       textAlign="center"
       bgGradient="linear(to-b, gradient.100, gradient.200, gradient.300, gradient.400, gradient.500, gradient.600)"
     >
-      <Heading pt="30%" as="h2" size="lg">
+      <Heading
+        pt="30%"
+        as="h2"
+        size="lg"
+      >
         Hello, I am David Franks
       </Heading>
       {/* <Heading
