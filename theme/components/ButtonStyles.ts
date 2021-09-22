@@ -25,7 +25,7 @@ export const ButtonStyles = {
       },
     }),
     contactPrimary: (props: Dict<never> | StyleFunctionProps) => ({
-      bg: "transparent",
+      bg: "rgba(255, 255, 255, .15)",
       fontSize: "xl",
       p: "2",
       _hover: {
