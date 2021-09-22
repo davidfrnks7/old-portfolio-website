@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/layout";
 import React from "react";
-import Greeting from "../components/Greeting";
+import Greeting from "../components/sections/greeting/Greeting";
 
 const IndexPage = (): JSX.Element => {
   return (
