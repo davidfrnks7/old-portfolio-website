@@ -35,6 +35,17 @@ export const ButtonStyles = {
         )(props),
       },
     }),
+    contactSecondary: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "brand.primary",
+      fontSize: "xl",
+      p: "2",
+      _hover: {
+        bg: mode(
+          whiten("brand.primary", 20),
+          darken("brand.primary", 20)
+        )(props),
+      },
+    }),
     // default values for `size` and `variant`
     defaultProps: {},
   },

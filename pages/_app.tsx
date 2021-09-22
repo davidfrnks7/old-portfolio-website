@@ -3,6 +3,7 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 import Layout from "../theme/layout/Layout";
+import "../styles/background.css";
 
 function DavidPortfolioWebsite({
   Component,

@@ -10,13 +10,9 @@ const Greeting = (): JSX.Element => {
       h="100vh"
       px={{ base: "3rem", lg: "3rem", xl: "5rem" }}
       textAlign="center"
-      bgGradient="linear(to-b, gradient.100, gradient.200, gradient.300, gradient.400, gradient.500, gradient.600)"
+      className="background"
     >
-      <Heading
-        pt="30%"
-        as="h2"
-        size="lg"
-      >
+      <Heading pt="35vh" as="h2" size="lg">
         Hello, I am David Franks
       </Heading>
       {/* <Heading
