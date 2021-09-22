@@ -9,7 +9,7 @@ class Document extends NextDocument {
       <Html>
         <Head></Head>
         <body>
-          <Box w="100vw" h="100vh">
+          <Box w="100%" h="100vh">
             <ColorModeScript
               initialColorMode={AppTheme.config.initialColorMode}
             />
