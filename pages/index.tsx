@@ -1,12 +1,14 @@
-import { Box } from "@chakra-ui/layout";
+import { VStack } from "@chakra-ui/react";
 import React from "react";
-import Greeting from "../components/Greeting";
+import About from "../components/sections/about/About";
+import Greeting from "../components/sections/greeting/Greeting";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <Box w="100%" h="100%">
+    <VStack w="100%">
       <Greeting />
-    </Box>
+      <About />
+    </VStack>
   );
 };
 
