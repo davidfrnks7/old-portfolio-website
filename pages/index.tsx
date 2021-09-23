@@ -5,9 +5,7 @@ import Greeting from "../components/sections/greeting/Greeting";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <VStack
-      w="100%"
-    >
+    <VStack w="100%">
       <Greeting />
       <About />
     </VStack>
