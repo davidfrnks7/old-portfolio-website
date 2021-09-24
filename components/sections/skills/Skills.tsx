@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Heading, Flex, Box } from "@chakra-ui/layout";
+import { VStack, Heading, Box, SimpleGrid } from "@chakra-ui/layout";
 import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
@@ -8,11 +8,29 @@ const Skills = (): JSX.Element => {
       <Heading mt={36} mb={12}>
         Skills
       </Heading>
-      <Flex>
+      <SimpleGrid
+        columns={[6]}
+        spacing={20}
+        h="auto"
+        justifyContent="center"
+        alignContent="center"
+        // maxBlockSize="fit-content"
+        // d={{ base: "none", md: "grid" }}
+      >
         {icons.map((icon: IconTuple): JSX.Element => {
-          return <Box key={icon[0]}>{singleIcon(icon)}</Box>;
+          return (
+            <Box
+              key={icon[0]}
+              h="100px"
+              w="100px"
+              fontSize="75px"
+              color="blackAlpha.700"
+            >
+              {icon[1]}
+            </Box>
+          );
         })}
-      </Flex>
+      </SimpleGrid>
     </VStack>
   );
 };

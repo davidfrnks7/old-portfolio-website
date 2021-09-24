@@ -1,77 +1,37 @@
 import React from "react";
-import { Icon } from "@chakra-ui/react";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faJs,
-  faHtml5,
-  faCss3Alt,
-  faReact,
-  faAws,
-  faDigitalOcean,
-  faDocker,
-  faGitAlt,
-} from "@fortawesome/free-brands-svg-icons";
-library.add(
-  faJs,
-  faHtml5,
-  faCss3Alt,
-  faReact,
-  faAws,
-  faDigitalOcean,
-  faDocker,
-  faGitAlt
-);
-import TS from "../../../public/icons/TS.svg";
-import GCloud from "../../../public/icons/GCloud.svg";
-import Vercel from "../../../public/icons/Vercel.svg";
-import Axios from "../../../public/icons/Axios.svg";
-import BootStrap from "../../../public/icons/BootStrap.svg";
-import ChakraUI from "../../../public/icons/ChakraUI.svg";
-import PostgreSQL from "../../../public/icons/PostgreSQL.svg";
-import GraphQL from "../../../public/icons/GraphQL.svg";
-import MongoDB from "../../../public/icons/MongoDB.svg";
-import MySQL from "../../../public/icons/MySQL.svg";
-import Nodejs from "../../../public/icons/Nodejs.svg";
-import Nextjs from "../../../public/icons/Nextjs.svg";
-import VSCode from "../../../public/icons/VSCode.svg";
-import JQuery from "../../../public/icons/JQuery.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from "@iconify/react";
 
 export type IconTuple = [string, JSX.Element];
 type Icons = IconTuple[];
 
 const icons: Icons = [
-  ["JavaScript", <FontAwesomeIcon key="JavaScript" icon={faJs} />],
-  ["TypeScrip", <Icon key="TypeScript" as={TS} />],
-  ["HTML5", <FontAwesomeIcon key="HTML5" icon={faHtml5} />],
-  ["CSS3", <FontAwesomeIcon key="CSS3" icon={faCss3Alt} />],
+  ["JavaScript", <Icon key="JavaScript" icon="fluent:javascript-24-filled" />],
+  ["TypeScript", <Icon key="TypeScript" icon="cib:typescript" />],
+  ["HTML5", <Icon key="HTML5" icon="ant-design:html5-filled" />],
+  ["CSS3", <Icon key="CSS3" icon="bx:bxl-css3" />],
   [
     "React | React Hooks | React Router",
-    <FontAwesomeIcon key="React" icon={faReact} />,
+    <Icon key="React " icon="akar-icons:react-fill" />,
   ],
-  ["Next.js", <Icon key="Next.js" as={Nextjs} />],
-  ["Vercel", <Icon key="Vercel" as={Vercel} />],
-  ["Node.js", <Icon key="Node.js" as={Nodejs} />],
-  ["AWS", <FontAwesomeIcon key="Amazon Web Services" icon={faAws} />],
-  [
-    "DigitalOcean",
-    <FontAwesomeIcon key="DigitalOcean" icon={faDigitalOcean} />,
-  ],
-  ["GCloud", <Icon key="GCloud" as={GCloud} />],
-  ["Docker", <FontAwesomeIcon key="Docker" icon={faDocker} />],
-  ["git", <FontAwesomeIcon key="git" icon={faGitAlt} />],
-  ["BootStrap", <Icon key="BootStrap" as={BootStrap} />],
-  ["Chakra UI", <Icon key="Chakra UI" as={ChakraUI} />],
-  ["Axios", <Icon key="Axios HTTP" as={Axios} />],
-  ["GraphQL", <Icon key="GraphQL" as={GraphQL} />],
-  ["PostgreSQL", <Icon key="PosgreSQL" as={PostgreSQL} />],
-  ["MongoDB", <Icon key="MongoDB" as={MongoDB} />],
-  ["MySQL", <Icon key="MySQL" as={MySQL} />],
+  ["Next.js", <Icon key="Next.js" icon="akar-icons:nextjs-fill" />],
+  ["Vercel", <Icon key="Vercel" icon="akar-icons:vercel-fill" />],
+  ["Node.js", <Icon key="Node.js" icon="la:node" />],
+  ["AWS", <Icon key="Amazon Web Services" icon="mdi:aws" />],
+  ["DigitalOcean", <Icon key="DigitalOcean" icon="gg:digitalocean" />],
+  ["GCloud", <Icon key="Google Cloud" icon="bx:bxl-google-cloud" />],
+  ["Docker", <Icon key="Docker" icon="grommet-icons:docker" />],
+  ["git", <Icon key="git" icon="bx:bxl-git" />],
+  ["BootStrap", <Icon key="BootStrap" icon="bi:bootstrap" />],
+  ["Chakra UI", <Icon key="Chalra UI" icon="simple-icons:chakraui" />],
+  ["GraphQL", <Icon key="GraphQL" icon="akar-icons:graphql-fill" />],
+  ["PostgreSQL", <Icon key="PostgreSQL" icon="cib:postgresql" />],
+  ["MongoDB", <Icon key="MongoDB" icon="cib:mongodb" />],
+  ["MySQL", <Icon key="MySQL" icon="simple-icons:mysql" />],
   [
     "Visual Studio Code | Visual Studio",
-    <Icon key="Visual Studio Code" as={VSCode} />,
+    <Icon key="Visual Studio Code" icon="akar-icons:vscode-fill" />,
   ],
-  ["JQuery", <Icon key="JQuery" as={JQuery} />],
+  ["JQuery", <Icon key="JQuery" icon="akar-icons:jquery-fill" />],
 ];
 
 export default icons;
