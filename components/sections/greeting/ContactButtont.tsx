@@ -1,9 +1,6 @@
 import React, { Fragment } from "react";
 import { ButtonGroup, Link, Button, Text, IconButton } from "@chakra-ui/react";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-library.add(faLinkedin, faGithub);
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from "@iconify/react";
 
 const ContactButtons = (): JSX.Element => {
   return (
@@ -12,7 +9,7 @@ const ContactButtons = (): JSX.Element => {
         <Button
           variant="contactPrimary"
           boxShadow="xl"
-          leftIcon={<FontAwesomeIcon icon={faLinkedin} />}
+          leftIcon={<Icon icon="brandico:linkedin-rect" />}
         >
           <Text>Connect with me</Text>
         </Button>
@@ -23,7 +20,7 @@ const ContactButtons = (): JSX.Element => {
             borderRadius="4px 0px 0px 4px"
             aria-label="Visit GitHub Page"
             mr="-px"
-            icon={<FontAwesomeIcon icon={faGithub} />}
+            icon={<Icon icon="akar-icons:github-fill" />}
           />
         </Link>
         <Link>
