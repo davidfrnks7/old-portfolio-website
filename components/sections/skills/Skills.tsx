@@ -5,7 +5,7 @@ import icons, { IconTuple } from "./Icons";
 const Skills = (): JSX.Element => {
   return (
     <VStack id="skills" w="100%">
-      <Heading as="h3" size="xl" mt={36} mb={12}>
+      <Heading as="h3" size="xl" mb={12}>
         Skills
       </Heading>
       <SimpleGrid
@@ -14,7 +14,44 @@ const Skills = (): JSX.Element => {
         justifyContent="flex-start"
         alignContent="center"
       // maxBlockSize="fit-content"
-      // d={{ base: "none", md: "grid" }}
+      d={{ base: "none", md: "grid" }}
+      >
+        {icons.map((icon: IconTuple): JSX.Element => {
+          return (
+            <Box
+              key={icon[0]}
+              h="auto"
+              mx="10px"
+              mb="30px"
+            >
+              <Box
+                h="100px"
+                w="80px"
+                fontSize="75px"
+                color="blackAlpha.700"
+                margin="auto"
+              >
+                {icon[1]}
+              </Box>
+              <Heading
+                w="100%"
+                textAlign="center"
+                as="h4"
+                size="md"
+              >
+                {icon[0]}
+              </Heading>
+            </Box>
+          );
+        })}
+      </SimpleGrid>
+      <SimpleGrid
+        columns={[3]}
+        h="auto"
+        justifyContent="flex-start"
+        alignContent="center"
+      // maxBlockSize="fit-content"
+      d={{ base: "grid", md: "none" }}
       >
         {icons.map((icon: IconTuple): JSX.Element => {
           return (

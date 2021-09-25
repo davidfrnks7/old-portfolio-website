@@ -6,7 +6,7 @@ import Skills from "../components/sections/skills/Skills";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <VStack w="100%" h="auto">
+    <VStack spacing="20%" w="100%" h="auto">
       <Greeting />
       <About />
       <Skills />
