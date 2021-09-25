@@ -11,6 +11,7 @@ const CallToAction = (): JSX.Element => {
         w="100%"
         spacing="6"
         justifyContent="center"
+        alignContent="center"
       >
         <ContactButtons />
       </HStack>
@@ -20,6 +21,7 @@ const CallToAction = (): JSX.Element => {
         w="100%"
         spacing="4"
         justifyContent="center"
+        alignContent="center"
       >
         <ContactButtons />
       </VStack>
