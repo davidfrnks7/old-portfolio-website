@@ -41,7 +41,7 @@ const About = (): JSX.Element => {
         w="97%"
         d={{ base: "flex", lg: "none" }}
       >
-        <Box p="20px" w={{base:"60%", md:"40%"}}>
+        <Box p="20px" w={{ base: "60%", md: "40%" }}>
           <Image
             layout="responsive"
             src={davidFImage}

@@ -4,7 +4,7 @@ import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
-    <VStack id="skills" w="100%">
+    <VStack id="skills" w="100%" justifyContent="center" alignContent="center">
       <Heading as="h3" size="xl" mb={12}>
         Skills
       </Heading>
@@ -13,17 +13,12 @@ const Skills = (): JSX.Element => {
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-      // maxBlockSize="fit-content"
-      d={{ base: "none", md: "grid" }}
+        // maxBlockSize="fit-content"
+        d={{ base: "none", md: "grid" }}
       >
         {icons.map((icon: IconTuple): JSX.Element => {
           return (
-            <Box
-              key={icon[0]}
-              h="auto"
-              mx="10px"
-              mb="30px"
-            >
+            <Box key={icon[0]} h="auto" mx="10px" mb="30px">
               <Box
                 h="100px"
                 w="80px"
@@ -33,12 +28,7 @@ const Skills = (): JSX.Element => {
               >
                 {icon[1]}
               </Box>
-              <Heading
-                w="100%"
-                textAlign="center"
-                as="h4"
-                size="md"
-              >
+              <Heading w="100%" textAlign="center" as="h4" size="md">
                 {icon[0]}
               </Heading>
             </Box>
@@ -50,17 +40,12 @@ const Skills = (): JSX.Element => {
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-      // maxBlockSize="fit-content"
-      d={{ base: "grid", md: "none" }}
+        // maxBlockSize="fit-content"
+        d={{ base: "grid", md: "none" }}
       >
         {icons.map((icon: IconTuple): JSX.Element => {
           return (
-            <Box
-              key={icon[0]}
-              h="auto"
-              mx="10px"
-              mb="30px"
-            >
+            <Box key={icon[0]} h="auto" mx="10px" mb="30px">
               <Box
                 h="100px"
                 w="80px"
@@ -70,12 +55,7 @@ const Skills = (): JSX.Element => {
               >
                 {icon[1]}
               </Box>
-              <Heading
-                w="100%"
-                textAlign="center"
-                as="h4"
-                size="md"
-              >
+              <Heading w="100%" textAlign="center" as="h4" size="md">
                 {icon[0]}
               </Heading>
             </Box>
