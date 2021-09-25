@@ -7,7 +7,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { projects, Project } from "./projectList.ts";
+import { projects, Project } from "./projectList";
 
 const Projects = (): JSX.Element => {
   return (
