@@ -16,7 +16,6 @@ const TypeWriter = (): JSX.Element => {
             "Dedicated",
             "Reliable",
             "Motivated",
-            "Driven",
             "Gamer",
           ],
           autoStart: true,
