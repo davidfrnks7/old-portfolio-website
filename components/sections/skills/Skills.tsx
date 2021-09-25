@@ -4,29 +4,43 @@ import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
-    <VStack id="skills" w="100%" h="100vh">
-      <Heading mt={36} mb={12}>
+    <VStack id="skills" w="100%">
+      <Heading as="h3" size="xl" mt={36} mb={12}>
         Skills
       </Heading>
       <SimpleGrid
         columns={[6]}
-        spacing={20}
         h="auto"
-        justifyContent="center"
+        justifyContent="flex-start"
         alignContent="center"
-        // maxBlockSize="fit-content"
-        // d={{ base: "none", md: "grid" }}
+      // maxBlockSize="fit-content"
+      // d={{ base: "none", md: "grid" }}
       >
         {icons.map((icon: IconTuple): JSX.Element => {
           return (
             <Box
               key={icon[0]}
-              h="100px"
-              w="100px"
-              fontSize="75px"
-              color="blackAlpha.700"
+              h="auto"
+              mx="10px"
+              mb="30px"
             >
-              {icon[1]}
+              <Box
+                h="100px"
+                w="80px"
+                fontSize="75px"
+                color="blackAlpha.700"
+                margin="auto"
+              >
+                {icon[1]}
+              </Box>
+              <Heading
+                w="100%"
+                textAlign="center"
+                as="h4"
+                size="md"
+              >
+                {icon[0]}
+              </Heading>
             </Box>
           );
         })}
