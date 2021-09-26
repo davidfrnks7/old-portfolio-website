@@ -14,16 +14,6 @@ export const ButtonStyles = {
   sizes: {},
   // styles for different visual variants ("outline", "solid")
   variants: {
-    primary: (props: Dict<never> | StyleFunctionProps) => ({
-      bg: "primary", // Notice the use of color directly here
-      color: "white",
-      _hover: {
-        // Notice the use of `mode` function to change color
-        // based on theme color mode
-        bg: mode(whiten("primary", 20), darken("primary", 20))(props),
-        boxShadow: "md",
-      },
-    }),
     contactPrimary: (props: Dict<never> | StyleFunctionProps) => ({
       bg: "rgba(255, 255, 255, .15)",
       fontSize: "xl",
@@ -44,6 +34,22 @@ export const ButtonStyles = {
           whiten("brand.primary", 20),
           darken("brand.primary", 20)
         )(props),
+      },
+    }),
+    project: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "lg",
+      py: 2,
+      px: 4,
+      boxShadow:
+        "rgba(0, 134, 255, 0.2) 0px 0px 15px, rgba(0, 134, 255, 0.15) 0px 0px 3px 1px",
+      _hover: {
+        bg: mode(
+          whiten("brand.secondary", 20),
+          darken("brand.secondary", 20)
+        )(props),
+        boxShadow:
+          "rgba(0, 104, 255, 0.2) 0px 0px 15px, rgba(0, 104, 255, 0.15) 0px 0px 3px 1px",
       },
     }),
     // default values for `size` and `variant`

@@ -54,7 +54,9 @@ const Projects = (): JSX.Element => {
                     );
                   })}
               </Box>
-              <Button href={project.link}>View Project</Button>
+              <Button variant="project" href={project.link}>
+                View Project
+              </Button>
             </VStack>
           );
         })}
