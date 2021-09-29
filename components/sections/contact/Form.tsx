@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import React from "react";
+import EmojiValidate from "./EmojiValidate";
 
 const ContactFrom = (): JSX.Element => {
   const validateName = (inputName: string | undefined): string | undefined => {
@@ -85,7 +86,7 @@ const ContactFrom = (): JSX.Element => {
         <Form>
           <VStack h="auto" w="100%" spacing={6}>
             <Heading as="h4" size="md">
-              Required fields indicated with <span role="img" aria-label="Explication Mark">❌</span>
+              Required fields indicated with <EmojiValidate type="Required" />
             </Heading>
             <HStack h="auto" w="100%" alignItems="flex-start" spacing={8}>
               <Field name="name" validate={validateName}>
