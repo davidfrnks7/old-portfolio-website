@@ -4,6 +4,7 @@ import About from "../components/sections/about/About";
 import Greeting from "../components/sections/greeting/Greeting";
 import Skills from "../components/sections/skills/Skills";
 import Projects from "../components/sections/projects/Projects";
+import Contact from "../components/sections/contact/Contact";
 
 const IndexPage = (): JSX.Element => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = (): JSX.Element => {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </VStack>
   );
 };
