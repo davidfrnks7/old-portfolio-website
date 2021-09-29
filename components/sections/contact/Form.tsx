@@ -7,10 +7,9 @@ import {
   VStack,
   HStack,
   Textarea,
-  Text,
   Heading,
 } from "@chakra-ui/react";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, FieldProps } from "formik";
 import React from "react";
 import EmojiValidate from "./EmojiValidate";
 
@@ -90,9 +89,11 @@ const ContactFrom = (): JSX.Element => {
             </Heading>
             <HStack h="auto" w="100%" alignItems="flex-start" spacing={8}>
               <Field name="name" validate={validateName}>
-                {({ field, form }) => (
+                {({ field, form }: FieldProps) => (
                   <FormControl
-                    isInvalid={form.errors.name && form.touched.name}
+                    isInvalid={
+                      form.errors.name && form.touched.name ? true : false
+                    }
                   >
                     <FormLabel htmlFor="name">Name</FormLabel>
                     <Input {...field} id="name" placeholder="David Franks" />
@@ -101,9 +102,11 @@ const ContactFrom = (): JSX.Element => {
                 )}
               </Field>
               <Field name="email" validate={validateEmail}>
-                {({ field, form }) => (
+                {({ field, form }: FieldProps) => (
                   <FormControl
-                    isInvalid={form.errors.email && form.touched.email}
+                    isInvalid={
+                      form.errors.email && form.touched.email ? true : false
+                    }
                   >
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <Input
@@ -117,20 +120,21 @@ const ContactFrom = (): JSX.Element => {
               </Field>
             </HStack>
             <Field name="subject" validate={validateSubject}>
-              {({ field, form }) => (
+              {({ field, form }: FieldProps) => (
                 <FormControl
-                  isInvalid={form.errors.subject && form.touched.subject}
+                  isInvalid={
+                    form.errors.subject && form.touched.subject ? true : false
+                  }
                 >
-                  <HStack
-                    h="auto"
-                    w="auto"
-                    spacing={0}
-                    alignItems="flex-start"
-                  >
-                    <FormLabel mr={2} htmlFor="subject">Subject</FormLabel>
-                    {form.errors.subject && form.touched.subject &&
-                      <span role="img" aria-label="X">❌</span>
-                    }
+                  <HStack h="auto" w="auto" spacing={0} alignItems="flex-start">
+                    <FormLabel mr={2} htmlFor="subject">
+                      Subject
+                    </FormLabel>
+                    {form.errors.subject && form.touched.subject && (
+                      <span role="img" aria-label="X">
+                        ❌
+                      </span>
+                    )}
                   </HStack>
                   <Input
                     {...field}
@@ -142,9 +146,11 @@ const ContactFrom = (): JSX.Element => {
               )}
             </Field>
             <Field name="message" validate={validateMessage}>
-              {({ field, form }) => (
+              {({ field, form }: FieldProps) => (
                 <FormControl
-                  isInvalid={form.errors.message && form.touched.message}
+                  isInvalid={
+                    form.errors.message && form.touched.message ? true : false
+                  }
                 >
                   <FormLabel htmlFor="message">Message</FormLabel>
                   <Textarea
