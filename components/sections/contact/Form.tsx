@@ -118,7 +118,7 @@ const ContactFrom = (): JSX.Element => {
         <Form
           style={{
             width: "90%",
-            zIndex: "1",
+            zIndex: 1,
           }}
         >
           <VStack h="auto" w="100%" spacing={6}>
