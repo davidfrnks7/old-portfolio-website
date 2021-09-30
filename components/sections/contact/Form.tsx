@@ -8,7 +8,7 @@ import {
   HStack,
   Textarea,
   Heading,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
@@ -117,7 +117,7 @@ const ContactFrom = (): JSX.Element => {
       {(props) => (
         <Form
           style={{
-            width: "90%"
+            width: "90%",
           }}
         >
           <VStack h="auto" w="100%" spacing={6}>
@@ -125,7 +125,13 @@ const ContactFrom = (): JSX.Element => {
               Required fields indicated with <EmojiValidate type="Required" />
             </Heading>
 
-            <HStack d={{ base: "none", md: "flex" }} h="auto" w="100%" alignItems="flex-start" spacing={8}>
+            <HStack
+              d={{ base: "none", md: "flex" }}
+              h="auto"
+              w="100%"
+              alignItems="flex-start"
+              spacing={8}
+            >
               <Field name="name" validate={validateName}>
                 {({ field, form }: FieldProps) => (
                   <FormControl
@@ -192,7 +198,13 @@ const ContactFrom = (): JSX.Element => {
 
             {/* Not duped components!! Different layouts for responsiveness. */}
 
-            <VStack d={{ base: "flex", md: "none" }} h="auto" w="100%" alignItems="flex-start" spacing={8}>
+            <VStack
+              d={{ base: "flex", md: "none" }}
+              h="auto"
+              w="100%"
+              alignItems="flex-start"
+              spacing={8}
+            >
               <Field name="name" validate={validateName}>
                 {({ field, form }: FieldProps) => (
                   <FormControl
@@ -316,7 +328,12 @@ const ContactFrom = (): JSX.Element => {
             </Field>
             <VStack h="auto" w="auto" spacing={2}>
               <Text fontSize="sm">
-                Form ready to submit: {valid ? <EmojiValidate type="Valid" /> : <EmojiValidate type="Error" />}
+                Form ready to submit:{" "}
+                {valid ? (
+                  <EmojiValidate type="Valid" />
+                ) : (
+                  <EmojiValidate type="Error" />
+                )}
               </Text>
               <Button
                 fontSize="lg"
@@ -332,9 +349,8 @@ const ContactFrom = (): JSX.Element => {
             </VStack>
           </VStack>
         </Form>
-      )
-      }
-    </Formik >
+      )}
+    </Formik>
   );
 };
 
