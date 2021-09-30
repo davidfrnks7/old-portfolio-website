@@ -45,14 +45,6 @@ const Footer = (): JSX.Element => {
             <Icon fontSize="1.75rem" icon="logos:vercel" />
           </Link>
         </HStack>
-        <VStack spacing={0}>
-          <Text fontSize="xs">
-            A personal portfolio website for David Franks
-          </Text>
-          <Text fontSize="xs">
-            Logos are copyright or trademarked to their respective organizations
-          </Text>
-        </VStack>
         <VStack spacing={2}>
           <Link
             href="https://github.com/davidfrnks7/portfolio-website"
@@ -71,6 +63,14 @@ const Footer = (): JSX.Element => {
               ©
             </span>{" "}
             2021 - {new Date().getFullYear()} David Franks
+          </Text>
+        </VStack>
+        <VStack spacing={0}>
+          <Text fontSize="xs">
+            A personal portfolio website for David Franks
+          </Text>
+          <Text fontSize="xs">
+            Logos are copyright or trademarked to their respective organizations
           </Text>
         </VStack>
       </VStack>
