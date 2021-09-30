@@ -11,16 +11,24 @@ import {
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import BackToTopButton from "./BackToTopButton";
 
 const Header = (): JSX.Element => {
   // Sticky Navbar
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
+  const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 
   const handleScroll = (): void => {
     if (window.scrollY >= 1) {
       setStickyNavbar(true);
     } else {
       setStickyNavbar(false);
+    }
+
+    if (window.scrollY >= 900) {
+      setShowBackToTop(true);
+    } else {
+      setShowBackToTop(false);
     }
   };
 
@@ -29,6 +37,7 @@ const Header = (): JSX.Element => {
       console.log("waiting for mount");
     } else if (window) {
       window.addEventListener("scroll", handleScroll);
+      console.info(window.scrollY);
     }
   }, []);
 
@@ -110,6 +119,7 @@ const Header = (): JSX.Element => {
         />
       </HStack>
       <MobileNav shouldOpen={open} />
+      <BackToTopButton scrollDirection="down" show={showBackToTop} />
     </VStack>
   );
 };
