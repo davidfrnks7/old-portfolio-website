@@ -82,5 +82,23 @@ export const ButtonStyles = {
         bg: mode(whiten("brand.main", 20), darken("brand.main", 20))(props),
       },
     }),
+    backToTop: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "lg",
+      py: 2,
+      px: 4,
+      color: "rgba(0, 134, 255, 0.6)",
+      boxShadow:
+        "rgba(0, 134, 255, 0.05) 0px 0px 15px, rgba(0, 134, 255, 0.1) 0px 0px 3px 1px",
+      _hover: {
+        bg: mode(
+          whiten("brand.secondary", 20),
+          darken("brand.secondary", 20)
+        )(props),
+        boxShadow:
+          "rgba(0, 104, 255, 0.2) 0px 0px 15px, rgba(0, 104, 255, 0.15) 0px 0px 3px 1px",
+        color: "whiteAlpha.900",
+      },
+    }),
   },
 };

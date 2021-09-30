@@ -21,7 +21,9 @@ const BackToTopButton = ({
       left="85vw"
     >
       <Link href="/#top">
-        <Button>
+        <Button
+          variant="backToTop"
+        >
           <Icon icon="akar-icons:chevron-up" />
         </Button>
       </Link>
