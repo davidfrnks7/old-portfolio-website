@@ -6,7 +6,7 @@ const Header = (): JSX.Element => {
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
 
   const handleScroll = (): void => {
-    if (window.scrollY >= 125) {
+    if (window.scrollY >= 1) {
       setStickyNavbar(true);
     } else {
       setStickyNavbar(false);
@@ -23,39 +23,22 @@ const Header = (): JSX.Element => {
 
   return (
     <Fragment>
-      {stickyNavbar && (
-        <HStack
-          justifyContent="space-between"
-          w="100%"
-          h="auto"
-          bg="brand.main"
-          py={{ base: "0.5rem", md: "0.9rem" }}
-          px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
-          transition="opacity 2s ease-in-out"
-          pos="sticky"
-          top="0"
-          zIndex={1000000}
-        >
-          <Heading as="h1" size="md">
-            <Link href="/">David Franks Portfolio Website</Link>
-          </Heading>
-          <Nav sticky />
-        </HStack>
-      )}
       <HStack
         justifyContent="space-between"
         w="100%"
         h="auto"
-        bg="transparent"
+        bg={stickyNavbar ? "brand.main" : "transparent"}
         py={{ base: "0.5rem", md: "0.9rem" }}
         px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
         transition=".3s ease"
-        pos="absolute"
+        pos="sticky"
+        top={0}
+        zIndex={1000000}
       >
         <Heading as="h1" size="md">
           <Link href="/">David Franks Portfolio Website</Link>
         </Heading>
-        <Nav />
+        <Nav sticky={stickyNavbar} />
       </HStack>
     </Fragment>
   );

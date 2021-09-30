@@ -8,6 +8,7 @@ const Greeting = (): JSX.Element => {
     <Box
       w="100%"
       h="100vh"
+      mt="-70px"
       px={{ base: "3rem", lg: "3rem", xl: "5rem" }}
       textAlign="center"
       className="background"
@@ -15,14 +16,6 @@ const Greeting = (): JSX.Element => {
       <Heading pt="35vh" as="h2" size="lg">
         Hello, I am David Franks
       </Heading>
-      {/* <Heading
-        mt="3rem"
-        pb="10vh"
-        as="h2"
-        size="lg"
-      >
-        Software Engineer
-      </Heading> */}
       <TypeWriter />
       <CallToAction />
     </Box>
