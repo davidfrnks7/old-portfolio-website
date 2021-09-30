@@ -1,57 +1,27 @@
 import { Button, HStack, Link } from "@chakra-ui/react";
 import React from "react";
 
-const Nav = (): JSX.Element => {
+interface NavProps {
+  sticky?: boolean;
+}
+
+const Nav = ({ sticky }: NavProps): JSX.Element => {
   return (
-    <HStack
-      h="auto"
-      w="auto"
-      spacing={2}
-    >
-      <Link
-        href="/#top"
-      >
-        <Button
-          variant="nav"
-        >
-          Home
-        </Button>
+    <HStack h="auto" w="auto" spacing={4}>
+      <Link href="/#top">
+        <Button variant={sticky ? "stickyNav" : "nav"}>Home</Button>
       </Link>
-      <Link
-        href="/#about"
-      >
-        <Button
-          variant="nav"
-        >
-          About
-        </Button>
+      <Link href="/#about">
+        <Button variant={sticky ? "stickyNav" : "nav"}>About</Button>
       </Link>
-      <Link
-        href="/#skills"
-      >
-        <Button
-          variant="nav"
-        >
-          Skills
-        </Button>
+      <Link href="/#skills">
+        <Button variant={sticky ? "stickyNav" : "nav"}>Skills</Button>
       </Link>
-      <Link
-        href="/#projects"
-      >
-        <Button
-          variant="nav"
-        >
-          Projects
-        </Button>
+      <Link href="/#projects">
+        <Button variant={sticky ? "stickyNav" : "nav"}>Projects</Button>
       </Link>
-      <Link
-        href="/#contact"
-      >
-        <Button
-          variant="nav"
-        >
-          Contact
-        </Button>
+      <Link href="/#contact">
+        <Button variant={sticky ? "stickyNav" : "nav"}>Contact</Button>
       </Link>
     </HStack>
   );

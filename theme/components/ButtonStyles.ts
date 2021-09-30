@@ -64,14 +64,12 @@ export const ButtonStyles = {
       },
     }),
     stickyNav: (props: Dict<never> | StyleFunctionProps) => ({
-      bg: "rgba(255, 255, 255, .15)",
+      // bg: "rgba(255, 255, 255, .15)",
+      bg: "transparent",
       fontSize: "md",
       px: "2",
       _hover: {
-        bg: mode(
-          whiten("brand.primary", 20),
-          darken("brand.primary", 20)
-        )(props),
+        textDecoration: "underline",
       },
     }),
     // default values for `size` and `variant`
