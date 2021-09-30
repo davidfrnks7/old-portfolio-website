@@ -52,6 +52,28 @@ export const ButtonStyles = {
           "rgba(0, 104, 255, 0.2) 0px 0px 15px, rgba(0, 104, 255, 0.15) 0px 0px 3px 1px",
       },
     }),
+    nav: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "md",
+      px: "2",
+      _hover: {
+        bg: mode(
+          whiten("brand.secondary", 20),
+          darken("brand.secondary", 20)
+        )(props),
+      },
+    }),
+    stickyNav: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "rgba(255, 255, 255, .15)",
+      fontSize: "md",
+      px: "2",
+      _hover: {
+        bg: mode(
+          whiten("brand.primary", 20),
+          darken("brand.primary", 20)
+        )(props),
+      },
+    }),
     // default values for `size` and `variant`
     defaultProps: {},
   },
