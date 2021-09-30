@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Heading,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Heading, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
 

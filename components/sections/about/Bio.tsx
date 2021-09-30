@@ -13,8 +13,10 @@ const Bio = (): JSX.Element => {
       px="20px"
       py="15px"
     >
-      {bio.split("\n").map(line => (
-        <Text key={line.replace(" ", "-")} w="100%" textAlign="justify">{line}</Text>
+      {bio.split("\n").map((line) => (
+        <Text key={line.replace(" ", "-")} w="100%" textAlign="justify">
+          {line}
+        </Text>
       ))}
     </VStack>
   );

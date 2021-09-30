@@ -107,10 +107,9 @@ export const projects: Project[] = [
       "Added the ability for users to drop custom pins onto the map",
       "Allowed users to add the custom pins to their favorites and create events at them",
       "Rendered custom icons on the map to represent if the type of event planned at parks and trails",
-      "Made the app responsive to screen size"
+      "Made the app responsive to screen size",
     ],
-    deployed:
-      "This app was not deployed, but used MongoDB for the database.",
+    deployed: "This app was not deployed, but used MongoDB for the database.",
     link: "https://github.com/davidfrnks7/trailz",
   },
 ];
