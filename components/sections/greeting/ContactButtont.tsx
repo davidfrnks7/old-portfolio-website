@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 const ContactButtons = (): JSX.Element => {
   return (
     <Fragment>
-      <Link>
+      <Link href="https://www.linkedin.com/in/davidfrnks7/">
         <Button
           variant="contactPrimary"
           boxShadow="xl"
