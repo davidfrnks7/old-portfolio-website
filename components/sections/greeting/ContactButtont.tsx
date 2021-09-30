@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { ButtonGroup, Link, Button, Text, IconButton } from "@chakra-ui/react";
+import { ButtonGroup, Link, Button, IconButton } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 
 const ContactButtons = (): JSX.Element => {
