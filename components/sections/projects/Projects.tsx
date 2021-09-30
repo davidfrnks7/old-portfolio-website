@@ -16,12 +16,10 @@ const Projects = (): JSX.Element => {
         Projects
       </Heading>
       <SimpleGrid
-        columns={[3]}
+        columns={{ base: 2, lg: 3 }}
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-        // maxBlockSize="fit-content"
-        // spacing="10px"
         d={{ base: "none", md: "grid" }}
         w="100%"
       >
@@ -61,6 +59,50 @@ const Projects = (): JSX.Element => {
           );
         })}
       </SimpleGrid>
+      <VStack
+        w="95%"
+        h="auto"
+        alignContent="center"
+        justifyContent="center"
+        d={{ base: "flex", md: "none" }}
+      >
+        {projects.map((project: Project): JSX.Element => {
+          return (
+            <VStack
+              key={project.name}
+              boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
+              borderRadius="lg"
+              border="1px solid white"
+              justifyContent="center"
+              alignContent="center"
+              mx="30px"
+              mb="30px"
+              h="auto"
+              py={6}
+              px={2}
+              w="100%"
+            >
+              <Heading mb={2} w="100%" textAlign="center" as="h4" size="md">
+                {project.name}
+              </Heading>
+              <Box pb={4}>
+                {project.description
+                  .split("\n")
+                  .map((line: string): JSX.Element => {
+                    return (
+                      <Text key={line.replace(" ", "-").toLowerCase()}>
+                        {line}
+                      </Text>
+                    );
+                  })}
+              </Box>
+              <Button variant="project" href={project.link}>
+                View Project
+              </Button>
+            </VStack>
+          );
+        })}
+      </VStack>
     </VStack>
   );
 };

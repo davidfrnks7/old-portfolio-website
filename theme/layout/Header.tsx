@@ -1,5 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Link, Heading, HStack, Box, IconButton, VStack } from "@chakra-ui/react";
+import {
+  Link,
+  Heading,
+  HStack,
+  Box,
+  IconButton,
+  VStack,
+} from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
@@ -50,7 +57,7 @@ const Header = (): JSX.Element => {
       alignContent={{ base: "flex-start", lg: "center" }}
       w="100%"
       h="3rem"
-      bg={(stickyNavbar || open) ? "brand.main" : "transparent"}
+      bg={stickyNavbar || open ? "brand.main" : "transparent"}
       py={{ base: "0", md: "0.9rem" }}
       px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
       transition=".5s ease"

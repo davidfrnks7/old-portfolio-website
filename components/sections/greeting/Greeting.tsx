@@ -8,7 +8,7 @@ const Greeting = (): JSX.Element => {
     <Box
       w="100%"
       h="100vh"
-      mt="-50px"
+      mt="-48px"
       px={{ base: "3rem", lg: "3rem", xl: "5rem" }}
       textAlign="center"
       className="background"

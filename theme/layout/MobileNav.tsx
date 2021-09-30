@@ -8,10 +8,7 @@ interface NavProps {
 
 const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
   return (
-    <Collapse
-      in={shouldOpen}
-      animateOpacity
-    >
+    <Collapse in={shouldOpen} animateOpacity>
       <VStack
         as="nav"
         d={{ base: "flex", lg: "none" }}
@@ -26,7 +23,9 @@ const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
         {navItems.map((navItem: NavItem) => {
           return (
             <Link key={navItem[0]} href={navItem[1]}>
-              <Button w="90vw" variant={"nav"}>{navItem[0]}</Button>
+              <Button w="90vw" variant={"nav"}>
+                {navItem[0]}
+              </Button>
             </Link>
           );
         })}
