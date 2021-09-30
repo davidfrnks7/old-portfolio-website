@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
         bg={stickyNavbar ? "brand.main" : "transparent"}
         py={{ base: "0.5rem", md: "0.9rem" }}
         px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
-        transition=".3s ease"
+        transition=".5s ease"
         pos="sticky"
         top={0}
         zIndex={1000000}
