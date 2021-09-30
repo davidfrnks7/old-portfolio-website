@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, Heading, Box, SimpleGrid } from "@chakra-ui/layout";
+import { VStack, Heading, Box, SimpleGrid } from "@chakra-ui/react";
 import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {

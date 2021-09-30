@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading } from "@chakra-ui/layout";
+import { Heading } from "@chakra-ui/react";
 import Typewritter from "typewriter-effect";
 
 const TypeWriter = (): JSX.Element => {

@@ -100,5 +100,21 @@ export const ButtonStyles = {
         color: "whiteAlpha.900",
       },
     }),
+    collapse: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "md",
+      p: 2,
+      h: 8,
+      color: "rgba(0, 134, 255, 0.5)",
+      textDecoration: "underline",
+      _hover: {
+        bg: mode(
+          whiten("brand.secondary", 20),
+          darken("brand.secondary", 20)
+        )(props),
+        color: "whiteAlpha.900",
+        textDecoration: "none",
+      },
+    }),
   },
 };
