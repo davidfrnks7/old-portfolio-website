@@ -56,7 +56,7 @@ const Header = (): JSX.Element => {
       justifyContent={{ base: "flex-start", lg: "center" }}
       alignContent={{ base: "flex-start", lg: "center" }}
       w="100%"
-      h="3rem"
+      h="60px"
       bg={stickyNavbar || open ? "brand.main" : "transparent"}
       py={{ base: "0", md: "0.9rem" }}
       px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
