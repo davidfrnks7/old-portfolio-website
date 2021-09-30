@@ -12,7 +12,7 @@ const Contact = (): JSX.Element => {
       alignContent="center"
       py={8}
       h="auto"
-      w={{ base: "100%", md: "90%" }}
+      w={{ base: "100%", md: "95%" }}
     >
       <Heading as="h3" size="xl" mb={12}>
         Contact Me
