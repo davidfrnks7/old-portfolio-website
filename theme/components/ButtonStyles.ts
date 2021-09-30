@@ -74,5 +74,13 @@ export const ButtonStyles = {
     }),
     // default values for `size` and `variant`
     defaultProps: {},
+    credits: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "brand.main",
+      fontSize: "lg",
+      p: 3,
+      _hover: {
+        bg: mode(whiten("brand.main", 20), darken("brand.main", 20))(props),
+      },
+    }),
   },
 };

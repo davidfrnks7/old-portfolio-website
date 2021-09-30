@@ -90,17 +90,13 @@ const Header = (): JSX.Element => {
         justifyContent="space-between"
       >
         <Box w="auto" h="100%" d={{ base: "flex", lg: "none " }}></Box>
-          <Box
-            w="100%"
-            d={{ base: "none", lg: "flex" }}
-            m="auto"
-          >
-            <Link href="/">
-              <Heading as="h1" size="md">
-                David Franks Portfolio Website
-              </Heading>
-            </Link>
-          </Box>
+        <Box w="100%" d={{ base: "none", lg: "flex" }} m="auto">
+          <Link href="/">
+            <Heading as="h1" size="md">
+              David Franks Portfolio Website
+            </Heading>
+          </Link>
+        </Box>
         <DesktopNav sticky={stickyNavbar} />
         <IconButton
           aria-label="Mobile Nav Menu"
