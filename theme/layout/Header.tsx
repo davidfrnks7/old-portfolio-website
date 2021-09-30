@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import {
   Link,
   Heading,
@@ -14,22 +14,42 @@ import MobileNav from "./MobileNav";
 import BackToTopButton from "./BackToTopButton";
 
 const Header = (): JSX.Element => {
-  // Sticky Navbar
+  // Sticky Navbar, Scroll Direction, and Back to Top Button Visibility
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
+  const lastScroll = useRef<number>(0);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
+    "top"
+  );
 
   const handleScroll = (): void => {
+    // Sticky Nav
     if (window.scrollY >= 1) {
       setStickyNavbar(true);
     } else {
       setStickyNavbar(false);
     }
 
+    // Back To Top Button
     if (window.scrollY >= 900) {
       setShowBackToTop(true);
     } else {
       setShowBackToTop(false);
     }
+
+    // Scroll Direction
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScroll.current) {
+      setScrollDirection("down");
+    } else if (currentScroll === 0) {
+      setScrollDirection("top");
+    } else {
+      setScrollDirection("up");
+    }
+
+    lastScroll.current = currentScroll <= 0 ? 0 : currentScroll;
   };
 
   useEffect(() => {
@@ -74,6 +94,11 @@ const Header = (): JSX.Element => {
       pos="sticky"
       top={0}
       zIndex={1000000}
+      d={
+        scrollDirection === "down" || scrollDirection === "top"
+          ? "flex"
+          : "none"
+      }
     >
       <Flex
         pos="absolute"
@@ -119,7 +144,7 @@ const Header = (): JSX.Element => {
         />
       </HStack>
       <MobileNav shouldOpen={open} />
-      <BackToTopButton scrollDirection="down" show={showBackToTop} />
+      <BackToTopButton scrollDirection={scrollDirection} show={showBackToTop} />
     </VStack>
   );
 };

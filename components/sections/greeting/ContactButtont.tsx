@@ -16,7 +16,11 @@ const ContactButtons = (): JSX.Element => {
       </Link> */}
       <ButtonGroup variant="contactPrimary" isAttached boxShadow="xl">
         <Link href="https://www.linkedin.com/in/davidfrnks7/" target="_blank">
-          <Button leftIcon={<Icon icon="brandico:linkedin-rect" />} ml="-px" borderRadius="4px 0px 0px 4px">
+          <Button
+            leftIcon={<Icon icon="brandico:linkedin-rect" />}
+            ml="-px"
+            borderRadius="4px 0px 0px 4px"
+          >
             Connect with me
           </Button>
         </Link>
