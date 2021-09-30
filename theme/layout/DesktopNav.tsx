@@ -22,9 +22,7 @@ const DesktopNav = ({ sticky }: NavProps): JSX.Element => {
       {navItems.map((navItem: NavItem) => {
         return (
           <Link key={navItem[0]} href={navItem[1]}>
-            <Button variant={sticky ? "stickyNav" : "nav"}>
-              {navItem[0]}
-            </Button>
+            <Button variant={sticky ? "stickyNav" : "nav"}>{navItem[0]}</Button>
           </Link>
         );
       })}

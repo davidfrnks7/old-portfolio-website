@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import type { AppProps } from "next/app";
 import Header from "../layout/Header";
 import { Box } from "@chakra-ui/layout";
+import Footer from "./Footer";
 
 interface Props {
   children: ReactNode;
@@ -14,6 +15,7 @@ function Layout({ children }: Props, { pageProps }: AppProps): JSX.Element {
     <Box w="100%">
       <Header {...pageProps} />
       <main>{children}</main>
+      <Footer />
     </Box>
   );
 }
