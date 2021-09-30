@@ -18,7 +18,7 @@ const Contact = (): JSX.Element => {
       w={{ base: "100%", md: "95%" }}
       spacing={6}
     >
-      <Heading as="h3" size="xl" mb={6}>
+      <Heading as="h3" size="xl" mb={6} id="contact">
         Contact Me
       </Heading>
       <ContactFrom />
