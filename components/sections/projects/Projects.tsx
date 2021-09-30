@@ -12,7 +12,7 @@ import { projects, Project } from "./projectList";
 const Projects = (): JSX.Element => {
   return (
     <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
-      <Heading as="h3" size="xl" mb={6} id="project" >
+      <Heading as="h3" size="xl" mb={6} id="projects">
         Projects
       </Heading>
       <SimpleGrid
