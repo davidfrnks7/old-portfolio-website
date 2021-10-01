@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
 
     // Scroll Direction
     const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
+      window.scrollY || window.pageYOffset || document.body.scrollTop;
 
     if (currentScroll > lastScroll.current) {
       setScrollDirection("down");
