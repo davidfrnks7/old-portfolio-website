@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Divider,
@@ -10,11 +10,36 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
+import BackToTopButton from "./BackToTopButton";
 
 const Footer = (): JSX.Element => {
+  const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
+  const lastScroll = useRef<number>(0);
+
+  const handleScroll = (): void => {
+    if (window.scrollY >= 900) {
+      setShowBackToTop(true);
+    } else {
+      setShowBackToTop(false);
+    }
+
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    lastScroll.current = currentScroll <= 0 ? 0 : currentScroll;
+  };
+
+  useEffect(() => {
+    if (!window) {
+      console.log("waiting for mount");
+    } else if (window) {
+      window.addEventListener("scroll", handleScroll);
+    }
+  }, []);
   return (
     <Box as="footer" w="100%" h="auto">
       <Divider />
+      <BackToTopButton show={showBackToTop} />
       <VStack
         h="auto"
         w="auto"
