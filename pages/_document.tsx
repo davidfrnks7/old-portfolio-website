@@ -15,6 +15,7 @@ class Document extends NextDocument {
             name="og:description"
             content="A website to list my skills and demonstrate them for potential employers and clients to see."
           />
+          <meta property="og:type" content="Skills and Projects" />
           <meta property="og:image" content="/images/davidFImage.jpg" />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:alt" content="A face shot of David Franks." />
@@ -28,7 +29,7 @@ class Document extends NextDocument {
             content="portfolio software engineering coding developer seeking employment open for hire"
           />
           <meta name="copyright" content="David Franks" />
-          <meta name="page-topic" content="Skills and PRojects" />
+          <meta name="page-topic" content="Skills and Projects" />
           <meta name="page-type" content="Portfolio" />
           <meta name="audience" content="Everyone" />
           <meta name="robots" content="index, follow" />
