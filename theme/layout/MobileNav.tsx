@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Collapse, Link, VStack } from "@chakra-ui/react";
+import React, { Fragment } from "react";
+import { Button, Collapse, Divider, Link, VStack } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
 interface NavProps {
@@ -12,20 +12,21 @@ const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
       <VStack
         as="nav"
         d={{ base: "flex", lg: "none" }}
-        pos="relative"
-        top="0"
-        h="auto"
-        w="100vw"
-        spacing={4}
-        mb={6}
+        spacing={0}
         bg="brand.main"
       >
-        {navItems.map((navItem: NavItem) => {
+        <Divider colorScheme="black" />
+        {navItems.map((navItem: NavItem, index: number) => {
           return (
             <Link key={navItem[0]} href={navItem[1]}>
-              <Button w="90vw" variant={"nav"}>
+              <Button w="100vw" variant={"nav"}>
                 {navItem[0]}
               </Button>
+              {index !== navItems.length - 1 ? (
+                <Divider />
+              ) : (
+                <Fragment></Fragment>
+              )}
             </Link>
           );
         })}

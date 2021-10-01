@@ -11,10 +11,10 @@ const DesktopNav = ({ sticky }: NavProps): JSX.Element => {
     <HStack
       as="nav"
       d={{ base: "none", lg: "flex" }}
-      h="100%"
+      h="auto"
       w="auto"
       spacing={4}
-      m="auto"
+      // m="auto"
       justifyContent="center"
       alignContent="center"
       alignItems="center"
