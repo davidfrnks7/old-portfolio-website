@@ -19,6 +19,7 @@ const Header = (): JSX.Element => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
     "top"
   );
+  const [scroll, setScroll] = useState<number>(0);
 
   const handleScroll = (): void => {
     // Sticky Nav
@@ -41,6 +42,7 @@ const Header = (): JSX.Element => {
     }
 
     lastScroll.current = currentScroll <= 0 ? 0 : currentScroll;
+    setScroll(lastScroll.current = currentScroll <= 0 ? 0 : currentScroll)
   };
 
   useEffect(() => {
@@ -99,7 +101,7 @@ const Header = (): JSX.Element => {
         d={{ base: "flex", lg: "none" }}
       >
         <Heading as="h1" fontSize="lg">
-          David Franks Portfolio Website
+          David Franks Portfolio Website {scroll}
         </Heading>
       </Flex>
 
