@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Box } from "@chakra-ui/react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 interface CaptchaProps {
@@ -18,18 +19,23 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
   };
 
   return (
-    <HCaptcha
-      sitekey={
-        process.env.NEXT_PUBLIC_HCAPTCHA_KEY
-          ? process.env.NEXT_PUBLIC_HCAPTCHA_KEY
-          : ""
-      }
-      onVerify={updateToken}
-      onError={onError}
-      onExpire={onExpire}
-      theme="dark"
-      ref={captchaRef}
-    />
+    <Box
+      h="auto"
+      w="auto"
+    >
+      <HCaptcha
+        sitekey={
+          process.env.NEXT_PUBLIC_HCAPTCHA_KEY
+            ? process.env.NEXT_PUBLIC_HCAPTCHA_KEY
+            : ""
+        }
+        onVerify={updateToken}
+        onError={onError}
+        onExpire={onExpire}
+        theme="dark"
+        ref={captchaRef}
+      />
+    </Box>
   );
 };
 
