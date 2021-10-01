@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Link,
   Heading,
@@ -11,12 +11,10 @@ import {
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
-import BackToTopButton from "./BackToTopButton";
 
 const Header = (): JSX.Element => {
   // Sticky Navbar, Scroll Direction, and Back to Top Button Visibility
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
-  const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
   const lastScroll = useRef<number>(0);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
     "top"
@@ -28,13 +26,6 @@ const Header = (): JSX.Element => {
       setStickyNavbar(true);
     } else {
       setStickyNavbar(false);
-    }
-
-    // Back To Top Button
-    if (window.scrollY >= 900) {
-      setShowBackToTop(true);
-    } else {
-      setShowBackToTop(false);
     }
 
     // Scroll Direction
@@ -142,7 +133,6 @@ const Header = (): JSX.Element => {
         />
       </HStack>
       <MobileNav shouldOpen={open} />
-      <BackToTopButton scrollDirection={scrollDirection} show={showBackToTop} />
     </VStack>
   );
 };
