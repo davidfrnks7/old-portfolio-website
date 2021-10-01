@@ -101,7 +101,7 @@ const Header = (): JSX.Element => {
         d={{ base: "flex", lg: "none" }}
       >
         <Heading as="h1" fontSize="lg">
-          David Franks Portfolio Website
+          David Franks Portfolio Website {lastScroll.current}
         </Heading>
       </Flex>
 
