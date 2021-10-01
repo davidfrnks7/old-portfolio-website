@@ -119,7 +119,6 @@ const ContactFrom = (): JSX.Element => {
       axios
         .post("/api/contact", body)
         .then((response) => {
-          console.info("Form submission response: ", response);
           if (response.status >= 200 && response.status <= 299) {
             return resolve(response.statusText);
           } else if (response.status >= 400 && response.status <= 499) {
