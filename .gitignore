@@ -27,5 +27,8 @@ yarn-error.log*
 # local env files
 .env*
 
-# vercel
-.vercel
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
