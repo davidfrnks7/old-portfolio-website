@@ -128,6 +128,7 @@ const Header = (): JSX.Element => {
               d={{ base: "inline-flex", lg: "none" }}
               w="auto"
               margin="auto"
+              variant="nav"
             />
           </HStack>
         </Flex>
