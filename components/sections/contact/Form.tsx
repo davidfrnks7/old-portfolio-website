@@ -224,6 +224,7 @@ const ContactFrom = (): JSX.Element => {
                       )}
                     </HStack>
                     <Input
+                      type="text"
                       isDisabled={form.isSubmitting}
                       {...field}
                       id="name"
@@ -259,6 +260,7 @@ const ContactFrom = (): JSX.Element => {
                     </HStack>
                     <Input
                       {...field}
+                      type="email"
                       id="email"
                       placeholder="contact@davidfrnks7.dev"
                       isDisabled={form.isSubmitting}
@@ -303,6 +305,7 @@ const ContactFrom = (): JSX.Element => {
                       )}
                     </HStack>
                     <Input
+                      type="text"
                       isDisabled={form.isSubmitting}
                       {...field}
                       id="name"
@@ -338,6 +341,7 @@ const ContactFrom = (): JSX.Element => {
                     </HStack>
                     <Input
                       {...field}
+                      type="email"
                       id="email"
                       placeholder="contact@davidfrnks7.dev"
                       isDisabled={form.isSubmitting}
@@ -369,6 +373,7 @@ const ContactFrom = (): JSX.Element => {
                   </HStack>
                   <Input
                     {...field}
+                    type="text"
                     id="subject"
                     placeholder="I am interested in..."
                     isDisabled={form.isSubmitting}
@@ -398,6 +403,7 @@ const ContactFrom = (): JSX.Element => {
                   </HStack>
                   <Textarea
                     {...field}
+                    type="text"
                     isDisabled={form.isSubmitting}
                     id="message"
                     rows={4}
