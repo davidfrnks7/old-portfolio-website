@@ -9,8 +9,11 @@ class Document extends NextDocument {
       <Html>
         <Head>
           <link rel="icon" href="/images/favicon.svg" />
-          <link rel="image" href="/images/davidFImage.jpg" />
-          <meta httpEquiv="content-language" content="en" />
+          <meta property="og:site_name" content="David's Portfolio Website" />
+          <meta property="og:image" content="/images/davidFImage.jpg" />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:alt" content="A face shot of David Franks." />
+          <meta httpEquiv="content-language" content="en_US" />
           <meta charSet="UTF-8" />
           <meta
             name="viewport"
