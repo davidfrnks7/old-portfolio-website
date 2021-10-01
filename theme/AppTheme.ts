@@ -16,7 +16,7 @@ const AppTheme = extendTheme({
       hover: "#00aec1",
       warning: "#ffbd48",
       danger: "#FC8181",
-      valid: "#00c17c"
+      valid: "#00c17c",
     },
   },
   components: {

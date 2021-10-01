@@ -120,16 +120,14 @@ export const ButtonStyles = {
       type: "submit",
       _hover: {
         color: "whiteAlpha.900",
-        bg: mode(
-          whiten("brand.valid", 20),
-          darken("brand.valid", 20)
-        )(props),
+        bg: mode(whiten("brand.valid", 20), darken("brand.valid", 20))(props),
         _disabled: {
           color: mode(
             whiten("brand.danger", 20),
             darken("brand.danger", 20)
           )(props),
-          boxShadow: "rgba(252, 129, 129, 1) 0px 0px 15px, rgba(252, 129, 129, 0.8) 0px 0px 3px 1px",
+          boxShadow:
+            "rgba(252, 129, 129, 1) 0px 0px 15px, rgba(252, 129, 129, 0.8) 0px 0px 3px 1px",
         },
       },
     }),
