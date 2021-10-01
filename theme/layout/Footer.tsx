@@ -47,7 +47,7 @@ const Footer = (): JSX.Element => {
         justifyContent="center"
       >
         <HStack color="brand.footerText" spacing={2}>
-          <Text fontSize="xl">Build with</Text>
+          <Text fontSize="xl">Build on</Text>
           <Link href="https://nextjs.org/" target="_blank">
             <Icon fontSize="2.75rem" icon="logos:nextjs" />
           </Link>
