@@ -9,6 +9,7 @@ class Document extends NextDocument {
       <Html>
         <Head>
           <link rel="icon" href="/images/favicon.svg" />
+          <link rel="image" href="/images/davidFImage.jpg" />
           <meta httpEquiv="content-language" content="en" />
           <meta charSet="UTF-8" />
           <meta
