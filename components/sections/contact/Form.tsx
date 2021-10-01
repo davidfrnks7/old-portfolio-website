@@ -178,7 +178,7 @@ const ContactFrom = (): JSX.Element => {
           style={{
             width: "90%",
             zIndex: 1,
-            height: "auto"
+            height: "auto",
           }}
         >
           <VStack h="auto" w="100%" spacing={6}>
@@ -403,7 +403,11 @@ const ContactFrom = (): JSX.Element => {
             </Field>
             <VStack h="auto" w="100%" spacing={6}>
               <VStack h="auto" w="100%" spacing={2}>
-                <strong><Text fontSize="sm" color="red.500">Do not contact with unsolicited services or offers</Text></strong>
+                <strong>
+                  <Text fontSize="sm" color="red.500">
+                    Do not contact with unsolicited services or offers
+                  </Text>
+                </strong>
                 <Text fontSize="sm">
                   Form ready to submit:{" "}
                   {valid ? (

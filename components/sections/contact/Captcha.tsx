@@ -19,10 +19,7 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
   };
 
   return (
-    <Box
-      h="auto"
-      w="auto"
-    >
+    <Box h="auto" w="auto">
       <HCaptcha
         sitekey={
           process.env.NEXT_PUBLIC_HCAPTCHA_KEY
