@@ -100,7 +100,7 @@ const ContactFrom = (): JSX.Element => {
     }
   }, [validEmail, validMessage, validName, validSubject]);
 
-  // Email the info in the form
+  // Email the form
   interface FormFields {
     name: string;
     email: string;
@@ -108,21 +108,33 @@ const ContactFrom = (): JSX.Element => {
     message: string;
   }
 
-  const handleSubmit = (input: FormFields): void => {
-    interface Body extends FormFields {
-      key?: string;
-    }
-    const body: Body = input;
-    body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+  const handleSubmit = (input: FormFields): Promise<unknown> => {
+    return new Promise((resolve, reject) => {
+      interface Body extends FormFields {
+        key?: string;
+      }
+      const body: Body = input;
+      body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
-    axios
-      .post("/api/contact", body)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.warn(err);
-      });
+      axios
+        .post("/api/contact", body)
+        .then((response) => {
+          console.info("Form submission response: ", response);
+          if (response.status >= 200 && response.status <= 299) {
+            return resolve(response.statusText);
+          } else if (response.status >= 400 && response.status <= 499) {
+            return reject(response.statusText);
+          } else if (response.status >= 500 && response.status <= 599) {
+            return reject(response.statusText);
+          } else {
+            return reject("An unknown error occurred");
+          }
+        })
+        .catch((err) => {
+          console.warn(err);
+          return reject(err);
+        });
+    });
   };
 
   return (
@@ -133,7 +145,23 @@ const ContactFrom = (): JSX.Element => {
         subject: "",
         message: "",
       }}
-      onSubmit={(data) => handleSubmit(data)}
+      onSubmit={(data, actions) => {
+        handleSubmit(data)
+          .then(() => {
+            actions.setSubmitting(false);
+            actions.resetForm({
+              values: {
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+              },
+            });
+          })
+          .catch(() => {
+            actions.setSubmitting(false);
+          });
+      }}
     >
       {(props) => (
         <Form
