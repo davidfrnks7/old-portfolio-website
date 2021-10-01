@@ -6,8 +6,9 @@ import AppTheme from "../theme/AppTheme";
 class Document extends NextDocument {
   render(): JSX.Element {
     return (
-      <Html>
+      <Html>z
         <Head>
+          <meta name="theme-color" content="#00aec1" />
           <link rel="icon" href="/images/favicon.svg" sizes="32x32 192x192" />
           <link rel="apple-touch-icon" href="/images/favicon.svg" />
           <meta property="og:title" content="David's Portfolio Website" />
