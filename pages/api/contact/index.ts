@@ -50,8 +50,6 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
         const validate = (): boolean => {
           let ready = false;
 
-          console.info(validFields);
-
           if (Object.values(validFields).every((e) => e)) {
             ready = true;
           }
