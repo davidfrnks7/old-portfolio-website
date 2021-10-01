@@ -8,9 +8,6 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
-import {
-  darken,
-} from "@chakra-ui/theme-tools";
 import { Icon } from "@iconify/react";
 import BackToTopButton from "./BackToTopButton";
 
