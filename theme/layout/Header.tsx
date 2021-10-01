@@ -57,7 +57,6 @@ const Header = (): JSX.Element => {
       console.log("waiting for mount");
     } else if (window) {
       window.addEventListener("scroll", handleScroll);
-      console.info(window.scrollY);
     }
   }, []);
 
