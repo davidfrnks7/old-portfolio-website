@@ -28,7 +28,9 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
       onError={onError}
       onExpire={onExpire}
       theme="dark"
+      size="normal"
       ref={captchaRef}
+      reCaptchaCompat={false}
     />
   );
 };
