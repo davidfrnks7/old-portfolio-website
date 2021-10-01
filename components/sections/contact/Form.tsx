@@ -14,6 +14,7 @@ import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
 import axios from "axios";
+import Captcha from "./Captcha";
 
 const ContactFrom = (): JSX.Element => {
   const [validName, setValidName] = useState<boolean>(false);
@@ -390,6 +391,7 @@ const ContactFrom = (): JSX.Element => {
               )}
             </Field>
             <VStack h="auto" w="auto" spacing={2}>
+              <Captcha />
               <Text fontSize="sm">
                 Form ready to submit:{" "}
                 {valid ? (
