@@ -113,6 +113,25 @@ export const ButtonStyles = {
         textDecoration: "none",
       },
     }),
+    submit: (props: Dict<never> | StyleFunctionProps) => ({
+      fontSize: "lg",
+      py: 2,
+      px: 4,
+      type: "submit",
+      _hover: {
+        color: "whiteAlpha.900",
+        bg: mode(
+          whiten("brand.valid", 20),
+          darken("brand.valid", 20)
+        )(props),
+        _disabled: {
+          bg: mode(
+            whiten("brand.danger", 20),
+            darken("brand.danger", 20)
+          )(props),
+        },
+      },
+    }),
     // default values for `size` and `variant`
     defaultProps: {},
   },
