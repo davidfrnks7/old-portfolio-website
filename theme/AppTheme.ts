@@ -17,6 +17,8 @@ const AppTheme = extendTheme({
       warning: "#ffbd48",
       danger: "#FC8181",
       valid: "#00c17c",
+      footer: "#0097a7",
+      footerText: "black",
     },
   },
   components: {

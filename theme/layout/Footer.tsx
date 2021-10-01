@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
-  Divider,
   HStack,
   Text,
   VStack,
@@ -9,6 +8,9 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
+import {
+  darken,
+} from "@chakra-ui/theme-tools";
 import { Icon } from "@iconify/react";
 import BackToTopButton from "./BackToTopButton";
 
@@ -37,24 +39,23 @@ const Footer = (): JSX.Element => {
     }
   }, []);
   return (
-    <Box as="footer" w="100%" h="auto">
-      <Divider />
+    <Box bg="brand.footer" as="footer" w="100%" h="auto">
       <BackToTopButton show={showBackToTop} />
       <VStack
         h="auto"
         w="auto"
-        my={12}
+        py={12}
         spacing={4}
         justifyItems="center"
         justifyContent="center"
       >
-        <HStack spacing={2}>
+        <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Build with</Text>
           <Link href="https://nextjs.org/" target="_blank">
             <Icon fontSize="2.75rem" icon="logos:nextjs" />
           </Link>
         </HStack>
-        <HStack spacing={2}>
+        <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Designed with</Text>
           <Link href="https://chakra-ui.com/" target="_blank">
             <Image
@@ -64,7 +65,7 @@ const Footer = (): JSX.Element => {
             />
           </Link>
         </HStack>
-        <HStack spacing={2}>
+        <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Deployed by</Text>
           <Link href="https://vercel.com/" target="_blank">
             <Icon fontSize="1.75rem" icon="logos:vercel" />
@@ -76,21 +77,21 @@ const Footer = (): JSX.Element => {
             target="_blank"
           >
             <Button
+              color="whiteAlpha"
               variant="credits"
               leftIcon={<Icon icon="akar-icons:github-fill" />}
             >
               View Codebase
             </Button>
           </Link>
-          <Text fontSize="xs">
-            {" "}
+          <Text color="brand.footerText" fontSize="xs">
             <span role="img" aria-label="copyright">
               ©
             </span>{" "}
             2021 - {new Date().getFullYear()} David Franks
           </Text>
         </VStack>
-        <VStack spacing={0}>
+        <VStack color="brand.footerText" spacing={0}>
           <Text fontSize="xs">
             A personal portfolio website for David Franks
           </Text>

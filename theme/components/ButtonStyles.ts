@@ -75,12 +75,13 @@ export const ButtonStyles = {
       bg: "brand.main",
       fontSize: "lg",
       p: 3,
+      color: "whiteAlpha",
       _hover: {
         bg: mode(whiten("brand.main", 20), darken("brand.main", 20))(props),
       },
     }),
     backToTop: (props: Dict<never> | StyleFunctionProps) => ({
-      bg: "transparent",
+      bg: "rgba(23, 25, 35, 0.5)",
       fontSize: "lg",
       py: 2,
       px: 4,
