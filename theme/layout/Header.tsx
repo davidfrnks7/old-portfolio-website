@@ -19,6 +19,7 @@ const Header = (): JSX.Element => {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
     "top"
   );
+  // const [scroll, setScroll] = useState<number>(0);
 
   const handleScroll = (): void => {
     // Sticky Nav
@@ -30,17 +31,18 @@ const Header = (): JSX.Element => {
 
     // Scroll Direction
     const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
+      window.scrollY || window.pageYOffset || document.body.scrollTop;
 
     if (currentScroll > lastScroll.current) {
       setScrollDirection("down");
-    } else if (currentScroll === 0) {
+    } else if (currentScroll <= 5) {
       setScrollDirection("top");
     } else {
       setScrollDirection("up");
     }
 
     lastScroll.current = currentScroll <= 0 ? 0 : currentScroll;
+    // setScroll(lastScroll.current = currentScroll <= 0 ? 0 : currentScroll)
   };
 
   useEffect(() => {
