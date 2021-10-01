@@ -13,6 +13,7 @@ import {
 import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
+import axios from "axios";
 
 const ContactFrom = (): JSX.Element => {
   const [validName, setValidName] = useState<boolean>(false);
@@ -50,7 +51,6 @@ const ContactFrom = (): JSX.Element => {
     } else {
       setValidEmail(true);
     }
-
     return emailError;
   };
 
@@ -82,7 +82,7 @@ const ContactFrom = (): JSX.Element => {
       subjectError = "Subject too long";
       setValidSubject(false);
     } else {
-      setValidEmail(true);
+      setValidSubject(true);
     }
 
     return subjectError;
@@ -100,8 +100,40 @@ const ContactFrom = (): JSX.Element => {
     }
   }, [validEmail, validMessage, validName, validSubject]);
 
-  const handleSubmit = (input: unknown): void => {
-    console.info(input);
+  // Email the form
+  interface FormFields {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }
+
+  const handleSubmit = (input: FormFields): Promise<unknown> => {
+    return new Promise((resolve, reject) => {
+      interface Body extends FormFields {
+        key?: string;
+      }
+      const body: Body = input;
+      body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+
+      axios
+        .post("/api/contact", body)
+        .then((response) => {
+          if (response.status >= 200 && response.status <= 299) {
+            return resolve(response.statusText);
+          } else if (response.status >= 400 && response.status <= 499) {
+            return reject(response.statusText);
+          } else if (response.status >= 500 && response.status <= 599) {
+            return reject(response.statusText);
+          } else {
+            return reject("An unknown error occurred");
+          }
+        })
+        .catch((err) => {
+          console.warn(err);
+          return reject(err);
+        });
+    });
   };
 
   return (
@@ -112,7 +144,23 @@ const ContactFrom = (): JSX.Element => {
         subject: "",
         message: "",
       }}
-      onSubmit={handleSubmit}
+      onSubmit={(data, actions) => {
+        handleSubmit(data)
+          .then(() => {
+            actions.setSubmitting(false);
+            actions.resetForm({
+              values: {
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+              },
+            });
+          })
+          .catch(() => {
+            actions.setSubmitting(false);
+          });
+      }}
     >
       {(props) => (
         <Form
@@ -157,7 +205,12 @@ const ContactFrom = (): JSX.Element => {
                         <EmojiValidate type="Valid" />
                       )}
                     </HStack>
-                    <Input {...field} id="name" placeholder="David Franks" />
+                    <Input
+                      isDisabled={form.isSubmitting}
+                      {...field}
+                      id="name"
+                      placeholder="David Franks"
+                    />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
                 )}
@@ -190,6 +243,7 @@ const ContactFrom = (): JSX.Element => {
                       {...field}
                       id="email"
                       placeholder="me@davidfrnks7.dev"
+                      isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                   </FormControl>
@@ -230,7 +284,12 @@ const ContactFrom = (): JSX.Element => {
                         <EmojiValidate type="Valid" />
                       )}
                     </HStack>
-                    <Input {...field} id="name" placeholder="David Franks" />
+                    <Input
+                      isDisabled={form.isSubmitting}
+                      {...field}
+                      id="name"
+                      placeholder="David Franks"
+                    />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
                 )}
@@ -263,6 +322,7 @@ const ContactFrom = (): JSX.Element => {
                       {...field}
                       id="email"
                       placeholder="me@davidfrnks7.dev"
+                      isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                   </FormControl>
@@ -293,6 +353,7 @@ const ContactFrom = (): JSX.Element => {
                     {...field}
                     id="subject"
                     placeholder="I am interested in..."
+                    isDisabled={form.isSubmitting}
                   />
                   <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
                 </FormControl>
@@ -319,6 +380,7 @@ const ContactFrom = (): JSX.Element => {
                   </HStack>
                   <Textarea
                     {...field}
+                    isDisabled={form.isSubmitting}
                     id="message"
                     rows={4}
                     placeholder="I like your portfolio website and your list and stills and would like to discuss..."
