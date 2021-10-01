@@ -8,7 +8,7 @@ class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <meta name="theme-color" content="#00aec1" />
+          <meta name="theme-color" content="#3138dc" />
           <link rel="icon" href="/images/favicon.svg" sizes="32x32 192x192" />
           <link rel="apple-touch-icon" href="/images/favicon.svg" />
           <meta property="og:title" content="David's Portfolio Website" />
