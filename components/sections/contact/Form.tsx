@@ -174,6 +174,8 @@ const ContactFrom = (): JSX.Element => {
           })
           .catch(() => {
             actions.setSubmitting(false);
+            setToken(null);
+            setReset(true);
           });
       }}
     >
