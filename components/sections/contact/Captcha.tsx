@@ -6,7 +6,7 @@ interface CaptchaProps {
 }
 
 const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
-  const captchaRef = useRef<unknown>(null);
+  const captchaRef = useRef<HCaptcha>(null);
 
   const onExpire = () => {
     console.log("hCaptcha Token Expired");
@@ -27,6 +27,7 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
       onVerify={updateToken}
       onError={onError}
       onExpire={onExpire}
+      theme="dark"
       ref={captchaRef}
     />
   );
