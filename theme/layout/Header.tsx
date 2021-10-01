@@ -72,68 +72,68 @@ const Header = (): JSX.Element => {
   };
 
   return (
-    <VStack
-      justifyContent="center"
-      alignContent="center"
-      alignItems="center"
-      w="100%"
-      h="60px"
-      bg={stickyNavbar || open ? "brand.main" : "transparent"}
-      px={{ base: "0.5rem", md: "1rem", lg: "2rem", xl: "3rem" }}
-      transition=".5s ease"
-      pos="sticky"
-      top={0}
+    <Box
       zIndex={1000000}
+      w="100%"
+      pos="fixed"
+      top="0"
+      alignItems={"center"}
+      bg={stickyNavbar || open ? "brand.main" : "transparent"}
       d={
         scrollDirection === "down" || scrollDirection === "top"
-          ? "flex"
+          ? "block"
           : "none"
       }
+      transition=".5s ease"
+      borderRadius="0px 0px 10px 10px"
     >
+      {/* Logo | Site Name */}
       <Flex
-        pos="absolute"
-        h="60px"
-        w="100%"
-        top="0"
-        p={2}
-        d={{ base: "flex", lg: "none" }}
-        m={0}
-        justifyContent={{ base: "left", sm: "center" }}
+        width="100%"
+        justifyContent={{ base: "flex-start", sm: "center" }}
         alignItems="center"
+        height={12}
+        top={0}
+        position="absolute"
+        d={{ base: "flex", lg: "none" }}
       >
-        <Heading as="h1" size="md">
-          <Link href="/">David Franks Portfolio Website</Link>
+        <Heading as="h1" fontSize="lg">
+          David Franks Portfolio Website
         </Heading>
       </Flex>
-      <HStack
-        w="100%"
-        h="100%"
-        alignItems="center"
-        alignContent="center"
-        justifyContent="space-between"
-      >
-        <Box w="auto" h="100%" d={{ base: "flex", lg: "none " }}></Box>
-        <Box w="100%" d={{ base: "none", lg: "flex" }} m="auto">
-          <Link href="/">
-            <Heading as="h1" size="md">
-              David Franks Portfolio Website
-            </Heading>
-          </Link>
-        </Box>
-        <DesktopNav sticky={stickyNavbar} />
-        <IconButton
-          aria-label="Mobile Nav Menu"
-          icon={menuIcon()}
-          onClick={() => setOpen(!open)}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          d={{ base: "inline-flex", lg: "none" }}
-          w="auto"
-          margin="auto"
-        />
-      </HStack>
-      <MobileNav shouldOpen={open} />
-    </VStack>
+
+      {/* Desktop Nav Items and Mobile Menu Button */}
+      <Box h="auto" w="100%" px={4}>
+        <Flex h={12} alignItems={"center"} justifyContent={"space-between"}>
+          <HStack
+            w="100%"
+            h="auto"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Box w="auto" d={{ base: "flex", lg: "none " }}></Box>
+            <Box w="100%" d={{ base: "none", lg: "flex" }} m="auto">
+              <Heading as="h1" size="md">
+                David Franks Portfolio Website
+              </Heading>
+            </Box>
+            <DesktopNav sticky={stickyNavbar} />
+            <IconButton
+              aria-label="Mobile Nav Menu"
+              icon={menuIcon()}
+              onClick={() => setOpen(!open)}
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+              d={{ base: "inline-flex", lg: "none" }}
+              w="auto"
+              margin="auto"
+            />
+          </HStack>
+        </Flex>
+
+        <MobileNav shouldOpen={open} />
+      </Box>
+    </Box>
   );
 };
 
