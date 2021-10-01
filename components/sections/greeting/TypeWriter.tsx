@@ -4,7 +4,7 @@ import Typewritter from "typewriter-effect";
 
 const TypeWriter = (): JSX.Element => {
   return (
-    <Heading mt="1rem" mb="5vh" as="h2" size="xl">
+    <Heading w="100%" h="auto" mt="1rem" mb="5vh" as="h3" size="xl">
       <Typewritter
         options={{
           strings: [
