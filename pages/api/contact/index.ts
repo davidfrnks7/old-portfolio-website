@@ -62,8 +62,8 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
             port: 465,
             host: "smtp.gmail.com",
             auth: {
-              user: process.env.GMAIL_ACCOUNT,
-              pass: process.env.GMAIL_PASSWORD,
+              user: process.env.EMAIL_ACCOUNT,
+              pass: process.env.EMAIL_PASSWORD,
             },
             secure: true,
             requireTLS: true,
@@ -72,7 +72,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
 
           const mailData = {
             from: `"Portfolio Website" <${process.env.EMAIL}>`,
-            to: `${process.env.GMAIL_ACCOUNT}`,
+            to: `${process.env.EMAIL_ACCOUNT}`,
             replyTo: `"${name}" <${email}>`,
             subject: newSubject,
             text: message,
