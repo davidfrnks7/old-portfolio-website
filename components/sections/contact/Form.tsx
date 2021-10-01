@@ -96,7 +96,13 @@ const ContactFrom = (): JSX.Element => {
   const [valid, setValid] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!validEmail || !validMessage || !validName || !validSubject || token === null) {
+    if (
+      !validEmail ||
+      !validMessage ||
+      !validName ||
+      !validSubject ||
+      token === null
+    ) {
       setValid(false);
     }
 

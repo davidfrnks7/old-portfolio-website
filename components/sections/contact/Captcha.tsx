@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 interface CaptchaProps {
-  updateToken: React.Dispatch<React.SetStateAction<string | null>>
+  updateToken: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
@@ -19,9 +19,11 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
 
   return (
     <HCaptcha
-      // This is testing sitekey, will autopass
-      // Make sure to replace
-      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_KEY ? process.env.NEXT_PUBLIC_HCAPTCHA_KEY : ""}
+      sitekey={
+        process.env.NEXT_PUBLIC_HCAPTCHA_KEY
+          ? process.env.NEXT_PUBLIC_HCAPTCHA_KEY
+          : ""
+      }
       onVerify={updateToken}
       onError={onError}
       onExpire={onExpire}
