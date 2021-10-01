@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description:
       "A website to list my skills and demonstrate them for potential employers and clients to see.",
     tech: [
-      "Next.s (React.js) in TypeScript",
+      "Next.js (React.js) in TypeScript",
       "Chakra UI for styling",
       "Formik for form validation",
       "Nodemailer to send forms through email",
@@ -42,10 +42,10 @@ export const projects: Project[] = [
       "TypeORM for the database transactions",
     ],
     role: [
-      "Setup NextAuth and link the NextAuth tables to a profiles table,",
-      "Create a user flow after first signin to allow users to customize their profile.",
+      "Setup NextAuth and link the NextAuth tables to a profiles table",
+      "Create a user flow after first signin to allow users to customize their profile",
       "Setup Cloudinary and link submissions to front end to allow users to submit custom pictures for their profile or app",
-      "Setup a search feature using regex and added filters for the search.",
+      "Setup a search feature using regex and added filters for the search",
     ],
     deployed: "It was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
