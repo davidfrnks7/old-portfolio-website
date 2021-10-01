@@ -102,7 +102,7 @@ export const ButtonStyles = {
       fontSize: "md",
       p: 2,
       h: 8,
-      color: "rgba(0, 134, 255, 0.5)",
+      color: "brand.hover",
       textDecoration: "underline",
       _hover: {
         bg: mode(
