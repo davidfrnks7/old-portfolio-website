@@ -101,9 +101,22 @@ const ContactFrom = (): JSX.Element => {
   }, [validEmail, validMessage, validName, validSubject]);
 
   // Email the info in the form
-  const handleSubmit = (input: unknown): void => {
+  interface FormFields {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }
+
+  const handleSubmit = (input: FormFields): void => {
+    interface Body extends FormFields {
+      key?: string;
+    }
+    const body: Body = input;
+    body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+
     axios
-      .post("/api/contact", input)
+      .post("/api/contact", body)
       .then((res) => {
         console.log(res);
       })
