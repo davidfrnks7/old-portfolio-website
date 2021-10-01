@@ -6,7 +6,7 @@ import AppTheme from "../theme/AppTheme";
 class Document extends NextDocument {
   render(): JSX.Element {
     return (
-      <Html>z
+      <Html>
         <Head>
           <meta name="theme-color" content="#00aec1" />
           <link rel="icon" href="/images/favicon.svg" sizes="32x32 192x192" />
