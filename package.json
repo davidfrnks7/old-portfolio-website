@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "author": {
     "name": "David F",
@@ -20,7 +20,7 @@
     "@hcaptcha/react-hcaptcha": "^0.3.7",
     "@iconify/react": "^3.0.1",
     "@types/react": "^17.0.26",
-    "axios": "^0.21.4",
+    "axios": "^0.22.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "next": "11.1.2",
