@@ -1154,6 +1154,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hcaptcha/react-hcaptcha@npm:^0.3.7":
+  version: 0.3.7
+  resolution: "@hcaptcha/react-hcaptcha@npm:0.3.7"
+  peerDependencies:
+    react: ">= 16.3.0"
+    react-dom: ">= 16.3.0"
+  checksum: 4a0ce88dd7a719cae2dc84255466a8636540287c2208f8fe46003a67c72f65509cabf8452cad73982a514cfce2e475d209a3e67cd41a559465f185fb4176a92f
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.5.0":
   version: 0.5.0
   resolution: "@humanwhocodes/config-array@npm:0.5.0"
@@ -2144,9 +2154,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001202, caniuse-lite@npm:^1.0.30001219, caniuse-lite@npm:^1.0.30001228":
-  version: 1.0.30001261
-  resolution: "caniuse-lite@npm:1.0.30001261"
-  checksum: d894662312ecbdd772f0a258c4a45cac93605247b127b25649052353e0b981abfd0b445f469650943b612adc236fd510ae61c1293f3e77c68af7411d1b66574a
+  version: 1.0.30001263
+  resolution: "caniuse-lite@npm:1.0.30001263"
+  checksum: 0657b995276a35aaa9ff6900b6e9d3876ef049c8d6065fe9f162cc0b9ac00d8b9c6e6740e87def73876a522dce8e9124170334c157cfbf5c383b7c6db79e520e
   languageName: node
   linkType: hard
 
@@ -2639,9 +2649,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.723":
-  version: 1.3.855
-  resolution: "electron-to-chromium@npm:1.3.855"
-  checksum: 3b71b765cd5d8912f50433a5f5f39682a9778fbdebb988db717c60db7cf2a7e0172d1a1a56c21ab329bb3daab563b88f498878193203d743443f0d21c8ceffa3
+  version: 1.3.856
+  resolution: "electron-to-chromium@npm:1.3.856"
+  checksum: 3f46ab4d4698f931dcb4aa739728e8b38454ee7cd5a589e94cfbaabe11a8e15157df2e1d7c1df40110af041b931379df79cb73796b38b1ccfdd0b01a4f64cc76
   languageName: node
   linkType: hard
 
@@ -2723,8 +2733,8 @@ __metadata:
   linkType: hard
 
 "es-abstract@npm:^1.18.0-next.1, es-abstract@npm:^1.18.0-next.2, es-abstract@npm:^1.18.1, es-abstract@npm:^1.18.2, es-abstract@npm:^1.18.5":
-  version: 1.18.7
-  resolution: "es-abstract@npm:1.18.7"
+  version: 1.19.0
+  resolution: "es-abstract@npm:1.19.0"
   dependencies:
     call-bind: ^1.0.2
     es-to-primitive: ^1.2.1
@@ -2737,14 +2747,16 @@ __metadata:
     is-callable: ^1.2.4
     is-negative-zero: ^2.0.1
     is-regex: ^1.1.4
+    is-shared-array-buffer: ^1.0.1
     is-string: ^1.0.7
+    is-weakref: ^1.0.1
     object-inspect: ^1.11.0
     object-keys: ^1.1.1
     object.assign: ^4.1.2
     string.prototype.trimend: ^1.0.4
     string.prototype.trimstart: ^1.0.4
     unbox-primitive: ^1.0.1
-  checksum: ec466f4a236b1f511dc20ddf2518d6192e60c741e0cdd151c6de1dadecbc7af469bf5359c3d33237955f39b177f53349cf73eae196e092e5d12e73b4910c77a7
+  checksum: 107eaf54c72405c4956211aae5ee13fab95582ad40efa3890355a4f6a65fe48b6968fe9e36e9a4f408d330d56655703cf214fa750776c07990dc189ffe67cd26
   languageName: node
   linkType: hard
 
@@ -3959,6 +3971,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"is-shared-array-buffer@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "is-shared-array-buffer@npm:1.0.1"
+  checksum: 2ffb92533e64e2876e6cfe6906871d28400b6f1a53130fe652ec8007bc0e5044d05e7af8e31bdc992fbba520bd92938cfbeedd0f286be92f250c7c76191c4d90
+  languageName: node
+  linkType: hard
+
 "is-string@npm:^1.0.5, is-string@npm:^1.0.7":
   version: 1.0.7
   resolution: "is-string@npm:1.0.7"
@@ -3987,6 +4006,15 @@ fsevents@~2.3.1:
     foreach: ^2.0.5
     has-tostringtag: ^1.0.0
   checksum: aa0f9f0716e19e2fb8aef69e69e4205479d25ace778e2339fc910948115cde4b0d9aff9d5d1e8b80f09a5664998278e05e54ad3dc9cb12cefcf86db71084ed00
+  languageName: node
+  linkType: hard
+
+"is-weakref@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "is-weakref@npm:1.0.1"
+  dependencies:
+    call-bind: ^1.0.0
+  checksum: fdafb7b955671dd2f9658ff47c86e4025c0650fc68a3542a40e5a75898a763b1abd6b1e1f9f13207eed49541cdd76af67d73c44989ea358b201b70274cf8f6c1
   languageName: node
   linkType: hard
 
@@ -5081,6 +5109,7 @@ fsevents@~2.3.1:
     "@chakra-ui/react": ^1.6.8
     "@emotion/react": ^11.4.1
     "@emotion/styled": ^11.3.0
+    "@hcaptcha/react-hcaptcha": ^0.3.7
     "@iconify/react": ^3.0.1
     "@types/nodemailer": ^6.4.4
     "@types/react": ^17.0.26

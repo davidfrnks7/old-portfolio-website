@@ -16,6 +16,7 @@
     "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@hcaptcha/react-hcaptcha": "^0.3.7",
     "@iconify/react": "^3.0.1",
     "@types/react": "^17.0.26",
     "axios": "^0.21.4",

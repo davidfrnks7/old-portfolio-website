@@ -14,12 +14,17 @@ import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
 import axios from "axios";
+import Captcha from "./Captcha";
 
 const ContactFrom = (): JSX.Element => {
+  // Validate
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
   const [validSubject, setValidSubject] = useState<boolean>(false);
   const [validMessage, setValidMessage] = useState<boolean>(false);
+
+  // Captcha
+  const [token, setToken] = useState<null | string>(null);
 
   const validateName = (inputName: string | undefined): string | undefined => {
     let nameError;
@@ -91,14 +96,20 @@ const ContactFrom = (): JSX.Element => {
   const [valid, setValid] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!validEmail || !validMessage || validName || validSubject) {
+    if (
+      !validEmail ||
+      !validMessage ||
+      !validName ||
+      !validSubject ||
+      token === null
+    ) {
       setValid(false);
     }
 
-    if (validEmail && validMessage && validName && validSubject) {
+    if (validEmail && validMessage && validName && validSubject && token) {
       setValid(true);
     }
-  }, [validEmail, validMessage, validName, validSubject]);
+  }, [validEmail, validMessage, validName, validSubject, token]);
 
   // Email the form
   interface FormFields {
@@ -242,7 +253,7 @@ const ContactFrom = (): JSX.Element => {
                     <Input
                       {...field}
                       id="email"
-                      placeholder="me@davidfrnks7.dev"
+                      placeholder="contact@davidfrnks7.dev"
                       isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
@@ -321,7 +332,7 @@ const ContactFrom = (): JSX.Element => {
                     <Input
                       {...field}
                       id="email"
-                      placeholder="me@davidfrnks7.dev"
+                      placeholder="contact@davidfrnks7.dev"
                       isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
@@ -390,6 +401,7 @@ const ContactFrom = (): JSX.Element => {
               )}
             </Field>
             <VStack h="auto" w="auto" spacing={2}>
+              <Captcha updateToken={setToken} />
               <Text fontSize="sm">
                 Form ready to submit:{" "}
                 {valid ? (
