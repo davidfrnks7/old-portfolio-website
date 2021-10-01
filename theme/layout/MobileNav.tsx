@@ -14,11 +14,12 @@ const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
         d={{ base: "flex", lg: "none" }}
         spacing={0}
         bg="brand.main"
+        w="100%"
       >
-        <Divider colorScheme="black" />
         {navItems.map((navItem: NavItem, index: number) => {
           return (
             <Link key={navItem[0]} href={navItem[1]}>
+              {index === 0 ? <Divider /> : <Fragment></Fragment>}
               <Button w="100vw" variant={"nav"}>
                 {navItem[0]}
               </Button>
