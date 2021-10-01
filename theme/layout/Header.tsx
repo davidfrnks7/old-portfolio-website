@@ -34,7 +34,7 @@ const Header = (): JSX.Element => {
 
     if (currentScroll > lastScroll.current) {
       setScrollDirection("down");
-    } else if (currentScroll === 0) {
+    } else if (currentScroll <= 0) {
       setScrollDirection("top");
     } else {
       setScrollDirection("up");
