@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 import Layout from "../theme/layout/Layout";
 import "../styles/background.css";
-import Head from 'next/head'
+import Head from "next/head";
 
 function DavidPortfolioWebsite({
   Component,
@@ -14,7 +14,7 @@ function DavidPortfolioWebsite({
     <ChakraProvider theme={AppTheme}>
       <Layout {...pageProps}>
         <Head>
-          <title>David's Portfolio Website</title>
+          <title>{"David's Portfolio Website"}</title>
         </Head>
         <Component {...pageProps} />
       </Layout>
