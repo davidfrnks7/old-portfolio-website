@@ -107,8 +107,7 @@ const Header = (): JSX.Element => {
         p={2}
         d={{ base: "flex", lg: "none" }}
         m={0}
-        justifyContent="center"
-        alignContent="center"
+        justifyContent={{ base: "left", sm: "center" }}
         alignItems="center"
       >
         <Heading as="h1" size="md">

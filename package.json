@@ -1,9 +1,10 @@
 {
   "name": "portfolio-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "David F"
+    "name": "David F",
+    "email": "contact@davidfrnks7.dev"
   },
   "scripts": {
     "dev": "next dev",
