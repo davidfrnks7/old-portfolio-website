@@ -1,11 +1,13 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 interface CaptchaProps {
   updateToken: React.Dispatch<React.SetStateAction<string | null>>;
+  shouldReset: boolean;
+  updateReset: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
+const Captcha = ({ updateToken, shouldReset, updateReset }: CaptchaProps): JSX.Element => {
   const captchaRef = useRef<HCaptcha>(null);
 
   const onExpire = () => {
@@ -16,6 +18,13 @@ const Captcha = ({ updateToken }: CaptchaProps): JSX.Element => {
   const onError = (err: unknown) => {
     console.log(`hCaptcha Error: ${err}`);
   };
+
+  useEffect(() => {
+    if (shouldReset) {
+      updateReset(false);
+      captchaRef.current?.resetCaptcha();
+    }
+  }, [shouldReset, updateReset])
 
   return (
     <HCaptcha
