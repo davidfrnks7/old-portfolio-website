@@ -21,7 +21,7 @@ const Contact = (): JSX.Element => {
       <Heading as="h3" size="xl" mb={6} id="contact">
         Contact Me
       </Heading>
-      <ContactFrom />
+      <ContactFrom key="contact" />
     </VStack>
   );
 };

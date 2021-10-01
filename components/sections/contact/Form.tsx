@@ -13,6 +13,7 @@ import {
 import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
+import axios from "axios";
 
 const ContactFrom = (): JSX.Element => {
   const [validName, setValidName] = useState<boolean>(false);
@@ -50,7 +51,6 @@ const ContactFrom = (): JSX.Element => {
     } else {
       setValidEmail(true);
     }
-
     return emailError;
   };
 
@@ -82,7 +82,7 @@ const ContactFrom = (): JSX.Element => {
       subjectError = "Subject too long";
       setValidSubject(false);
     } else {
-      setValidEmail(true);
+      setValidSubject(true);
     }
 
     return subjectError;
@@ -100,8 +100,16 @@ const ContactFrom = (): JSX.Element => {
     }
   }, [validEmail, validMessage, validName, validSubject]);
 
+  // Email the info in the form
   const handleSubmit = (input: unknown): void => {
-    console.info(input);
+    axios
+      .post("/api/contact", input)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
   };
 
   return (
@@ -112,7 +120,7 @@ const ContactFrom = (): JSX.Element => {
         subject: "",
         message: "",
       }}
-      onSubmit={handleSubmit}
+      onSubmit={(data) => handleSubmit(data)}
     >
       {(props) => (
         <Form
@@ -157,7 +165,12 @@ const ContactFrom = (): JSX.Element => {
                         <EmojiValidate type="Valid" />
                       )}
                     </HStack>
-                    <Input {...field} id="name" placeholder="David Franks" />
+                    <Input
+                      isDisabled={form.isSubmitting}
+                      {...field}
+                      id="name"
+                      placeholder="David Franks"
+                    />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
                 )}
@@ -190,6 +203,7 @@ const ContactFrom = (): JSX.Element => {
                       {...field}
                       id="email"
                       placeholder="me@davidfrnks7.dev"
+                      isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                   </FormControl>
@@ -230,7 +244,12 @@ const ContactFrom = (): JSX.Element => {
                         <EmojiValidate type="Valid" />
                       )}
                     </HStack>
-                    <Input {...field} id="name" placeholder="David Franks" />
+                    <Input
+                      isDisabled={form.isSubmitting}
+                      {...field}
+                      id="name"
+                      placeholder="David Franks"
+                    />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
                 )}
@@ -263,6 +282,7 @@ const ContactFrom = (): JSX.Element => {
                       {...field}
                       id="email"
                       placeholder="me@davidfrnks7.dev"
+                      isDisabled={form.isSubmitting}
                     />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                   </FormControl>
@@ -293,6 +313,7 @@ const ContactFrom = (): JSX.Element => {
                     {...field}
                     id="subject"
                     placeholder="I am interested in..."
+                    isDisabled={form.isSubmitting}
                   />
                   <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
                 </FormControl>
@@ -319,6 +340,7 @@ const ContactFrom = (): JSX.Element => {
                   </HStack>
                   <Textarea
                     {...field}
+                    isDisabled={form.isSubmitting}
                     id="message"
                     rows={4}
                     placeholder="I like your portfolio website and your list and stills and would like to discuss..."
