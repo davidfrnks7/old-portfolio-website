@@ -147,6 +147,9 @@ const ContactFrom = (): JSX.Element => {
     });
   };
 
+  // Captcha reset
+  const [reset, setReset] = useState<boolean>(false);
+
   return (
     <Formik
       initialValues={{
@@ -167,6 +170,7 @@ const ContactFrom = (): JSX.Element => {
                 message: "",
               },
             });
+            setReset(true);
           })
           .catch(() => {
             actions.setSubmitting(false);
@@ -401,7 +405,7 @@ const ContactFrom = (): JSX.Element => {
               )}
             </Field>
             <VStack h="auto" w="auto" spacing={2}>
-              <Captcha updateToken={setToken} />
+              <Captcha updateToken={setToken} shouldReset={reset} updateReset={setReset} />
               <Text fontSize="sm">
                 Form ready to submit:{" "}
                 {valid ? (
