@@ -46,13 +46,7 @@ const Skills = (): JSX.Element => {
         {icons.map((icon: IconTuple): JSX.Element => {
           return (
             <Box key={icon[0]} h="auto" mx="10px" mb="30px">
-              <Box
-                h="100px"
-                w="80px"
-                fontSize="75px"
-                color="blackAlpha.700"
-                margin="auto"
-              >
+              <Box h="100px" w="80px" fontSize="75px" margin="auto">
                 {icon[1]}
               </Box>
               <Heading w="100%" textAlign="center" as="h4" size="md">

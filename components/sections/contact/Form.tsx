@@ -436,13 +436,10 @@ const ContactFrom = (): JSX.Element => {
                   updateReset={setReset}
                 />
                 <Button
-                  fontSize="lg"
-                  py={2}
-                  px={4}
+                  variant="submit"
                   isDisabled={!valid}
-                  background={valid ? "#00c17c" : "#FC8181"}
+                  background={valid ? "brand.valid" : "brand.danger"}
                   isLoading={props.isSubmitting}
-                  type="submit"
                 >
                   Submit
                 </Button>
