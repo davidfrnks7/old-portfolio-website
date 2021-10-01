@@ -7,7 +7,9 @@ class Document extends NextDocument {
   render(): JSX.Element {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <link rel="icon" href="/images/favicon.svg" />
+        </Head>
         <body>
           <ColorModeScript
             initialColorMode={AppTheme.config.initialColorMode}
