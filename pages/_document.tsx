@@ -18,12 +18,18 @@ class Document extends NextDocument {
           <meta property="og:type" content="Skills and Projects" />
           <meta property="og:image" content="/images/davidFImage.jpg" />
           <meta property="og:image:type" content="image/jpeg" />
-          <meta property="og:image:alt" content="A face shot of David Franks." />
+          <meta
+            property="og:image:alt"
+            content="A face shot of David Franks."
+          />
           <meta property="og:url" content="https://davidfrnks7.dev" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta httpEquiv="content-language" content="en_US" />
           <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, user-scalable=yes, initial-scale=1.0"
+          />
           <meta
             name="keywords"
             content="portfolio software engineering coding developer seeking employment open for hire"

@@ -64,7 +64,6 @@ export const ButtonStyles = {
       },
     }),
     stickyNav: (props: Dict<never> | StyleFunctionProps) => ({
-      // bg: "rgba(255, 255, 255, .15)",
       bg: "transparent",
       fontSize: "md",
       px: "2",
@@ -72,8 +71,6 @@ export const ButtonStyles = {
         textDecoration: "underline",
       },
     }),
-    // default values for `size` and `variant`
-    defaultProps: {},
     credits: (props: Dict<never> | StyleFunctionProps) => ({
       bg: "brand.main",
       fontSize: "lg",
@@ -116,5 +113,7 @@ export const ButtonStyles = {
         textDecoration: "none",
       },
     }),
+    // default values for `size` and `variant`
+    defaultProps: {},
   },
 };
