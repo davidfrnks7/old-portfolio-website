@@ -125,10 +125,11 @@ export const ButtonStyles = {
           darken("brand.valid", 20)
         )(props),
         _disabled: {
-          bg: mode(
+          color: mode(
             whiten("brand.danger", 20),
             darken("brand.danger", 20)
           )(props),
+          boxShadow: "rgba(252, 129, 129, 1) 0px 0px 15px, rgba(252, 129, 129, 0.8) 0px 0px 3px 1px",
         },
       },
     }),
