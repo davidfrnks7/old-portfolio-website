@@ -184,6 +184,7 @@ const ContactFrom = (): JSX.Element => {
           style={{
             width: "90%",
             zIndex: 1,
+            height: "auto",
           }}
         >
           <VStack h="auto" w="100%" spacing={6}>
@@ -406,27 +407,40 @@ const ContactFrom = (): JSX.Element => {
                 </FormControl>
               )}
             </Field>
-            <VStack h="auto" w="auto" spacing={2}>
-              <Captcha updateToken={setToken} shouldReset={reset} updateReset={setReset} />
-              <Text fontSize="sm">
-                Form ready to submit:{" "}
-                {valid ? (
-                  <EmojiValidate type="Valid" />
-                ) : (
-                  <EmojiValidate type="Error" />
-                )}
-              </Text>
-              <Button
-                fontSize="lg"
-                py={2}
-                px={4}
-                isDisabled={!valid}
-                background={valid ? "#00c17c" : "#FC8181"}
-                isLoading={props.isSubmitting}
-                type="submit"
-              >
-                Submit
-              </Button>
+            <VStack h="auto" w="100%" spacing={6}>
+              <VStack h="auto" w="100%" spacing={2}>
+                <strong>
+                  <Text fontSize="sm" color="red.500">
+                    Do not contact with unsolicited services or offers
+                  </Text>
+                </strong>
+                <Text fontSize="sm">
+                  Form ready to submit:{" "}
+                  {valid ? (
+                    <EmojiValidate type="Valid" />
+                  ) : (
+                    <EmojiValidate type="Error" />
+                  )}
+                </Text>
+              </VStack>
+              <VStack h="auto" w="100%" spacing={6}>
+                <Captcha
+                  updateToken={setToken}
+                  shouldReset={reset}
+                  updateReset={setReset}
+                />
+                <Button
+                  fontSize="lg"
+                  py={2}
+                  px={4}
+                  isDisabled={!valid}
+                  background={valid ? "#00c17c" : "#FC8181"}
+                  isLoading={props.isSubmitting}
+                  type="submit"
+                >
+                  Submit
+                </Button>
+              </VStack>
             </VStack>
           </VStack>
         </Form>
