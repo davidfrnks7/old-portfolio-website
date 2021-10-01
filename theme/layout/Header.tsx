@@ -95,6 +95,7 @@ const Header = (): JSX.Element => {
         height={12}
         top={0}
         position="absolute"
+        ml={4}
         d={{ base: "flex", lg: "none" }}
       >
         <Heading as="h1" fontSize="lg">
