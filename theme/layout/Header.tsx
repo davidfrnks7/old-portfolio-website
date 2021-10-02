@@ -1,5 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Heading, HStack, Box, IconButton, Flex } from "@chakra-ui/react";
+import {
+  Heading,
+  HStack,
+  Box,
+  IconButton,
+  Flex,
+  Button,
+  Menu,
+  MenuButton,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
@@ -80,10 +90,10 @@ const Header = (): JSX.Element => {
           : "none"
       }
       bg={
-        stickyNavbar
-          ? open
-            ? "brand.main"
-            : "rgba(49, 56, 220, 0.9)"
+        open
+          ? "brand.main"
+          : stickyNavbar
+          ? "rgba(49, 56, 220, 0.9)"
           : "transparent"
       }
       d={
@@ -94,13 +104,14 @@ const Header = (): JSX.Element => {
       transition=".5s ease"
       borderRadius="0px 0px 10px 10px"
       _hover={{
-        bg: stickyNavbar ? "brand.main" : "transparent",
+        bg: open ? "brand.main" : stickyNavbar ? "brand.main" : "transparent",
         boxShadow: open
           ? "none"
           : stickyNavbar
           ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
           : "none",
       }}
+      h={open ? "125px" : "auto"}
     >
       {/* Logo | Site Name */}
       <Flex
@@ -134,21 +145,22 @@ const Header = (): JSX.Element => {
               </Heading>
             </Box>
             <DesktopNav sticky={stickyNavbar} />
-            <IconButton
-              aria-label="Mobile Nav Menu"
+          </HStack>
+          <Menu isLazy lazyBehavior="unmount" isOpen={open}>
+            <MenuButton
+              as={IconButton}
+              aria-label="Mobile Menu"
               icon={menuIcon()}
               onClick={() => setOpen(!open)}
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
               d={{ base: "inline-flex", lg: "none" }}
-              w="auto"
-              margin="auto"
               variant="mobileNav"
+              bg={stickyNavbar ? "transparent" : "rgba(255, 255, 255, .15)"}
             />
-          </HStack>
+            <MobileNav updateOpen={setOpen} />
+          </Menu>
         </Flex>
-
-        <MobileNav updateOpen={setOpen} shouldOpen={open} />
       </Box>
     </Box>
   );
