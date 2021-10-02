@@ -7,13 +7,13 @@ const Projects = (): JSX.Element => {
   return (
     <VStack
       id="projects"
-      w={{base: "100%", lg: "95%"}}
+      w={{ base: "100%", lg: "95%" }}
       h="auto"
       justifyContent="center"
       alignContent="center"
       py="10%"
     >
-      <Link name="projects"/>
+      <Link name="projects" />
       <Heading as="h3" size="xl" mb={6}>
         Projects
       </Heading>

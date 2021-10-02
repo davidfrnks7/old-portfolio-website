@@ -1,13 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Link,
-  Heading,
-  HStack,
-  Box,
-  IconButton,
-  VStack,
-  Flex,
-} from "@chakra-ui/react";
+import { Heading, HStack, Box, IconButton, Flex } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
@@ -135,7 +127,7 @@ const Header = (): JSX.Element => {
           </HStack>
         </Flex>
 
-        <MobileNav shouldOpen={open} />
+        <MobileNav updateOpen={setOpen} shouldOpen={open} />
       </Box>
     </Box>
   );

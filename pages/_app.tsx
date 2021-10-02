@@ -15,6 +15,10 @@ function DavidPortfolioWebsite({
       <Layout {...pageProps}>
         <Head>
           <title>{"David's Portfolio Website"}</title>
+          <meta
+            name="viewport"
+            content="width=device-width, user-scalable=yes, initial-scale=1.0"
+          />
         </Head>
         <Component {...pageProps} />
       </Layout>
