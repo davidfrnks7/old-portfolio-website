@@ -28,10 +28,6 @@ class Document extends NextDocument {
           <meta httpEquiv="content-language" content="en_US" />
           <meta charSet="UTF-8" />
           <meta
-            name="viewport"
-            content="width=device-width, user-scalable=yes, initial-scale=1.0"
-          />
-          <meta
             name="keywords"
             content="portfolio software engineering coding developer seeking employment open for hire"
           />
