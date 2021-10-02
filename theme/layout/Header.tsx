@@ -54,8 +54,7 @@ const Header = (): JSX.Element => {
       window.addEventListener("scroll", handleScroll);
     }
 
-    return () => window.removeEventListener("scroll", handleScroll)
-
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Mobile Menu Icon && Open/Close
