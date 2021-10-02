@@ -11,7 +11,7 @@ const Projects = (): JSX.Element => {
       h="auto"
       justifyContent="center"
       alignContent="center"
-      py="10%"
+      py="10vh"
     >
       <Link name="projects" />
       <Heading as="h3" size="xl" mb={6}>
