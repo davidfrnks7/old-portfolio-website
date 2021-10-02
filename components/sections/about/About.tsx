@@ -7,7 +7,7 @@ import Bio from "./Bio";
 const About = (): JSX.Element => {
   return (
     <Box id="about" textAlign="center" w="100%" h="auto">
-      <Heading as="h3" size="xl" mb={12} >
+      <Heading as="h3" size="xl" mb={12}>
         About Me
       </Heading>
       <HStack

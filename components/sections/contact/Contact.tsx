@@ -19,7 +19,7 @@ const Contact = (): JSX.Element => {
       spacing={6}
       id="contact"
     >
-      <Heading as="h3" size="xl" mb={6} >
+      <Heading as="h3" size="xl" mb={6}>
         Contact Me
       </Heading>
       <ContactFrom key="contact" />

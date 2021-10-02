@@ -5,7 +5,7 @@ import icons, { IconTuple } from "./Icons";
 const Skills = (): JSX.Element => {
   return (
     <VStack id="skills" w="100%" justifyContent="center" alignContent="center">
-      <Heading  as="h3" size="xl" mb={12}>
+      <Heading as="h3" size="xl" mb={12}>
         Skills
       </Heading>
       <SimpleGrid
