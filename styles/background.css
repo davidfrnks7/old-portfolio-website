@@ -1,6 +1,7 @@
 .background {
   background: linear-gradient(
     145deg,
+    #00aec1,
     #3138dc,
     #0068ff,
     #0086ff,
@@ -9,7 +10,7 @@
     #00bd8e
   );
   background-size: 600% 100%;
-  animation: gradient 10s linear infinite;
+  animation: gradient 20s linear infinite;
   animation-direction: alternate;
 }
 
