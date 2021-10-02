@@ -5,8 +5,8 @@ import Project from "./Project";
 
 const Projects = (): JSX.Element => {
   return (
-    <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
-      <Heading as="h3" size="xl" mb={6} id="projects">
+    <VStack id="projects" w="100%" h="auto" justifyContent="center" alignContent="center">
+      <Heading as="h3" size="xl" mb={6} >
         Projects
       </Heading>
       <SimpleGrid
