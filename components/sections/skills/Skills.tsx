@@ -4,7 +4,13 @@ import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
-    <VStack py="10%" id="skills" w="100%" justifyContent="center" alignContent="center">
+    <VStack
+      py="10%"
+      id="skills"
+      w="100%"
+      justifyContent="center"
+      alignContent="center"
+    >
       <Link name="skills" />
       <Heading as="h3" size="xl" mb={12}>
         Skills

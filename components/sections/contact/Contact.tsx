@@ -9,8 +9,6 @@ import {
   Textarea,
   Heading,
   Text,
-  Box,
-  Flex,
   Link,
 } from "@chakra-ui/react";
 import { Field, Form, Formik, FieldProps } from "formik";
@@ -211,12 +209,13 @@ const Contact = (): JSX.Element => {
             <Form
               style={{
                 width: "90%",
-                height: "100%"
+                height: "100%",
               }}
             >
               <VStack h="auto" w="100%" spacing={6}>
                 <Heading as="h4" size="md">
-                  Required fields indicated with <EmojiValidate type="Required" />
+                  Required fields indicated with{" "}
+                  <EmojiValidate type="Required" />
                 </Heading>
 
                 <HStack
@@ -242,7 +241,9 @@ const Contact = (): JSX.Element => {
                           <FormLabel htmlFor="name" mr={2}>
                             Name
                           </FormLabel>
-                          {!form.touched.name && <EmojiValidate type="Required" />}
+                          {!form.touched.name && (
+                            <EmojiValidate type="Required" />
+                          )}
                           {form.errors.name && form.touched.name && (
                             <EmojiValidate type="Error" />
                           )}
@@ -277,7 +278,9 @@ const Contact = (): JSX.Element => {
                           <FormLabel htmlFor="email" mr={2}>
                             Email
                           </FormLabel>
-                          {!form.touched.email && <EmojiValidate type="Required" />}
+                          {!form.touched.email && (
+                            <EmojiValidate type="Required" />
+                          )}
                           {form.errors.email && form.touched.email && (
                             <EmojiValidate type="Error" />
                           )}
@@ -323,7 +326,9 @@ const Contact = (): JSX.Element => {
                           <FormLabel htmlFor="name" mr={2}>
                             Name
                           </FormLabel>
-                          {!form.touched.name && <EmojiValidate type="Required" />}
+                          {!form.touched.name && (
+                            <EmojiValidate type="Required" />
+                          )}
                           {form.errors.name && form.touched.name && (
                             <EmojiValidate type="Error" />
                           )}
@@ -358,7 +363,9 @@ const Contact = (): JSX.Element => {
                           <FormLabel htmlFor="email" mr={2}>
                             Email
                           </FormLabel>
-                          {!form.touched.email && <EmojiValidate type="Required" />}
+                          {!form.touched.email && (
+                            <EmojiValidate type="Required" />
+                          )}
                           {form.errors.email && form.touched.email && (
                             <EmojiValidate type="Error" />
                           )}
@@ -383,14 +390,23 @@ const Contact = (): JSX.Element => {
                   {({ field, form }: FieldProps) => (
                     <FormControl
                       isInvalid={
-                        form.errors.subject && form.touched.subject ? true : false
+                        form.errors.subject && form.touched.subject
+                          ? true
+                          : false
                       }
                     >
-                      <HStack h="auto" w="auto" spacing={0} alignItems="flex-start">
+                      <HStack
+                        h="auto"
+                        w="auto"
+                        spacing={0}
+                        alignItems="flex-start"
+                      >
                         <FormLabel htmlFor="subject" mr={2}>
                           Subject
                         </FormLabel>
-                        {!form.touched.subject && <EmojiValidate type="Required" />}
+                        {!form.touched.subject && (
+                          <EmojiValidate type="Required" />
+                        )}
                         {form.errors.subject && form.touched.subject && (
                           <EmojiValidate type="Error" />
                         )}
@@ -413,14 +429,23 @@ const Contact = (): JSX.Element => {
                   {({ field, form }: FieldProps) => (
                     <FormControl
                       isInvalid={
-                        form.errors.message && form.touched.message ? true : false
+                        form.errors.message && form.touched.message
+                          ? true
+                          : false
                       }
                     >
-                      <HStack h="auto" w="auto" spacing={0} alignItems="flex-start">
+                      <HStack
+                        h="auto"
+                        w="auto"
+                        spacing={0}
+                        alignItems="flex-start"
+                      >
                         <FormLabel htmlFor="message" mr={2}>
                           Message
                         </FormLabel>
-                        {!form.touched.message && <EmojiValidate type="Required" />}
+                        {!form.touched.message && (
+                          <EmojiValidate type="Required" />
+                        )}
                         {form.errors.message && form.touched.message && (
                           <EmojiValidate type="Error" />
                         )}

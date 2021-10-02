@@ -4,9 +4,10 @@ import navItems, { NavItem } from "./navItems";
 
 interface NavProps {
   shouldOpen: boolean;
+  updateOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
+const MobileNav = ({ shouldOpen, updateOpen }: NavProps): JSX.Element => {
   return (
     <Collapse in={shouldOpen} animateOpacity>
       <VStack
@@ -18,7 +19,11 @@ const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
       >
         {navItems.map((navItem: NavItem, index: number) => {
           return (
-            <Link key={navItem[0]} href={navItem[1]}>
+            <Link
+              onClick={() => updateOpen(false)}
+              key={navItem[0]}
+              href={navItem[1]}
+            >
               {index === 0 ? <Divider /> : <Fragment></Fragment>}
               <Button w="100vw" variant={"nav"}>
                 {navItem[0]}
@@ -36,4 +41,4 @@ const DesktopNav = ({ shouldOpen }: NavProps): JSX.Element => {
   );
 };
 
-export default DesktopNav;
+export default MobileNav;
