@@ -1,12 +1,20 @@
 import React from "react";
-import { Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Heading, Link, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
 
 const Projects = (): JSX.Element => {
   return (
-    <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
-      <Heading as="h3" size="xl" mb={6} id="projects">
+    <VStack
+      id="projects"
+      w={{base: "100%", lg: "95%"}}
+      h="auto"
+      justifyContent="center"
+      alignContent="center"
+      py="10%"
+    >
+      <Link name="projects"/>
+      <Heading as="h3" size="xl" mb={6}>
         Projects
       </Heading>
       <SimpleGrid
