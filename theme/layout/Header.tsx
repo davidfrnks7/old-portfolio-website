@@ -72,7 +72,20 @@ const Header = (): JSX.Element => {
       pos="fixed"
       top="0"
       alignItems={"center"}
-      bg={stickyNavbar || open ? "brand.main" : "transparent"}
+      boxShadow={
+        open
+          ? "none"
+          : stickyNavbar
+          ? "rgba(0, 134, 255, 0.75) 0px 0px 15px, rgba(0, 134, 255, 0.5) 0px 0px 3px 1px"
+          : "none"
+      }
+      bg={
+        stickyNavbar
+          ? open
+            ? "brand.main"
+            : "rgba(49, 56, 220, 0.9)"
+          : "transparent"
+      }
       d={
         scrollDirection === "down" || scrollDirection === "top"
           ? "block"
@@ -80,6 +93,14 @@ const Header = (): JSX.Element => {
       }
       transition=".5s ease"
       borderRadius="0px 0px 10px 10px"
+      _hover={{
+        bg: stickyNavbar ? "brand.main" : "transparent",
+        boxShadow: open
+          ? "none"
+          : stickyNavbar
+          ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
+          : "none",
+      }}
     >
       {/* Logo | Site Name */}
       <Flex
@@ -122,7 +143,7 @@ const Header = (): JSX.Element => {
               d={{ base: "inline-flex", lg: "none" }}
               w="auto"
               margin="auto"
-              variant="nav"
+              variant="mobileNav"
             />
           </HStack>
         </Flex>

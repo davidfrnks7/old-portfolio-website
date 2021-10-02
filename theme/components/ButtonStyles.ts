@@ -49,7 +49,7 @@ export const ButtonStyles = {
           darken("brand.secondary", 20)
         )(props),
         boxShadow:
-          "rgba(0, 104, 255, 0.2) 0px 0px 15px, rgba(0, 104, 255, 0.15) 0px 0px 3px 1px",
+          "rgba(0, 104, 255, 0.5) 0px 0px 15px, rgba(0, 104, 255, 0.3) 0px 0px 3px 1px",
       },
     }),
     nav: (props: Dict<never> | StyleFunctionProps) => ({
@@ -94,7 +94,7 @@ export const ButtonStyles = {
           darken("brand.secondary", 20)
         )(props),
         boxShadow:
-          "rgba(0, 104, 255, 0.2) 0px 0px 15px, rgba(0, 104, 255, 0.15) 0px 0px 3px 1px",
+          "rgba(0, 104, 255, 0.5) 0px 0px 15px, rgba(0, 104, 255, 0.3) 0px 0px 3px 1px",
         color: "whiteAlpha.900",
       },
     }),
@@ -130,6 +130,21 @@ export const ButtonStyles = {
           boxShadow:
             "rgba(252, 129, 129, 1) 0px 0px 15px, rgba(252, 129, 129, 0.8) 0px 0px 3px 1px",
         },
+      },
+    }),
+    mobileNav: (props: Dict<never> | StyleFunctionProps) => ({
+      bg: "transparent",
+      fontSize: "md",
+      px: "2",
+      boxShadow:
+        "rgba(0, 134, 255, 0.30) 0px 0px 15px, rgba(0, 134, 255, 0.15) 0px 0px 3px 1px",
+      _hover: {
+        bg: mode(
+          whiten("brand.secondary", 20),
+          darken("brand.secondary", 20)
+        )(props),
+        boxShadow:
+          "rgba(0, 134, 255, 0.5) 0px 0px 15px, rgba(0, 134, 255, 0.3) 0px 0px 3px 1px",
       },
     }),
     // default values for `size` and `variant`

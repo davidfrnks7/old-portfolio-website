@@ -158,7 +158,7 @@ const Contact = (): JSX.Element => {
       justifyContent="center"
       alignContent="center"
       py="10%"
-    spacing={6}
+      spacing={6}
       id="contact"
     >
       <Link name="contact" />
