@@ -34,6 +34,8 @@ const Footer = (): JSX.Element => {
     } else if (window) {
       window.addEventListener("scroll", handleScroll);
     }
+
+    return () => window.removeEventListener("scroll", handleScroll)
   }, []);
   return (
     <Box bg="brand.footer" as="footer" w="100%" h="auto">

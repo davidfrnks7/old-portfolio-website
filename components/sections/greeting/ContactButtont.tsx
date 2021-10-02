@@ -5,15 +5,6 @@ import { Icon } from "@iconify/react";
 const ContactButtons = (): JSX.Element => {
   return (
     <Fragment>
-      {/* <Link href="https://www.linkedin.com/in/davidfrnks7/" target="_blank">
-        <Button
-          variant="contactPrimary"
-          boxShadow="xl"
-          rightIcon={<Icon icon="brandico:linkedin-rect" />}
-        >
-          <Text>Connect with me</Text>
-        </Button>
-      </Link> */}
       <ButtonGroup variant="contactPrimary" isAttached boxShadow="xl">
         <Link href="https://www.linkedin.com/in/davidfrnks7/" target="_blank">
           <Button

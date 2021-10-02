@@ -133,7 +133,7 @@ export const ButtonStyles = {
       },
     }),
     mobileNav: (props: Dict<never> | StyleFunctionProps) => ({
-      bg: "transparent",
+      // bg: "transparent",
       fontSize: "md",
       px: "2",
       boxShadow:
@@ -143,6 +143,11 @@ export const ButtonStyles = {
           whiten("brand.secondary", 20),
           darken("brand.secondary", 20)
         )(props),
+        boxShadow:
+          "rgba(0, 134, 255, 0.5) 0px 0px 15px, rgba(0, 134, 255, 0.3) 0px 0px 3px 1px",
+      },
+      _expanded: {
+        bg: "brand.primary",
         boxShadow:
           "rgba(0, 134, 255, 0.5) 0px 0px 15px, rgba(0, 134, 255, 0.3) 0px 0px 3px 1px",
       },
