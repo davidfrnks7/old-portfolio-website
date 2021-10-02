@@ -25,7 +25,7 @@ const Header = (): JSX.Element => {
 
   const handleScroll = (): void => {
     // Sticky Nav
-    if (window.scrollY >= 1) {
+    if (window.scrollY >= 20) {
       setStickyNavbar(true);
     } else {
       setStickyNavbar(false);
@@ -37,7 +37,7 @@ const Header = (): JSX.Element => {
 
     if (currentScroll > lastScroll.current) {
       setScrollDirection("down");
-    } else if (currentScroll <= 5) {
+    } else if (currentScroll <= 20) {
       setScrollDirection("top");
     } else {
       setScrollDirection("up");
