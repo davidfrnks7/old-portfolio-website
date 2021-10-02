@@ -5,7 +5,7 @@ import icons, { IconTuple } from "./Icons";
 const Skills = (): JSX.Element => {
   return (
     <VStack
-      py="10%"
+      py="10vh"
       id="skills"
       w="100%"
       justifyContent="center"

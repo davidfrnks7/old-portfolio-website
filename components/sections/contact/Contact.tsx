@@ -157,7 +157,7 @@ const Contact = (): JSX.Element => {
       h="100%"
       justifyContent="center"
       alignContent="center"
-      py="10%"
+      py="10vh"
       spacing={6}
       id="contact"
     >
