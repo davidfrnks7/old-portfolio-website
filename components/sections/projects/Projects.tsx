@@ -7,10 +7,11 @@ const Projects = (): JSX.Element => {
   return (
     <VStack
       id="projects"
-      w="100%"
+      w={{base: "100%", lg: "95%"}}
       h="auto"
       justifyContent="center"
       alignContent="center"
+      py="10%"
     >
       <Heading as="h3" size="xl" mb={6}>
         Projects

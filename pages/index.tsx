@@ -8,7 +8,7 @@ import Contact from "../components/sections/contact/Contact";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <VStack spacing="20%" w="100%" h="auto" mb="10%">
+    <VStack w="100%" h="auto" mb="10%">
       <Greeting />
       <About />
       <Skills />
