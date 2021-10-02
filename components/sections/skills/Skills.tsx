@@ -1,10 +1,11 @@
 import React from "react";
-import { VStack, Heading, Box, SimpleGrid } from "@chakra-ui/react";
+import { VStack, Heading, Box, SimpleGrid, Link } from "@chakra-ui/react";
 import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
     <VStack py="10%" id="skills" w="100%" justifyContent="center" alignContent="center">
+      <Link name="skills" />
       <Heading as="h3" size="xl" mb={12}>
         Skills
       </Heading>

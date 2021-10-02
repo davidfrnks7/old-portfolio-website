@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Heading, Link, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
 
@@ -13,6 +13,7 @@ const Projects = (): JSX.Element => {
       alignContent="center"
       py="10%"
     >
+      <Link name="projects"/>
       <Heading as="h3" size="xl" mb={6}>
         Projects
       </Heading>

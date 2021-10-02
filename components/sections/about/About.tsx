@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Link, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import davidFImage from "../../../public/images/davidFImage.jpg";
 import Bio from "./Bio";
@@ -7,6 +7,7 @@ import Bio from "./Bio";
 const About = (): JSX.Element => {
   return (
     <Box py="10%" id="about" textAlign="center" w="100%" h="auto">
+      <Link name="about" />
       <Heading as="h3" size="xl" mb={12}>
         About Me
       </Heading>
