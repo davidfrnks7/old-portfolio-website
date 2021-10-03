@@ -3,7 +3,10 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
-const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
+module.exports = (
+  req: VercelRequest,
+  res: VercelResponse
+): Promise<unknown> => {
   return new Promise((resolve) => {
     const { body } = req;
     const parsedBody = JSON.stringify(body);
@@ -159,5 +162,3 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
     }
   });
 };
-
-export default mail;
