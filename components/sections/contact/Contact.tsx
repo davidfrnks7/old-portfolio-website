@@ -129,7 +129,11 @@ const Contact = (): JSX.Element => {
       body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
-        .post("/api/contact", body)
+        .post("/api/contact", body, {
+          headers: {
+            "content-type": "application/x-www-form-urlencoded",
+          },
+        })
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return resolve(response.statusText);
