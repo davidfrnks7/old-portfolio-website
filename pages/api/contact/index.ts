@@ -25,7 +25,7 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
           "Body of request:\n" +
           JSON.stringify(body) +
           "\nInfo of the request:\n" +
-          JSON.stringify(body)
+          JSON.parse(body)
       );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
