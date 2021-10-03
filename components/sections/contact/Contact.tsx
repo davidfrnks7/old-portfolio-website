@@ -492,6 +492,7 @@ const Contact = (): JSX.Element => {
                       isDisabled={!valid}
                       background={valid ? "brand.valid" : "brand.danger"}
                       isLoading={props.isSubmitting}
+                      type="submit"
                     >
                       Submit
                     </Button>
