@@ -19,7 +19,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
 
     if (!key) {
       console.info(
-        reqIP + " tried to access /api/contact without an access key! " + " body of request: " + JSON.stringify(body)
+        reqIP + " tried to access /api/contact without an access key!\n" + "Body of request:\n" + JSON.stringify(body) + "\nInfo of the request:\n" + req
       );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
@@ -37,7 +37,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
       if (!name || !email || !subject || !message) {
         console.info(
           reqIP +
-            " did not provide appropriate form info. Info provided: " +
+            " did not provide appropriate form info. Info provided:\n" +
             parsedBody
         );
 
@@ -112,7 +112,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
 
             transporter.sendMail(mailData, (err, info) => {
               if (err) {
-                console.warn("Failed to send the form: ", err);
+                console.error("Failed to send the form:\n", err);
                 res
                   .status(500)
                   .end(
@@ -125,9 +125,9 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
                 const parsedTransportInfo = JSON.stringify(info);
 
                 console.info(
-                  "Email sent successfully with: " +
+                  "Email sent successfully with:\n" +
                     parsedBody +
-                    " the response information is: " +
+                    "\n\nThe response information is:\n" +
                     parsedTransportInfo
                 );
                 res.status(200).end("Message sent");
@@ -138,7 +138,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
         } else {
           console.info(
             reqIP +
-              " did not provide valid form info. Info provided: " +
+              " did not provide valid form info. Info provided:\n" +
               parsedBody
           );
           res
