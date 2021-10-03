@@ -43,6 +43,7 @@ export const ButtonStyles = {
       px: 4,
       boxShadow:
         "rgba(0, 134, 255, 0.2) 0px 0px 15px, rgba(0, 134, 255, 0.15) 0px 0px 3px 1px",
+      border: "1px solid rgba(0, 134, 255, 0.4)",
       _hover: {
         bg: mode(
           whiten("brand.secondary", 20),
@@ -88,6 +89,7 @@ export const ButtonStyles = {
       color: "rgba(0, 134, 255, 0.6)",
       boxShadow:
         "rgba(0, 134, 255, 0.05) 0px 0px 15px, rgba(0, 134, 255, 0.1) 0px 0px 3px 1px",
+      border: "rgba(0, 134, 255, 0.15)",
       _hover: {
         bg: mode(
           whiten("brand.secondary", 20),
@@ -128,7 +130,8 @@ export const ButtonStyles = {
             darken("brand.danger", 20)
           )(props),
           boxShadow:
-            "rgba(252, 129, 129, 1) 0px 0px 15px, rgba(252, 129, 129, 0.8) 0px 0px 3px 1px",
+            "rgba(252, 129, 129, .95) 0px 0px 15px, rgba(252, 129, 129, 0.75) 0px 0px 3px 1px",
+          border: "px solid #FC8181",
         },
       },
     }),
@@ -150,6 +153,7 @@ export const ButtonStyles = {
         bg: "brand.primary",
         boxShadow:
           "rgba(0, 134, 255, 0.5) 0px 0px 15px, rgba(0, 134, 255, 0.3) 0px 0px 3px 1px",
+        border: "1px solid #0068ff",
       },
     }),
     // default values for `size` and `variant`
