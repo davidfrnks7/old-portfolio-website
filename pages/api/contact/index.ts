@@ -7,14 +7,40 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
     const { body } = req;
     const { key, name, email, subject, message } = body;
 
+    // Prevent original object from being modified
+    const newBody = Object(body);
+    // Removing access key to prevent it from showing up in logs
+    newBody.key = null;
+    // Parsed newBody
+    const parsedBody = JSON.stringify(newBody);
+
+    // IP of the client
+    const reqIP = req.socket.remoteAddress || req.connection.remoteAddress;
+
     if (!key) {
+      console.info(
+        reqIP + " tried to access /api/contact without an access key!"
+      );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
     } else if (key !== process.env.ACCESS_KEY) {
+      console.info(
+        reqIP +
+          " tried to access /api/contact with an invalid access key! Access key provided: " +
+          key
+      );
       res.status(403).end("Wrong access key!");
       return resolve("Wrong access key!");
     } else if (key === process.env.ACCESS_KEY) {
+      console.info(reqIP + " accessed /api/contact with a valid access key.");
+
       if (!name || !email || !subject || !message) {
+        console.info(
+          reqIP +
+            " did not provide appropriate form info. Info provided: " +
+            parsedBody
+        );
+
         res
           .status(400)
           .end(
@@ -79,9 +105,9 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
             html: `<div>${message}</div>`,
           };
 
-          transporter.sendMail(mailData, (err /*, info*/) => {
+          transporter.sendMail(mailData, (err, info) => {
             if (err) {
-              console.warn(err);
+              console.warn("Failed to send the form: ", err);
               res
                 .status(500)
                 .end(
@@ -91,12 +117,24 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
                 "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo."
               );
             } else {
-              // console.info(info);
+              const parsedTransportInfo = JSON.stringify(info);
+
+              console.info(
+                "Email sent successfully with: " +
+                  parsedBody +
+                  " the response information is: " +
+                  parsedTransportInfo
+              );
               res.status(200).end("Message sent");
               return resolve("Message sent");
             }
           });
         } else {
+          console.info(
+            reqIP +
+              " did not provide valid form info. Info provided: " +
+              parsedBody
+          );
           res
             .status(400)
             .end(
