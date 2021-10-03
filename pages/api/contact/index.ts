@@ -6,14 +6,16 @@ import nodemailer from "nodemailer";
 const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
   return new Promise((resolve) => {
     const { body } = req;
+    const parsedBody = JSON.stringify(body);
+
     const { key, name, email, subject, message } = body;
 
     // Prevent original object from being modified
     const newBody = Object(body);
     // Removing access key to prevent it from showing up in logs
-    newBody.key = null;
+    delete newBody.key;
     // Parsed newBody
-    const parsedBody = JSON.stringify(newBody);
+    const sanitizedBody = JSON.stringify(newBody);
 
     // IP of the client
     const reqIP = req.socket.remoteAddress || req.connection.remoteAddress;
@@ -25,7 +27,7 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
           "Body of request:\n" +
           JSON.stringify(body) +
           "\nInfo of the request:\n" +
-          JSON.parse(body)
+          parsedBody
       );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
@@ -44,7 +46,7 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
         console.info(
           reqIP +
             " did not provide appropriate form info. Info provided:\n" +
-            parsedBody
+            sanitizedBody
         );
 
         res
@@ -132,7 +134,7 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
 
                 console.info(
                   "Email sent successfully with:\n" +
-                    parsedBody +
+                    sanitizedBody +
                     "\n\nThe response information is:\n" +
                     parsedTransportInfo
                 );
@@ -145,7 +147,7 @@ const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
           console.info(
             reqIP +
               " did not provide valid form info. Info provided:\n" +
-              parsedBody
+              sanitizedBody
           );
           res
             .status(400)
