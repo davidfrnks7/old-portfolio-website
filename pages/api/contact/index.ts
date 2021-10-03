@@ -19,7 +19,7 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
 
     if (!key) {
       console.info(
-        reqIP + " tried to access /api/contact without an access key!"
+        reqIP + " tried to access /api/contact without an access key! " + " body of request: " + JSON.stringify(body)
       );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
