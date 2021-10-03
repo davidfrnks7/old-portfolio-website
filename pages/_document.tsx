@@ -25,6 +25,16 @@ class Document extends NextDocument {
           />
           <meta property="og:url" content="https://davidfrnks7.dev" />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta property="title" content="David's Portfolio Website" />
+          <meta
+            name="description"
+            content="A website to list my skills and demonstrate them for potential employers and clients to see."
+          />
+          <meta property="type" content="Skills and Projects" />
+          <meta property="image" content="/images/davidFImage.jpg" />
+          <meta property="image:type" content="image/jpeg" />
+          <meta property="image:alt" content="A face shot of David Franks." />
+          <meta property="url" content="https://davidfrnks7.dev" />
           <meta httpEquiv="content-language" content="en_US" />
           <meta charSet="UTF-8" />
           <meta
@@ -37,6 +47,7 @@ class Document extends NextDocument {
           <meta name="audience" content="Everyone" />
           <meta name="robots" content="index, follow" />
         </Head>
+        <html lang="en" />
         <body>
           <ColorModeScript
             initialColorMode={AppTheme.config.initialColorMode}

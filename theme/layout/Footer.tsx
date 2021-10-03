@@ -50,13 +50,13 @@ const Footer = (): JSX.Element => {
       >
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Build on</Text>
-          <Link href="https://nextjs.org/" target="_blank">
+          <Link href="https://nextjs.org/" target="_blank" rel="noopener">
             <Icon fontSize="2.75rem" icon="logos:nextjs" />
           </Link>
         </HStack>
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Designed with</Text>
-          <Link href="https://chakra-ui.com/" target="_blank">
+          <Link href="https://chakra-ui.com/" rel="noopener" target="_blank">
             <Image
               alt="Chakra UI Logo"
               h="2rem"
@@ -66,7 +66,7 @@ const Footer = (): JSX.Element => {
         </HStack>
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Deployed by</Text>
-          <Link href="https://vercel.com/" target="_blank">
+          <Link href="https://vercel.com/" rel="noopener" target="_blank">
             <Icon fontSize="1.75rem" icon="logos:vercel" />
           </Link>
         </HStack>
@@ -74,6 +74,7 @@ const Footer = (): JSX.Element => {
           <Link
             href="https://github.com/davidfrnks7/portfolio-website"
             target="_blank"
+            rel="noopener"
           >
             <Button
               color="whiteAlpha"
