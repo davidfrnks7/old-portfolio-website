@@ -196,7 +196,7 @@ module.exports = (
       );
       res
         .setHeader("Content-Type", "text/plain")
-        .status(202)
+        .status(403)
         .end(
           "Dev/Preview key used. This is not allowed in production mode. Your IP Address was logged. FVNS"
         );
