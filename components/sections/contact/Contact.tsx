@@ -128,7 +128,10 @@ const Contact = (): JSX.Element => {
         key?: string;
       }
       const body: Body = input;
-      body.key = environment === "development" ? "ABc123$%^" : process.env.NEXT_PUBLIC_ACCESS_KEY;
+      body.key =
+        environment === "development"
+          ? "ABc123$%^"
+          : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
         .post("/api/contact", body)
