@@ -470,7 +470,7 @@ const Contact = (): JSX.Element => {
                 <VStack h="auto" w="100%" spacing={6}>
                   <VStack h="auto" w="100%" spacing={2}>
                     <strong>
-                      <Text fontSize="sm" color="red.500">
+                      <Text fontSize="sm" color="brand.danger">
                         Do not contact with unsolicited services or offers
                       </Text>
                     </strong>
