@@ -5,10 +5,8 @@ import {
   Box,
   IconButton,
   Flex,
-  Button,
   Menu,
   MenuButton,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
