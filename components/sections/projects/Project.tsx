@@ -29,8 +29,6 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
       border="1px solid white"
       justifyContent="space-between"
       alignContent="center"
-      // mx="30px"
-      // mb="30px"
       h="auto"
       py={6}
       px={2}

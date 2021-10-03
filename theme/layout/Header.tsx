@@ -158,6 +158,7 @@ const Header = (): JSX.Element => {
               variant="mobileNav"
               bg={stickyNavbar ? "transparent" : "rgba(255, 255, 255, .15)"}
               type="button"
+              border={stickyNavbar ? "1px solid #0068ff" : "none"}
             />
             <MobileNav updateOpen={setOpen} />
           </Menu>

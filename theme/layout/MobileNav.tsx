@@ -21,8 +21,8 @@ const MobileNav = ({ updateOpen }: NavProps): JSX.Element => {
       h="auto"
       w="100%"
       p={0}
+      border="none"
       boxShadow="none"
-      borderWidth="none"
     >
       {navItems.map((navItem: NavItem, index: number) => {
         return (

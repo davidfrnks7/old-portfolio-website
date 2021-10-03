@@ -168,10 +168,7 @@ const Contact = (): JSX.Element => {
     >
       <Link name="contact" />
       <VStack
-        boxShadow={{
-          base: "none",
-          md: "rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px",
-        }}
+        boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
         borderRadius="2xl"
         border="1px solid white"
         w={{ base: "95%", lg: "90%" }}
