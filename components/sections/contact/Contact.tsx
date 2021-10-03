@@ -18,6 +18,8 @@ import axios from "axios";
 import Captcha from "./Captcha";
 
 const Contact = (): JSX.Element => {
+  const environment = process.env.NODE_ENV || "development";
+
   // Validate
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
@@ -126,14 +128,13 @@ const Contact = (): JSX.Element => {
         key?: string;
       }
       const body: Body = input;
-      body.key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+      body.key =
+        environment === "development"
+          ? "ABc123$%^"
+          : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
-        .post("/api/contact", body, {
-          headers: {
-            "content-type": "application/x-www-form-urlencoded",
-          },
-        })
+        .post("/api/contact", body)
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return resolve(response.statusText);
