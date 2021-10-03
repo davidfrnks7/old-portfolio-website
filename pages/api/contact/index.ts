@@ -1,14 +1,16 @@
-// import { NextApiRequest, NextApiResponse } from "next";
-import { VercelRequest, VercelResponse } from "@vercel/node";
+import { NextApiRequest, NextApiResponse } from "next";
+// import { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
 module.exports = (
-  req: VercelRequest,
-  res: VercelResponse
+  req: NextApiRequest,
+  res: NextApiResponse
 ): Promise<unknown> => {
   return new Promise((resolve) => {
-    const { body } = req;
+    const environment = process.env.NODE_ENV || "development";
+
+    const { body, headers } = req;
     const parsedBody = JSON.stringify(body);
 
     const { key, name, email, subject, message } = body;
@@ -21,7 +23,10 @@ module.exports = (
     const sanitizedBody = JSON.stringify(newBody);
 
     // IP of the client
-    const reqIP = req.socket.remoteAddress || req.connection.remoteAddress;
+    const reqIP =
+      headers["x-forwarded-for"] ||
+      req.socket.remoteAddress ||
+      req.connection.remoteAddress;
 
     if (!key) {
       console.info(
@@ -34,15 +39,10 @@ module.exports = (
       );
       res.status(401).end("Access key required!");
       return resolve("Access key required!");
-    } else if (key !== process.env.ACCESS_KEY) {
-      console.info(
-        reqIP +
-          " tried to access /api/contact with an invalid access key! Access key provided: " +
-          key
-      );
-      res.status(403).end("Wrong access key!");
-      return resolve("Wrong access key!");
-    } else if (key === process.env.ACCESS_KEY) {
+    } else if (
+      key === process.env.ACCESS_KEY ||
+      (key === "ABc123$%^" && environment === "development")
+    ) {
       console.info(reqIP + " accessed /api/contact with a valid access key.");
 
       if (!name || !email || !subject || !message) {
@@ -95,9 +95,30 @@ module.exports = (
         };
 
         if (validate()) {
-          if (key === "ABc123$%^") {
+          if (key === "ABc123$%^" && environment === "development") {
             console.info(
-              "Test/Preview key used. All forms validated. Email not sent."
+              "Dev/Preview key used. All forms validated. Email not sent."
+            );
+            res
+              .status(202)
+              .end(
+                "Dev/Preview key used. All forms validated. Email would have sent if environment was set to production."
+              );
+            return resolve(
+              "Dev/Preview key used. All forms validated. Email would have sent if environment was set to production."
+            );
+          } else if (key === "ABc123$%^" && environment !== "development") {
+            console.warn(
+              reqIP +
+                " Used dev/Preview key used while not in production. Form validation was started. Email not sent."
+            );
+            res
+              .status(202)
+              .end(
+                "Dev/Preview key used. This is not allowed in production mode."
+              );
+            return resolve(
+              "Dev/Preview key used while not in production. Form validation was started. Email not sent."
             );
           } else {
             const transporterData = {
@@ -159,6 +180,25 @@ module.exports = (
             );
         }
       }
+    } else if (key === "ABc123$%^" && environment !== "development") {
+      console.info(
+        reqIP +
+          " Used dev/Preview key used while not in production. From validation was not started. Email not sent."
+      );
+      res
+        .status(202)
+        .end("Dev/Preview key used. This is not allowed in production mode.");
+      return resolve(
+        "Dev/Preview key used while not in production. From validation was not started. Email not sent."
+      );
+    } else if (key !== process.env.ACCESS_KEY) {
+      console.info(
+        reqIP +
+          " tried to access /api/contact with an invalid access key! Access key provided: " +
+          key
+      );
+      res.status(403).end("Wrong access key!");
+      return resolve("Wrong access key!");
     }
   });
 };
