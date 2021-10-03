@@ -1,8 +1,9 @@
-import { NextApiRequest, NextApiResponse } from "next";
+// import { NextApiRequest, NextApiResponse } from "next";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
-const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
+const mail = (req: VercelRequest, res: VercelResponse): Promise<unknown> => {
   return new Promise((resolve) => {
     const { body } = req;
     const { key, name, email, subject, message } = body;
