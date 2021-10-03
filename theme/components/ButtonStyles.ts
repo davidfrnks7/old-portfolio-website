@@ -63,7 +63,7 @@ export const ButtonStyles = {
         )(props),
       },
     }),
-    stickyNav: (props: Dict<never> | StyleFunctionProps) => ({
+    stickyNav: (/* props: Dict<never> | StyleFunctionProps */) => ({
       bg: "transparent",
       fontSize: "md",
       px: "2",
