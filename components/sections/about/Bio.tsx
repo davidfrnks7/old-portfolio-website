@@ -10,8 +10,11 @@ const Bio = (): JSX.Element => {
       spacing={4}
       h="auto"
       w="100%"
-      px="20px"
-      py="15px"
+      px={{ base: 6 }}
+      pr={{ md: 6 }}
+      pl={{ md: 0 }}
+      pt={6}
+      pb={8}
     >
       {bio.split("\n").map((line) => (
         <Text key={line.replace(" ", "-")} w="100%" textAlign="justify">
