@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-// import { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
@@ -24,6 +23,7 @@ module.exports = (
 
     // IP of the client
     const reqIP =
+      headers["cf-connecting-ip"] ||
       headers["x-forwarded-for"] ||
       req.socket.remoteAddress ||
       req.connection.remoteAddress;
@@ -37,7 +37,10 @@ module.exports = (
           "\nInfo of the request:\n" +
           parsedBody
       );
-      res.status(401).end("Access key required!");
+      res
+        .setHeader("Content-Type", "text/plain")
+        .status(401)
+        .end("Access key required!");
       return resolve("Access key required!");
     } else if (
       key === process.env.ACCESS_KEY ||
@@ -53,6 +56,7 @@ module.exports = (
         );
 
         res
+          .setHeader("Content-Type", "text/plain")
           .status(400)
           .end(
             "Invalid form data. Please make sure all fields are filled out."
@@ -100,6 +104,7 @@ module.exports = (
               "Dev/Preview key used. All forms validated. Email not sent."
             );
             res
+              .setHeader("Content-Type", "text/plain")
               .status(202)
               .end(
                 "Dev/Preview key used. All forms validated. Email would have sent if environment was set to production."
@@ -113,6 +118,7 @@ module.exports = (
                 " Used dev/Preview key used while not in production. Form validation was started. Email not sent."
             );
             res
+              .setHeader("Content-Type", "text/plain")
               .status(202)
               .end(
                 "Dev/Preview key used. This is not allowed in production mode."
@@ -146,6 +152,7 @@ module.exports = (
               if (err) {
                 console.error("Failed to send the form:\n", err);
                 res
+                  .setHeader("Content-Type", "text/plain")
                   .status(500)
                   .end(
                     "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo."
@@ -162,7 +169,10 @@ module.exports = (
                     "\n\nThe response information is:\n" +
                     parsedTransportInfo
                 );
-                res.status(200).end("Message sent");
+                res
+                  .setHeader("Content-Type", "text/plain")
+                  .status(200)
+                  .end("Message sent");
                 return resolve("Message sent");
               }
             });
@@ -174,6 +184,7 @@ module.exports = (
               sanitizedBody
           );
           res
+            .setHeader("Content-Type", "text/plain")
             .status(400)
             .end(
               "Invalid form data. Please make sure all fields are filled out."
@@ -186,6 +197,7 @@ module.exports = (
           " Used dev/Preview key used while not in production. From validation was not started. Email not sent."
       );
       res
+        .setHeader("Content-Type", "text/plain")
         .status(202)
         .end("Dev/Preview key used. This is not allowed in production mode.");
       return resolve(
@@ -197,7 +209,10 @@ module.exports = (
           " tried to access /api/contact with an invalid access key! Access key provided: " +
           key
       );
-      res.status(403).end("Wrong access key!");
+      res
+        .setHeader("Content-Type", "text/plain")
+        .status(403)
+        .end("Wrong access key!");
       return resolve("Wrong access key!");
     }
   });

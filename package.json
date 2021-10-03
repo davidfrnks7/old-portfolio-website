@@ -20,7 +20,6 @@
     "@hcaptcha/react-hcaptcha": "^0.3.7",
     "@iconify/react": "^3.0.1",
     "@types/react": "^17.0.26",
-    "@vercel/node": "^1.12.1",
     "axios": "^0.22.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
