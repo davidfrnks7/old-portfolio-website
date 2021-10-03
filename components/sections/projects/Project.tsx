@@ -110,7 +110,7 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
           </Text>
         </VStack>
       </VStack>
-      <Link href={project.link} target="_blank">
+      <Link href={project.link} rel="noopener" target="_blank">
         <Button variant="project">View Project</Button>
       </Link>
     </VStack>

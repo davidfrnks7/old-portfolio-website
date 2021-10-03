@@ -6,7 +6,11 @@ const ContactButtons = (): JSX.Element => {
   return (
     <Fragment>
       <ButtonGroup variant="contactPrimary" isAttached boxShadow="xl">
-        <Link href="https://www.linkedin.com/in/davidfrnks7/" target="_blank">
+        <Link
+          href="https://www.linkedin.com/in/davidfrnks7/"
+          rel="noopener"
+          target="_blank"
+        >
           <Button
             leftIcon={<Icon icon="brandico:linkedin-rect" />}
             ml="-px"
@@ -25,7 +29,11 @@ const ContactButtons = (): JSX.Element => {
         </Link>
       </ButtonGroup>
       <ButtonGroup variant="contactSecondary" isAttached boxShadow="xl">
-        <Link href="https://github.com/davidfrnks7" target="_blank">
+        <Link
+          href="https://github.com/davidfrnks7"
+          rel="noopener"
+          target="_blank"
+        >
           <IconButton
             borderRadius="4px 0px 0px 4px"
             aria-label="Visit GitHub Page"
