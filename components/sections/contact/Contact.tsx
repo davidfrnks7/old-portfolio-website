@@ -165,16 +165,18 @@ const Contact = (): JSX.Element => {
       py="10vh"
       spacing={6}
       id="contact"
+      px="5vw"
     >
       <Link name="contact" />
       <VStack
         boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
         borderRadius="2xl"
         border="1px solid white"
-        w={{ base: "95%", lg: "90%" }}
-        zIndex={1}
+        w="100%"
+        zIndex={0}
         h="100%"
         py={12}
+        bg="brand.content"
       >
         <Heading as="h3" size="xl" mb={6}>
           Contact Me
@@ -470,7 +472,7 @@ const Contact = (): JSX.Element => {
                 <VStack h="auto" w="100%" spacing={6}>
                   <VStack h="auto" w="100%" spacing={2}>
                     <strong>
-                      <Text fontSize="sm" color="red.500">
+                      <Text fontSize="sm" color="brand.danger">
                         Do not contact with unsolicited services or offers
                       </Text>
                     </strong>

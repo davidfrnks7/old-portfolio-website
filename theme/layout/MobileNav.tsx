@@ -26,7 +26,13 @@ const MobileNav = ({ updateOpen }: NavProps): JSX.Element => {
     >
       {navItems.map((navItem: NavItem, index: number) => {
         return (
-          <MenuItem key={navItem[0]} w="auto" h="auto" p={0}>
+          <MenuItem
+            id={"mobile-" + navItem[0]}
+            key={navItem[0]}
+            w="auto"
+            h="auto"
+            p={0}
+          >
             <Link onClick={() => updateOpen(false)} href={navItem[1]}>
               {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
               <Button w="100vw" variant={"nav"} p={0} m="auto">

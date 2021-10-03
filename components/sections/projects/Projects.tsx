@@ -1,20 +1,13 @@
 import React from "react";
-import { Heading, Link, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, Heading, Link, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
 
 const Projects = (): JSX.Element => {
   return (
-    <VStack
-      id="projects"
-      w={{ base: "100%", lg: "95%" }}
-      h="auto"
-      justifyContent="center"
-      alignContent="center"
-      py="10vh"
-    >
+    <Box py="10vh" id="skills" textAlign="center" w="100%" h="auto">
       <Link name="projects" />
-      <Heading as="h3" size="xl" mb={6}>
+      <Heading as="h3" size="xl" mb={12}>
         Projects
       </Heading>
       <SimpleGrid
@@ -24,8 +17,8 @@ const Projects = (): JSX.Element => {
         alignContent="center"
         d={{ base: "none", md: "grid" }}
         w="100%"
-        spacing="30px"
-        px="30px"
+        spacing={8}
+        px="5vw"
       >
         {projects.map((project: SingleProject): JSX.Element => {
           return (
@@ -34,12 +27,13 @@ const Projects = (): JSX.Element => {
         })}
       </SimpleGrid>
       <VStack
-        w="95%"
+        w="100%"
         h="auto"
         alignContent="center"
         justifyContent="center"
         d={{ base: "flex", md: "none" }}
         spacing={10}
+        px="5vw"
       >
         {projects.map((project: SingleProject): JSX.Element => {
           return (
@@ -47,7 +41,7 @@ const Projects = (): JSX.Element => {
           );
         })}
       </VStack>
-    </VStack>
+    </Box>
   );
 };
 

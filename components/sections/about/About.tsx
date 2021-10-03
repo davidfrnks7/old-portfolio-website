@@ -21,10 +21,12 @@ const About = (): JSX.Element => {
         h="auto"
         w="97%"
         d={{ base: "none", lg: "flex" }}
+        bg="brand.content"
+        spacing={0}
       >
-        <Box p="20px" w="30%">
+        <Box h="auto" w={{ lg: "30%", xl: "25%" }} m={6}>
           <Image
-            layout="responsive"
+            layout="intrinsic"
             src={davidFImage}
             alt="Picture of David Franks"
           />
@@ -41,10 +43,11 @@ const About = (): JSX.Element => {
         h="auto"
         w="97%"
         d={{ base: "flex", lg: "none" }}
+        bg="brand.content"
       >
-        <Box p="20px" w={{ base: "60%", md: "40%" }}>
+        <Box mt={12} w={{ base: "80%", sm: "60%", md: "40%" }} h="auto">
           <Image
-            layout="responsive"
+            layout="intrinsic"
             src={davidFImage}
             alt="Picture of David Franks"
           />

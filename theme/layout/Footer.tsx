@@ -50,13 +50,23 @@ const Footer = (): JSX.Element => {
       >
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Built on</Text>
-          <Link aria-label="Next.js" href="https://nextjs.org/" target="_blank" rel="noopener">
+          <Link
+            aria-label="Next.js"
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener"
+          >
             <Icon fontSize="2.75rem" icon="logos:nextjs" />
           </Link>
         </HStack>
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Designed with</Text>
-          <Link aria-label="Chakra UI" href="https://chakra-ui.com/" rel="noopener" target="_blank">
+          <Link
+            aria-label="Chakra UI"
+            href="https://chakra-ui.com/"
+            rel="noopener"
+            target="_blank"
+          >
             <Image
               alt="Chakra UI Logo"
               h="2rem"
@@ -66,7 +76,12 @@ const Footer = (): JSX.Element => {
         </HStack>
         <HStack color="brand.footerText" spacing={2}>
           <Text fontSize="xl">Deployed by</Text>
-          <Link aria-label="Vercel" href="https://vercel.com/" rel="noopener" target="_blank">
+          <Link
+            aria-label="Vercel"
+            href="https://vercel.com/"
+            rel="noopener"
+            target="_blank"
+          >
             <Icon fontSize="1.75rem" icon="logos:vercel" />
           </Link>
         </HStack>

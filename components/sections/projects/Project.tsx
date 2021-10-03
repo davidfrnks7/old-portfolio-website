@@ -33,6 +33,7 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
       py={6}
       px={2}
       w="100%"
+      bg="brand.content"
     >
       <VStack w="90%" h="auto">
         <Heading mb={2} w="100%" textAlign="center" as="h4" size="md">

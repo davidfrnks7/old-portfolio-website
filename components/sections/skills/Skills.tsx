@@ -1,27 +1,28 @@
 import React from "react";
-import { VStack, Heading, Box, SimpleGrid, Link } from "@chakra-ui/react";
+import { Heading, Box, SimpleGrid, Link } from "@chakra-ui/react";
 import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
-    <VStack
-      py="10vh"
+    <Box
+      bg="brand.content"
+      my="7vh"
+      py="3vh"
       id="skills"
+      textAlign="center"
       w="100%"
-      justifyContent="center"
-      alignContent="center"
+      h="auto"
     >
       <Link name="skills" />
-      <Heading as="h3" size="xl" mb={12}>
+      <Heading as="h3" size="xl" mb="10vh">
         Skills
       </Heading>
       <SimpleGrid
-        columns={[6]}
+        columns={{ base: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-        // maxBlockSize="fit-content"
-        d={{ base: "none", md: "grid" }}
+        // d={{ base: "none", md: "grid" }}
       >
         {icons.map((icon: IconTuple): JSX.Element => {
           return (
@@ -42,28 +43,7 @@ const Skills = (): JSX.Element => {
           );
         })}
       </SimpleGrid>
-      <SimpleGrid
-        columns={[3]}
-        h="auto"
-        justifyContent="flex-start"
-        alignContent="center"
-        // maxBlockSize="fit-content"
-        d={{ base: "grid", md: "none" }}
-      >
-        {icons.map((icon: IconTuple): JSX.Element => {
-          return (
-            <Box key={icon[0]} h="auto" mx="10px" mb="30px">
-              <Box h="100px" w="80px" fontSize="75px" margin="auto">
-                {icon[1]}
-              </Box>
-              <Heading w="100%" textAlign="center" as="h4" size="md">
-                {icon[0]}
-              </Heading>
-            </Box>
-          );
-        })}
-      </SimpleGrid>
-    </VStack>
+    </Box>
   );
 };
 

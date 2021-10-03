@@ -1,4 +1,4 @@
-import { VStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import About from "../components/sections/about/About";
 import Greeting from "../components/sections/greeting/Greeting";
@@ -8,13 +8,13 @@ import Contact from "../components/sections/contact/Contact";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <VStack w="100%" h="auto" mb="10%">
+    <Box bg="brand.background" textAlign="center" w="100%" h="auto" pb="10vh">
       <Greeting />
       <About />
       <Skills />
       <Projects />
       <Contact />
-    </VStack>
+    </Box>
   );
 };
 
