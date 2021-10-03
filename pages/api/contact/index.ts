@@ -29,6 +29,7 @@ module.exports = (
       req.connection.remoteAddress;
 
     if (!key) {
+      // No key provided
       console.info(
         reqIP +
           " tried to access /api/contact without an access key!\n" +
@@ -46,6 +47,7 @@ module.exports = (
       key === process.env.ACCESS_KEY ||
       (key === "ABc123$%^" && environment === "development")
     ) {
+      // Key authenticated
       console.info(reqIP + " accessed /api/contact with a valid access key.");
 
       if (!name || !email || !subject || !message) {
@@ -99,7 +101,9 @@ module.exports = (
         };
 
         if (validate()) {
+          // Validating info
           if (key === "ABc123$%^" && environment === "development") {
+            // Check the key for Dev/Preview key.
             console.info(
               "Dev/Preview key used. All forms validated. Email not sent."
             );
@@ -127,6 +131,7 @@ module.exports = (
               "Dev/Preview key used while not in production. From validation started!! Email not sent."
             );
           } else {
+            // Send message
             const transporterData = {
               port: 465,
               host: "smtp.gmail.com",
@@ -150,6 +155,7 @@ module.exports = (
 
             transporter.sendMail(mailData, (err, info) => {
               if (err) {
+                // Error sending
                 console.error("Failed to send the form:\n", err);
                 res
                   .setHeader("Content-Type", "text/plain")
@@ -178,6 +184,7 @@ module.exports = (
             });
           }
         } else {
+          // Forms did not validate
           console.info(
             reqIP +
               " did not provide valid form info. Info provided:\n" +
@@ -190,6 +197,7 @@ module.exports = (
         }
       }
     } else if (key === "ABc123$%^" && environment !== "development") {
+      // Dev/Preview key used on Prod
       console.info(
         reqIP +
           " Used dev/Preview key used while not in production. From validation was not started. Email not sent."
@@ -204,6 +212,7 @@ module.exports = (
         "Dev/Preview key used while not in production. From validation was not started. Email not sent."
       );
     } else if (key !== process.env.ACCESS_KEY) {
+      // Key was provided, but does not match
       console.info(
         reqIP +
           " tried to access /api/contact with an invalid access key! Access key provided: " +
@@ -214,6 +223,15 @@ module.exports = (
         .status(403)
         .end("Wrong access key!");
       return resolve("Wrong access key!");
+    } else {
+      console.error(
+        "An unknown error occurred.\nRequest:\n" +
+          req +
+          "Request body:\n" +
+          parsedBody +
+          "Client ip: " +
+          reqIP
+      );
     }
   });
 };
