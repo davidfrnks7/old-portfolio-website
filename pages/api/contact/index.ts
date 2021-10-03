@@ -84,51 +84,57 @@ const mail = (req: NextApiRequest, res: NextApiResponse): Promise<unknown> => {
         };
 
         if (validate()) {
-          const transporterData = {
-            port: 465,
-            host: "smtp.gmail.com",
-            auth: {
-              user: process.env.EMAIL_ACCOUNT,
-              pass: process.env.EMAIL_PASSWORD,
-            },
-            secure: true,
-            requireTLS: true,
-          };
-          const transporter = nodemailer.createTransport(transporterData);
+          if (key === "ABc123$%^") {
+            console.info(
+              "Test/Preview key used. All forms validated. Email not sent."
+            );
+          } else {
+            const transporterData = {
+              port: 465,
+              host: "smtp.gmail.com",
+              auth: {
+                user: process.env.EMAIL_ACCOUNT,
+                pass: process.env.EMAIL_PASSWORD,
+              },
+              secure: true,
+              requireTLS: true,
+            };
+            const transporter = nodemailer.createTransport(transporterData);
 
-          const mailData = {
-            from: `"Portfolio Website" <${process.env.EMAIL}>`,
-            to: `${process.env.EMAIL_ACCOUNT}`,
-            replyTo: `"${name}" <${email}>`,
-            subject: newSubject,
-            text: message,
-            html: `<div>${message}</div>`,
-          };
+            const mailData = {
+              from: `"Portfolio Website" <${process.env.EMAIL}>`,
+              to: `${process.env.EMAIL_ACCOUNT}`,
+              replyTo: `"${name}" <${email}>`,
+              subject: newSubject,
+              text: message,
+              html: `<div>${message}</div>`,
+            };
 
-          transporter.sendMail(mailData, (err, info) => {
-            if (err) {
-              console.warn("Failed to send the form: ", err);
-              res
-                .status(500)
-                .end(
+            transporter.sendMail(mailData, (err, info) => {
+              if (err) {
+                console.warn("Failed to send the form: ", err);
+                res
+                  .status(500)
+                  .end(
+                    "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo."
+                  );
+                return resolve(
                   "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo."
                 );
-              return resolve(
-                "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo."
-              );
-            } else {
-              const parsedTransportInfo = JSON.stringify(info);
+              } else {
+                const parsedTransportInfo = JSON.stringify(info);
 
-              console.info(
-                "Email sent successfully with: " +
-                  parsedBody +
-                  " the response information is: " +
-                  parsedTransportInfo
-              );
-              res.status(200).end("Message sent");
-              return resolve("Message sent");
-            }
-          });
+                console.info(
+                  "Email sent successfully with: " +
+                    parsedBody +
+                    " the response information is: " +
+                    parsedTransportInfo
+                );
+                res.status(200).end("Message sent");
+                return resolve("Message sent");
+              }
+            });
+          }
         } else {
           console.info(
             reqIP +

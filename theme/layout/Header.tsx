@@ -5,10 +5,8 @@ import {
   Box,
   IconButton,
   Flex,
-  Button,
   Menu,
   MenuButton,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
@@ -159,6 +157,7 @@ const Header = (): JSX.Element => {
               d={{ base: "inline-flex", lg: "none" }}
               variant="mobileNav"
               bg={stickyNavbar ? "transparent" : "rgba(255, 255, 255, .15)"}
+              type="button"
             />
             <MobileNav updateOpen={setOpen} />
           </Menu>
