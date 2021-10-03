@@ -115,16 +115,16 @@ module.exports = (
           } else if (key === "ABc123$%^" && environment !== "development") {
             console.warn(
               reqIP +
-                " Used dev/Preview key used while not in production. Form validation was started. Email not sent."
+                " Used dev/Preview key used while not in production. Form validation was started!! Email not sent."
             );
             res
               .setHeader("Content-Type", "text/plain")
               .status(202)
               .end(
-                "Dev/Preview key used. This is not allowed in production mode."
+                "Dev/Preview key used. This is not allowed in production mode. Your IP Address has been logged! FVS"
               );
             return resolve(
-              "Dev/Preview key used while not in production. Form validation was started. Email not sent."
+              "Dev/Preview key used while not in production. From validation started!! Email not sent."
             );
           } else {
             const transporterData = {
@@ -186,9 +186,7 @@ module.exports = (
           res
             .setHeader("Content-Type", "text/plain")
             .status(400)
-            .end(
-              "Invalid form data. Please make sure all fields are filled out."
-            );
+            .end("Invalid form data. Please check that all fields are valid.");
         }
       }
     } else if (key === "ABc123$%^" && environment !== "development") {
@@ -199,7 +197,9 @@ module.exports = (
       res
         .setHeader("Content-Type", "text/plain")
         .status(202)
-        .end("Dev/Preview key used. This is not allowed in production mode.");
+        .end(
+          "Dev/Preview key used. This is not allowed in production mode. Your IP Address was logged. FVNS"
+        );
       return resolve(
         "Dev/Preview key used while not in production. From validation was not started. Email not sent."
       );
