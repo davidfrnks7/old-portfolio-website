@@ -44,7 +44,7 @@ const Footer = (): JSX.Element => {
         h="auto"
         w="auto"
         py={12}
-        spacing={4}
+        spacing={5}
         justifyItems="center"
         justifyContent="center"
       >

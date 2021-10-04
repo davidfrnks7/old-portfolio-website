@@ -38,7 +38,7 @@ const buttonStyles = {
     }),
     project: (props: Dict<never> | StyleFunctionProps) => ({
       bg: "transparent",
-      fontSize: "lg",
+      fontSize: "md",
       py: 2,
       px: 4,
       boxShadow:
@@ -89,7 +89,7 @@ const buttonStyles = {
       color: "rgba(0, 134, 255, 0.6)",
       boxShadow:
         "rgba(0, 134, 255, 0.05) 0px 0px 15px, rgba(0, 134, 255, 0.1) 0px 0px 3px 1px",
-      border: "rgba(0, 134, 255, 0.15)",
+      border: "1px solid rgba(0, 134, 255, 0.15)",
       _hover: {
         bg: mode(
           whiten("brand.secondary", 20),
@@ -98,6 +98,7 @@ const buttonStyles = {
         boxShadow:
           "rgba(0, 104, 255, 0.5) 0px 0px 15px, rgba(0, 104, 255, 0.3) 0px 0px 3px 1px",
         color: "whiteAlpha.900",
+        border: "1px solid rgba(0, 134, 255, 1)",
       },
     }),
     collapse: (props: Dict<never> | StyleFunctionProps) => ({
@@ -131,7 +132,7 @@ const buttonStyles = {
           )(props),
           boxShadow:
             "rgba(252, 129, 129, .95) 0px 0px 15px, rgba(252, 129, 129, 0.75) 0px 0px 3px 1px",
-          border: "px solid #FC8181",
+          border: "1px solid #FC8181",
         },
       },
     }),
