@@ -111,19 +111,25 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
           </Text>
         </VStack>
       </VStack>
-      <HStack
-        h="auto"
-        w="min-content"
-        spacing={3}
-      >
+      <HStack h="auto" w="min-content" spacing={3}>
         <Link href={project.links.github} rel="noopener" target="_blank">
-          <Button leftIcon={<Icon icon="akar-icons:github-fill" />} variant="project">View Source Code</Button>
+          <Button
+            leftIcon={<Icon icon="akar-icons:github-fill" />}
+            variant="project"
+          >
+            View Source Code
+          </Button>
         </Link>
-        {project.links.website &&
+        {project.links.website && (
           <Link href={project.links.website} rel="noopener" target="_blank">
-            <Button leftIcon={<Icon icon="akar-icons:globe" />} variant="project">View Live</Button>
+            <Button
+              leftIcon={<Icon icon="akar-icons:globe" />}
+              variant="project"
+            >
+              View Live
+            </Button>
           </Link>
-        }
+        )}
       </HStack>
     </VStack>
   );

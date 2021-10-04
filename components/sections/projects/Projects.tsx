@@ -11,14 +11,14 @@ const Projects = (): JSX.Element => {
         Projects
       </Heading>
       <SimpleGrid
-        columns={{ base: 2, lg: 3 }}
+        columns={{ base: 2, xl: 3 }}
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
         d={{ base: "none", md: "grid" }}
         w="100%"
         spacing={8}
-        px={8}
+        px={{ base: 3, md: 8 }}
       >
         {projects.map((project: SingleProject): JSX.Element => {
           return (
@@ -33,7 +33,7 @@ const Projects = (): JSX.Element => {
         justifyContent="center"
         d={{ base: "flex", md: "none" }}
         spacing={10}
-        px="5vw"
+        px={{ base: 3, md: 8 }}
       >
         {projects.map((project: SingleProject): JSX.Element => {
           return (

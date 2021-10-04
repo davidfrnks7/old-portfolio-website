@@ -1,5 +1,5 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { createBreakpoints } from "@chakra-ui/theme-tools";
 import buttons from "./components/buttonStyles";
 
 const config: ThemeConfig = {
@@ -13,7 +13,7 @@ const breakpoints = createBreakpoints({
   lg: "75em",
   xl: "85em",
   "2xl": "100em",
-})
+});
 
 const AppTheme = extendTheme({
   config,

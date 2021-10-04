@@ -6,7 +6,14 @@ import Bio from "./Bio";
 
 const About = (): JSX.Element => {
   return (
-    <Box px={8} py="10vh" id="about" textAlign="center" w="100%" h="auto">
+    <Box
+      px={{ base: 3, md: 8 }}
+      py="10vh"
+      id="about"
+      textAlign="center"
+      w="100%"
+      h="auto"
+    >
       <Link name="about" />
       <Heading as="h3" size="xl" mb={12}>
         About Me
