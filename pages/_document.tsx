@@ -3,6 +3,9 @@ import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 
+const description =
+  "David Franks. A software engineer and web developer proficient in TypeScript, JavaScrip, and React. See more of his skills and experience on this website.";
+
 class Document extends NextDocument {
   render(): JSX.Element {
     return (
@@ -12,10 +15,7 @@ class Document extends NextDocument {
           <link rel="icon" href="/images/favicon.svg" sizes="32x32 192x192" />
           <link rel="apple-touch-icon" href="/images/favicon.svg" />
           <meta property="og:title" content="David's Portfolio Website" />
-          <meta
-            name="og:description"
-            content="A website to list my skills and demonstrate them for potential employers and clients to see."
-          />
+          <meta name="og:description" content={description} />
           <meta property="og:type" content="Skills and Projects" />
           <meta property="og:image" content="/images/davidFImage.jpg" />
           <meta property="og:image:type" content="image/jpeg" />
@@ -26,10 +26,7 @@ class Document extends NextDocument {
           <meta property="og:url" content="https://davidfrnks7.dev" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="title" content="David's Portfolio Website" />
-          <meta
-            name="description"
-            content="A website to list my skills and demonstrate them for potential employers and clients to see."
-          />
+          <meta name="description" content={description} />
           <meta property="type" content="Skills and Projects" />
           <meta property="image" content="/images/davidFImage.jpg" />
           <meta property="image:type" content="image/jpeg" />
