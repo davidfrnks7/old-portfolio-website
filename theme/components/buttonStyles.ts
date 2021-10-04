@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/theme-tools";
 import { Dict } from "@chakra-ui/utils";
 
-export const ButtonStyles = {
+const buttonStyles = {
   // style object for base or default style
   baseStyle: {},
   // styles for different sizes ("sm", "md", "lg")
@@ -156,7 +156,9 @@ export const ButtonStyles = {
         border: "1px solid #0068ff",
       },
     }),
-    // default values for `size` and `variant`
-    defaultProps: {},
   },
+  // default values for `size` and `variant`
+  defaultProps: {},
 };
+
+export default buttonStyles;

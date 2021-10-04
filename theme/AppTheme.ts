@@ -1,5 +1,5 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { ButtonStyles as Button } from "./components/ButtonStyles";
+import buttons from "./components/buttonStyles";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
@@ -20,11 +20,17 @@ const AppTheme = extendTheme({
       footer: "#0097a7",
       footerText: "black",
       content: "#2d3748",
-      background: "#171923",
+    },
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "gray.900",
+      },
     },
   },
   components: {
-    Button,
+    Button: buttons,
   },
 });
 

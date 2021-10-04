@@ -156,6 +156,22 @@ const Contact = (): JSX.Element => {
   // Captcha reset
   const [reset, setReset] = useState<boolean>(false);
 
+  // Field theme
+  const fieldTheme = {
+    bg: "gray.900",
+    borderColor: "white",
+    _placeholder: {
+      color: "white",
+    },
+    _focus: {
+      bg: "#000",
+      color: "#FFF",
+      borderColor: "#63b3ed",
+      boxShadow: "0 0 0 1px #63b3ed",
+      zIndex: "1",
+    },
+  };
+
   return (
     <VStack
       w="100%"
@@ -223,7 +239,7 @@ const Contact = (): JSX.Element => {
                 </Heading>
 
                 <HStack
-                  d={{ base: "none", md: "flex" }}
+                  d={{ base: "none", lg: "flex" }}
                   h="auto"
                   w="100%"
                   alignItems="flex-start"
@@ -256,11 +272,22 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          {...fieldTheme}
                           type="text"
                           isDisabled={form.isSubmitting}
                           {...field}
                           id="name"
                           placeholder="David Franks"
+                          {...(!form.errors.name && form.touched.name
+                            ? {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c",
+                                },
+                              }
+                            : "")}
                         />
                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                       </FormControl>
@@ -293,11 +320,22 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          {...fieldTheme}
                           {...field}
                           type="email"
                           id="email"
                           placeholder="contact@davidfrnks7.dev"
                           isDisabled={form.isSubmitting}
+                          {...(!form.errors.email && form.touched.email
+                            ? {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c",
+                                },
+                              }
+                            : "")}
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
@@ -308,7 +346,7 @@ const Contact = (): JSX.Element => {
                 {/* Not duped components!! Different layouts for responsiveness. */}
 
                 <VStack
-                  d={{ base: "flex", md: "none" }}
+                  d={{ base: "flex", lg: "none" }}
                   h="auto"
                   w="100%"
                   alignItems="flex-start"
@@ -341,11 +379,22 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          {...fieldTheme}
                           type="text"
                           isDisabled={form.isSubmitting}
                           {...field}
                           id="name"
                           placeholder="David Franks"
+                          {...(!form.errors.name && form.touched.name
+                            ? {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c",
+                                },
+                              }
+                            : "")}
                         />
                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                       </FormControl>
@@ -378,11 +427,22 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          {...fieldTheme}
                           {...field}
                           type="email"
                           id="email"
                           placeholder="contact@davidfrnks7.dev"
                           isDisabled={form.isSubmitting}
+                          {...(!form.errors.email && form.touched.email
+                            ? {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c",
+                                },
+                              }
+                            : "")}
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
@@ -419,11 +479,22 @@ const Contact = (): JSX.Element => {
                         )}
                       </HStack>
                       <Input
+                        {...fieldTheme}
                         {...field}
                         type="text"
                         id="subject"
                         placeholder="I am interested in..."
                         isDisabled={form.isSubmitting}
+                        {...(!form.errors.subject && form.touched.subject
+                          ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                              },
+                            }
+                          : "")}
                       />
                       <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
                     </FormControl>
@@ -458,12 +529,23 @@ const Contact = (): JSX.Element => {
                         )}
                       </HStack>
                       <Textarea
+                        {...fieldTheme}
                         {...field}
                         type="text"
                         isDisabled={form.isSubmitting}
                         id="message"
                         rows={4}
-                        placeholder="I like your portfolio website and your list and stills and would like to discuss..."
+                        placeholder="I like your portfolio website and your list of stills. I am contacting you to discuss..."
+                        {...(!form.errors.message && form.touched.message
+                          ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c",
+                              },
+                            }
+                          : "")}
                       />
                       <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                     </FormControl>
