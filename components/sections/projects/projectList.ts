@@ -24,6 +24,8 @@ export const projects: Project[] = [
       "Chakra UI for styling",
       "Formik for form validation",
       "Nodemailer to send forms through email",
+      "RESTful API to receive from data",
+      "Axios to make requests to an API on form submit",
     ],
     deployed: "It was deployed on Vercel and only has a frontend.",
     links: {
@@ -74,6 +76,7 @@ export const projects: Project[] = [
       "Mongoose for transaction with the database",
       "Passport for passwordless authentication",
       "RESTful API for interfacing with the database",
+      "Axios to make requests to the api",
     ],
     expanded: [
       "Added the ability to register a business within the app",
@@ -107,6 +110,7 @@ export const projects: Project[] = [
       "Mongoose for transaction with the database",
       "Passport for passwordless authentication",
       "RESTful API for interfacing with the database",
+      "Axios to make requests to the api",
     ],
     role: [
       "Rendered Google Maps to the app",

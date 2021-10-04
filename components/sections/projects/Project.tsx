@@ -23,9 +23,21 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
   const [showExpanded, setShowExpanded] = useState<boolean>(false);
   const [showRole, setShowRole] = useState<boolean>(false);
 
+  const {
+    name,
+    // date,
+    description,
+    tech,
+    expanded,
+    role,
+    deployed,
+    // logo,
+    links,
+  } = project;
+
   return (
     <VStack
-      key={project.name}
+      key={name}
       boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
       borderRadius="lg"
       border="1px solid white"
@@ -39,7 +51,7 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
     >
       <VStack w="90%" h="auto">
         <Heading mb={2} w="100%" textAlign="center" as="h4" size="md">
-          {project.name}
+          {name}
         </Heading>
         <VStack
           justifyContent="center"
@@ -49,16 +61,16 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
           pb={4}
         >
           <Text mb={2} textAlign="center" w="100%">
-            {project.description}
+            {description}
           </Text>
-          {project.tech && (
+          {tech && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
-                {"The app was build on " + project.tech[0] + " and used:"}
+                {"The app was build on " + tech[0] + " and used:"}
               </Text>
               <Collapse in={showTech}>
                 <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
-                  {project.tech?.slice(1).map((line: string) => (
+                  {tech.slice(1).map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
@@ -68,7 +80,7 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
               </Button>
             </VStack>
           )}
-          {project.expanded && (
+          {expanded && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
                 My team expaned the app by adding the following featured and
@@ -76,7 +88,7 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
               </Text>
               <Collapse in={showExpanded}>
                 <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
-                  {project.expanded.map((line: string) => (
+                  {expanded.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
@@ -89,14 +101,14 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
               </Button>
             </VStack>
           )}
-          {project.role && (
+          {role && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
                 My role in this project was to:
               </Text>
               <Collapse in={showRole}>
                 <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
-                  {project.role?.map((line: string) => (
+                  {role?.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
@@ -107,12 +119,12 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
             </VStack>
           )}
           <Text textAlign="center" w="100%">
-            {project.deployed}
+            {deployed}
           </Text>
         </VStack>
       </VStack>
       <HStack h="auto" w="min-content" spacing={3}>
-        <Link href={project.links.github} rel="noopener" target="_blank">
+        <Link href={links.github} rel="noopener" target="_blank">
           <Button
             leftIcon={<Icon icon="akar-icons:github-fill" />}
             variant="project"
@@ -120,8 +132,8 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
             View Source Code
           </Button>
         </Link>
-        {project.links.website && (
-          <Link href={project.links.website} rel="noopener" target="_blank">
+        {links.website && (
+          <Link href={links.website} rel="noopener" target="_blank">
             <Button
               leftIcon={<Icon icon="akar-icons:globe" />}
               variant="project"
