@@ -7,7 +7,10 @@ export interface Project {
   role?: string[];
   deployed: string;
   logo?: string;
-  link: string;
+  links: {
+    github: string;
+    website?: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -23,7 +26,10 @@ export const projects: Project[] = [
       "Nodemailer to send forms through email",
     ],
     deployed: "It was deployed on Vercel and only has a frontend.",
-    link: "https://github.com/davidfrnks7/portfolio-website",
+    links: {
+      github: "https://github.com/davidfrnks7/portfolio-website",
+      website: "https://davidfrnks7.dev",
+    },
   },
   {
     name: "Plexus Create",
@@ -42,14 +48,17 @@ export const projects: Project[] = [
       "TypeORM for the database transactions",
     ],
     role: [
-      "Setup NextAuth and link the NextAuth tables to a profiles table",
+      "Setup NextAuth and links the NextAuth tables to a profiles table",
       "Create a user flow after first signin to allow users to customize their profile",
-      "Setup Cloudinary and link submissions to front end to allow users to submit custom pictures for their profile or app",
+      "Setup Cloudinary and links submissions to front end to allow users to submit custom pictures for their profile or app",
       "Setup a search feature using regex and added filters for the search",
     ],
     deployed: "It was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
-    link: "https://github.com/davidfrnks7/plexus-create",
+    links: {
+      github: "https://github.com/davidfrnks7/plexus-create",
+      website: "https://www.plexuscreate.com/",
+    },
   },
   {
     name: "Beastie Booze",
@@ -84,7 +93,7 @@ export const projects: Project[] = [
     ],
     deployed:
       "The expanded app was deployed on GCloud (Google Cloud) and used MongoDB for the database.",
-    link: "https://github.com/davidfrnks7/BeastieBooze",
+    links: { github: "https://github.com/davidfrnks7/BeastieBooze" },
   },
   {
     name: "Trailz",
@@ -110,6 +119,6 @@ export const projects: Project[] = [
       "Made the app responsive to screen size",
     ],
     deployed: "This app was not deployed, but used MongoDB for the database.",
-    link: "https://github.com/davidfrnks7/trailz",
+    links: { github: "https://github.com/davidfrnks7/trailz" },
   },
 ];

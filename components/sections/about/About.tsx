@@ -6,7 +6,7 @@ import Bio from "./Bio";
 
 const About = (): JSX.Element => {
   return (
-    <Box py="10vh" id="about" textAlign="center" w="100%" h="auto">
+    <Box px={8} py="10vh" id="about" textAlign="center" w="100%" h="auto">
       <Link name="about" />
       <Heading as="h3" size="xl" mb={12}>
         About Me
@@ -19,7 +19,7 @@ const About = (): JSX.Element => {
         alignContent="center"
         m="auto"
         h="auto"
-        w="97%"
+        w="100%"
         d={{ base: "none", lg: "flex" }}
         bg="brand.content"
         spacing={0}
@@ -41,7 +41,7 @@ const About = (): JSX.Element => {
         alignContent="center"
         m="auto"
         h="auto"
-        w="97%"
+        w="100%"
         d={{ base: "flex", lg: "none" }}
         bg="brand.content"
       >

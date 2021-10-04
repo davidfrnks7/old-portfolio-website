@@ -8,8 +8,10 @@ import {
   Text,
   Collapse,
   Link,
+  HStack,
 } from "@chakra-ui/react";
 import { Project as SingleProject } from "./projectList";
+import { Icon } from "@iconify/react";
 
 interface ProjectProps {
   project: SingleProject;
@@ -109,9 +111,20 @@ const Project = ({ project }: ProjectProps): JSX.Element => {
           </Text>
         </VStack>
       </VStack>
-      <Link href={project.link} rel="noopener" target="_blank">
-        <Button variant="project">View Project</Button>
-      </Link>
+      <HStack
+        h="auto"
+        w="min-content"
+        spacing={3}
+      >
+        <Link href={project.links.github} rel="noopener" target="_blank">
+          <Button leftIcon={<Icon icon="akar-icons:github-fill" />} variant="project">View Source Code</Button>
+        </Link>
+        {project.links.website &&
+          <Link href={project.links.website} rel="noopener" target="_blank">
+            <Button leftIcon={<Icon icon="akar-icons:globe" />} variant="project">View Live</Button>
+          </Link>
+        }
+      </HStack>
     </VStack>
   );
 };

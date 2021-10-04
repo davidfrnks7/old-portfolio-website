@@ -42,7 +42,7 @@ const ContactButtons = (): JSX.Element => {
           />
         </Link>
         <Link href="/#projects">
-          <Button ml="-px" borderRadius="0px 4px 4px 0px">
+          <Button rightIcon={<Icon icon="akar-icons:chevron-down" />} ml="-px" borderRadius="0px 4px 4px 0px">
             View my work
           </Button>
         </Link>
