@@ -8,7 +8,7 @@ import Contact from "../components/sections/contact/Contact";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <Box bg="brand.background" textAlign="center" w="100%" h="auto" pb="10vh">
+    <Box textAlign="center" w="100%" h="auto" pb="10vh">
       <Greeting />
       <About />
       <Skills />

@@ -1,0 +1,17 @@
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(45, 55, 72, 0.5);
+}
+/* Scroll bar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00aec1;
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #2d3748;
+}
