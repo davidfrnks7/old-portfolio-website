@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
-module.exports = (
+const contact = (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<unknown> => {
@@ -235,3 +235,5 @@ module.exports = (
     }
   });
 };
+
+export default contact;
