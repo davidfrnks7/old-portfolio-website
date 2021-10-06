@@ -272,6 +272,7 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          required
                           {...fieldTheme}
                           type="text"
                           isDisabled={form.isSubmitting}
@@ -320,6 +321,7 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          required
                           {...fieldTheme}
                           {...field}
                           type="email"
@@ -379,6 +381,7 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          required
                           {...fieldTheme}
                           type="text"
                           isDisabled={form.isSubmitting}
@@ -427,6 +430,7 @@ const Contact = (): JSX.Element => {
                           )}
                         </HStack>
                         <Input
+                          required
                           {...fieldTheme}
                           {...field}
                           type="email"
@@ -479,6 +483,7 @@ const Contact = (): JSX.Element => {
                         )}
                       </HStack>
                       <Input
+                        required
                         {...fieldTheme}
                         {...field}
                         type="text"
@@ -529,6 +534,7 @@ const Contact = (): JSX.Element => {
                         )}
                       </HStack>
                       <Textarea
+                        required
                         {...fieldTheme}
                         {...field}
                         type="text"
