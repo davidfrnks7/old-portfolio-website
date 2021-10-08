@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "2.5.1",
+  "version": "3.0",
   "private": true,
   "author": {
     "name": "David F",
@@ -14,7 +14,7 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.8",
+    "@chakra-ui/react": "^1.6.9",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@hcaptcha/react-hcaptcha": "^0.3.7",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/nodemailer": "^6.4.4",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
