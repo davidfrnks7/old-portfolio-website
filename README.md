@@ -8,6 +8,15 @@ This app was made to showcase David Franks's personal portfolio and isn't mean t
 
 While it **is not** meant to be a template, I do encourage taking inspiration from the layout for your own site and the codebase for guidance and help.
 
+This app is meant to not only showcase a list of skills and projects David Franks is proficient in and have worked on. but also to demonstrate these skills with a real, live app that potential clients and employers can interact with.
+
+More information to be added:
+
+- Work History
+- Education History & Certifications
+- Access link to a sanitized version of David's most recent resume
+  - Sanitized meaning personal email and phone number removed from the resume
+
 # Technologies
 
 ## TypeScript
