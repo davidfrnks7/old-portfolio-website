@@ -94,6 +94,40 @@ The plugin `upgrade-interactive` is a combination of the `yarn outdated` and `ya
 
 To learn more about the `upgrade-interactive` plugin please read the [official docs](https://classic.yarnpkg.com/lang/en/docs/cli/upgrade-interactive/).
 
+## Environment Variables
+
+_[Learn more about environment variables in Next.js and why it appears I am listing some twice](https://nextjs.org/docs/basic-features/environment-variables)_
+
+All environment variables are in `example.env.*`.
+
+Copy them and remove the `example.` prefix to use them.
+
+- .env
+
+```
+EMAIL_ACCOUNT Authentication email for smtp service (Nodemailer)
+EMAIL_PASSWORD Authentication password for smtp service (Nodemailer)
+EMAIL= Where the email is "from" (Nodemailer)
+ACCESS_KEY= Key to authenticate the api call (To prevent spam use of the contact api.)
+NEXT_PUBLIC_ACCESS_KEY= Keys have to match. This one only shows on the front end.
+```
+
+- .env.development
+
+```
+NEXT_PUBLIC_HCAPTCHA_KEY hCaptca key for development
+
+test key: 10000000-ffff-ffff-ffff-000000000001
+```
+
+- .env.production
+
+```
+NEXT_PUBLIC_HCAPTCHA_KEY hCaptca key for production
+```
+
+Development and production variables overwrite the main env variables. Development keys can be kept in the main env file to be overridden when `yarn start` is used.
+
 ## Development Server
 
 To start the development server run the command
