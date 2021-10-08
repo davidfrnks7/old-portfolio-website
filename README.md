@@ -26,7 +26,7 @@ While it **is not** meant to be a template, I do encourage taking inspiration fr
 
 ## Chakra UI
 
-[![Chakra UI](https://gist.githubusercontent.com/navin-moorthy/d4c5fe7f384a106ba8171eee77b45623/raw/3e4d37340270a38367bfe94dd2f7daea2a0537a2/chakra-ui-logo.svg)](https://chakra-ui.com/)
+[<img src="https://gist.githubusercontent.com/navin-moorthy/d4c5fe7f384a106ba8171eee77b45623/raw/3e4d37340270a38367bfe94dd2f7daea2a0537a2/chakra-ui-logo.svg" height="75px" alt="Chakra UI" >](https://chakra-ui.com/)
 
 > [Chakra UI](https://chakra-ui.com/) is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
 
