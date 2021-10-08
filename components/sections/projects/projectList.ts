@@ -23,6 +23,7 @@ export const projects: Project[] = [
       "Next.js (React.js) in TypeScript",
       "Chakra UI for styling",
       "Formik for form validation",
+      "hCaptcha for bot defence and human validation/detection within the form",
       "Nodemailer to send forms through email",
       "RESTful API to receive from data",
       "Axios to make requests to an API on form submit",
