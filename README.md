@@ -1,12 +1,10 @@
 [![Node.js CI](https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml)
 
-# David Franks Portfolio Website
-
-## [davidfrnks7.dev](https://davidfrnks7.dev/)
+# [David Franks Portfolio Website](https://davidfrnks7.dev/)
 
 ## About
 
-This app was made to not only show a list of skills and projects David is fluent in and have worked on, but to also be a live, interactive demonstration of those skills to potential clients and employers.
+This app is meant to not only showcase a list of skills and projects David Franks is proficient in and have worked on, but also to be a live and interactive demonstration of these skills within as real, live app that potential clients and employers can explore.
 
 More information to be added:
 
@@ -17,9 +15,7 @@ More information to be added:
 
 ## **Your Use of This App and it's Codebase**
 
-While this app **is not** meant to be a template, I do encourage taking inspiration from the layout for your own site and the codebase for guidance and help.
-
-This app is meant to not only showcase a list of skills and projects David Franks is proficient in and have worked on. but also to demonstrate these skills with a real, live app that potential clients and employers can interact with.
+While this app **is not** meant to be used as a template, I do encourage taking inspiration from the layout for your own site and using the codebase for guidance and help in learning the technologies used within it.
 
 # Technologies
 
