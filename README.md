@@ -117,8 +117,8 @@ Copy them and remove the `example.` prefix to use them.
 EMAIL_ACCOUNT Authentication email for smtp service (Nodemailer)
 EMAIL_PASSWORD Authentication password for smtp service (Nodemailer)
 EMAIL= Where the email is "from" (Nodemailer)
-ACCESS_KEY= Key to authenticate the api call (To prevent spam use of the contact api.)
-NEXT_PUBLIC_ACCESS_KEY= Keys have to match. This one only shows on the front end.
+ACCESS_KEY Key to authenticate the api call (To prevent spam use of the contact api.)
+NEXT_PUBLIC_ACCESS_KEY Keys have to match. This one only shows on the front end.
 ```
 
 - .env.development
