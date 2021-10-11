@@ -16,7 +16,7 @@ const Bio = (): JSX.Element => {
       pt={6}
       pb={8}
     >
-      {bio.split("\n").map((line) => (
+      {bio.map((line) => (
         <Text key={line.replace(" ", "-")} w="100%" textAlign="justify">
           {line}
         </Text>
