@@ -16,7 +16,7 @@ const Footer = (): JSX.Element => {
   const lastScroll = useRef<number>(0);
 
   const handleScroll = (): void => {
-    if (window.scrollY >= 900) {
+    if (window.scrollY >= 500) {
       setShowBackToTop(true);
     } else {
       setShowBackToTop(false);
