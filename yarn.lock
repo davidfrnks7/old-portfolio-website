@@ -4702,10 +4702,10 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.6.5":
-  version: 6.6.5
-  resolution: "nodemailer@npm:6.6.5"
-  checksum: 17daaeced44e6cdf53527018986ed090e950448fbef89608220a236e1d3e081e76eb8264edbdf8b7bd5d26f096fb86044576015b5000c59dc83f3712282c46da
+"nodemailer@npm:^6.7.0":
+  version: 6.7.0
+  resolution: "nodemailer@npm:6.7.0"
+  checksum: eebd6e5ac96bc77bd544eec939ef4a88dc60cbd5ef062995cb951141c41cf66db838cfbd7fe8ad2b1c8f8d23c839efb5519fa70e2be5d8e79c14b2459ebe4485
   languageName: node
   linkType: hard
 
@@ -5170,7 +5170,7 @@ fsevents@~2.3.1:
     formik: ^2.2.9
     framer-motion: ^4.1.17
     next: 11.1.2
-    nodemailer: ^6.6.5
+    nodemailer: ^6.7.0
     prettier: ^2.4.1
     react: 17.0.2
     react-dom: 17.0.2
