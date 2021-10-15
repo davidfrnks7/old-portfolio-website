@@ -1,4 +1,6 @@
-[![Node.js CI](https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml)
+<p align="center">
+  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml"><img alt="CI Status Badge" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg" /></a>
+</p>
 
 # [David Franks Portfolio Website](https://davidfrnks7.dev/)
 
