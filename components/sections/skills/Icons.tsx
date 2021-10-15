@@ -21,7 +21,7 @@ const icons: Icons = [
   ],
   [
     "Python",
-    <Icon key="Python" color={iconsColor} icon="akar-icons:python-fill" />
+    <Icon key="Python" color={iconsColor} icon="akar-icons:python-fill" />,
   ],
   [
     "HTML5",

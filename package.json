@@ -14,13 +14,13 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.9",
+    "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@hcaptcha/react-hcaptcha": "^0.3.7",
     "@iconify/react": "^3.0.1",
-    "@types/react": "^17.0.27",
-    "axios": "^0.22.0",
+    "@types/react": "^17.0.30",
+    "axios": "^0.23.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "next": "11.1.2",
@@ -39,6 +39,6 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.4.1",
-    "typescript": "4.4.3"
+    "typescript": "4.4.4"
   }
 }
