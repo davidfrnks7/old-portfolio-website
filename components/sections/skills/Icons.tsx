@@ -20,6 +20,10 @@ const icons: Icons = [
     <Icon key="TypeScript" color={iconsColor} icon="cib:typescript" />,
   ],
   [
+    "Python",
+    <Icon key="Python" color={iconsColor} icon="akar-icons:python-fill" />,
+  ],
+  [
     "HTML5",
     <Icon key="HTML5" color={iconsColor} icon="ant-design:html5-filled" />,
   ],
