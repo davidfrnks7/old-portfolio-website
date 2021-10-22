@@ -1,12 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import {
-  darken,
-  mode,
-  StyleFunctionProps,
-  whiten,
-} from "@chakra-ui/theme-tools";
-import { Dict } from "@chakra-ui/utils";
-
 const fieldsBackground = "gray.800";
 const placeholderColor = "gray.200";
 

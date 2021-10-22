@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { FC, Fragment } from "react";
 import {
   Button,
   Link,
@@ -8,11 +8,11 @@ import {
 } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
-interface NavProps {
+interface MobileNavProps {
   updateOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MobileNav = ({ updateOpen }: NavProps): JSX.Element => {
+const MobileNav: FC<MobileNavProps> = ({ updateOpen }: MobileNavProps) => {
   return (
     <MenuList
       as="nav"
