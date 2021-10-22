@@ -110,16 +110,16 @@ To learn more about the `upgrade-interactive` plugin please read the [official d
 
 _[Learn more about environment variables in Next.js and why it appears I am listing some twice](https://nextjs.org/docs/basic-features/environment-variables)_
 
-All environment variables are in `example.env.*`.
+All environment variables are in files named `example.env.*`.
 
-Copy them and remove the `example.` prefix to use them.
+Copy the files and remove the `example.` prefix to use them.
 
 - .env
 
 ```
 EMAIL_ACCOUNT Authentication email for smtp service (Nodemailer)
 EMAIL_PASSWORD Authentication password for smtp service (Nodemailer)
-EMAIL= Where the email is "from" (Nodemailer)
+EMAIL Where the email is "from" (Nodemailer)
 ACCESS_KEY Key to authenticate the api call (To prevent spam use of the contact api.)
 NEXT_PUBLIC_ACCESS_KEY Keys have to match. This one only shows on the front end.
 ```
