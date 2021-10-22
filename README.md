@@ -178,7 +178,7 @@ yarn run
 
 ## Prettier
 
-This app has the prettier code formatter built in. Run `yarn pretty` to have all code update to follow the same structure and format. [More about Prettier](https://prettier.io/)
+This app has the prettier code formatter built in. [More about Prettier](https://prettier.io/)
 
 To have Prettier update the structure of the codebase run the following command:
 
@@ -197,5 +197,3 @@ To lint the codebase run the following command:
 ```
 yarn lint
 ```
-
-Automatic fixing of code with ESLint has not been setup for the app.
