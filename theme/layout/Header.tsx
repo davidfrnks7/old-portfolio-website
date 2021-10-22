@@ -97,9 +97,7 @@ const Header = (): JSX.Element => {
           : "transparent"
       }
       d={
-        scrollDirection === "down" || scrollDirection === "top"
-          ? "block"
-          : "none"
+        scrollDirection === "up" || scrollDirection === "top" ? "block" : "none"
       }
       transition=".5s ease"
       borderRadius="0px 0px 10px 10px"
