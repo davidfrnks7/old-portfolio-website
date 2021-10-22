@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import {
   VStack,
   Heading,
@@ -17,7 +17,7 @@ interface ProjectProps {
   project: SingleProject;
 }
 
-const Project = ({ project }: ProjectProps): JSX.Element => {
+const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
   // Collapse sections
   const [showTech, setShowTech] = useState<boolean>(false);
   const [showExpanded, setShowExpanded] = useState<boolean>(false);

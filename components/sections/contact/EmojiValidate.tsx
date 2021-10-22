@@ -1,10 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 
 interface EmojiValidateProps {
   type: string;
 }
 
-const EmojiValidate = ({ type }: EmojiValidateProps): JSX.Element => {
+const EmojiValidate: FC<EmojiValidateProps> = ({
+  type,
+}: EmojiValidateProps) => {
   interface Validations {
     [key: string]: JSX.Element;
   }

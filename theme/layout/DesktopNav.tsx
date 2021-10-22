@@ -1,12 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import { Button, HStack, Link } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
-interface NavProps {
+interface DesktopNavProps {
   sticky?: boolean;
 }
 
-const DesktopNav = ({ sticky }: NavProps): JSX.Element => {
+const DesktopNav: FC<DesktopNavProps> = ({ sticky }: DesktopNavProps) => {
   return (
     <HStack
       as="nav"
