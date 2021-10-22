@@ -181,7 +181,7 @@ const Contact = (): JSX.Element => {
       py="10vh"
       spacing={6}
       id="contact"
-      px={{ base: 3, md: 8, xl:"10%" }}
+      px={{ base: 3, md: 8, "2xl": "10%" }}
     >
       <Link name="contact" />
       <VStack

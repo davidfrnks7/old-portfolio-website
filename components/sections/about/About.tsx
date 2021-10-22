@@ -7,7 +7,7 @@ import Bio from "./Bio";
 const About = (): JSX.Element => {
   return (
     <Box
-      px={{ base: 3, md: 8, xl:"10%" }}
+      px={{ base: 3, md: 8, "2xl": "10%" }}
       py="10vh"
       id="about"
       textAlign="center"

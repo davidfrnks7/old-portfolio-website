@@ -12,7 +12,7 @@ const Skills = (): JSX.Element => {
       textAlign="center"
       w="100%"
       h="auto"
-      px={{xl:"10%"}}
+      px={{ "2xl": "10%" }}
     >
       <Link name="skills" />
       <Heading as="h3" size="xl" mb="10vh">
