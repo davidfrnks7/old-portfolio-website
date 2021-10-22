@@ -18,7 +18,7 @@ const Projects = (): JSX.Element => {
         d={{ base: "none", md: "grid" }}
         w="100%"
         spacing={8}
-        px={{ base: 3, md: 8 }}
+        px={{ base: 3, md: 8, xl:"10%" }}
       >
         {projects.map((project: SingleProject): JSX.Element => {
           return (
