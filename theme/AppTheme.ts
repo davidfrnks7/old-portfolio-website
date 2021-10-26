@@ -29,6 +29,7 @@ const AppTheme = extendTheme({
       footer: "#0097a7",
       footerText: "black",
       content: "#2d3748",
+      primaryTooltip: "rgba(255, 255, 255, .15)",
     },
   },
   styles: {
