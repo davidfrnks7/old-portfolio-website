@@ -29,7 +29,7 @@ const ContactButtons = (): JSX.Element => {
           label="Go to email form"
           openDelay={200}
           hasArrow
-          bg="brand.primaryTooltip"
+          bg="brand.secondary"
           color="whiteAlpha"
           fontSize="md"
         >
