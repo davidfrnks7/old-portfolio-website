@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { HStack, VStack } from "@chakra-ui/react";
-import ContactButtons from "./ContactButtont";
+import ContactButtons from "./ContactButtons";
 
 const CallToAction = (): JSX.Element => {
   return (
