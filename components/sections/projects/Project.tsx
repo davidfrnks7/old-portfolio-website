@@ -69,7 +69,13 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 {"The app was build on " + tech[0] + " and used:"}
               </Text>
               <Collapse in={showTech}>
-                <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
+                <UnorderedList
+                  m={0}
+                  spacing={2}
+                  w="100%"
+                  h="auto"
+                  textAlign="center"
+                >
                   {tech.slice(1).map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
@@ -87,7 +93,13 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 functionality:
               </Text>
               <Collapse in={showExpanded}>
-                <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
+                <UnorderedList
+                  m={0}
+                  spacing={2}
+                  w="100%"
+                  h="auto"
+                  textAlign="center"
+                >
                   {expanded.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
@@ -107,7 +119,13 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 My role in this project was to:
               </Text>
               <Collapse in={showRole}>
-                <UnorderedList spacing={2} w="100%" h="auto" textAlign="center">
+                <UnorderedList
+                  m={0}
+                  spacing={2}
+                  w="100%"
+                  h="auto"
+                  textAlign="center"
+                >
                   {role?.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
