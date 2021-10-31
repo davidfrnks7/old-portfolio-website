@@ -49,7 +49,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
       w="100%"
       bg="brand.content"
     >
-      <VStack w="90%" h="auto">
+      <VStack w="100%" px="2.5%" h="auto">
         <Heading mb={2} w="100%" textAlign="center" as="h4" size="md">
           {name}
         </Heading>
