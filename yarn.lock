@@ -1179,13 +1179,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hcaptcha/react-hcaptcha@npm:^0.3.7":
-  version: 0.3.7
-  resolution: "@hcaptcha/react-hcaptcha@npm:0.3.7"
+"@hcaptcha/react-hcaptcha@npm:^0.3.8":
+  version: 0.3.8
+  resolution: "@hcaptcha/react-hcaptcha@npm:0.3.8"
   peerDependencies:
     react: ">= 16.3.0"
     react-dom: ">= 16.3.0"
-  checksum: 4a0ce88dd7a719cae2dc84255466a8636540287c2208f8fe46003a67c72f65509cabf8452cad73982a514cfce2e475d209a3e67cd41a559465f185fb4176a92f
+  checksum: ae18f6bf799705e1dd595240d549913d8117d22c6cb0f8e584993d45f223bc875d9bc991069d5ab311d0f570c3c9d74cf8ea8faf4c25b57822bd8f3793b19410
   languageName: node
   linkType: hard
 
@@ -1486,14 +1486,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.31":
-  version: 17.0.31
-  resolution: "@types/react@npm:17.0.31"
+"@types/react@npm:^17.0.33":
+  version: 17.0.33
+  resolution: "@types/react@npm:17.0.33"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: c2ea547b3e3398f53971908ae34bdb1ca1f2d8f1cf57a6f21c37b2bb77c2e625b5349de69b3c573f969056362eddac4bbac075d5d470716feef4161e26692b83
+  checksum: 5f53f3dae034229ff1eccb5de1c16d046696e883f8eae81b86e95c532798e655015e4edff8a6c9ec8f1c0ef12bb60dec43622d06256ba33ba6069e67a74b8d4e
   languageName: node
   linkType: hard
 
@@ -1955,12 +1955,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "axios@npm:0.23.0"
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
   dependencies:
     follow-redirects: ^1.14.4
-  checksum: 879f61022bd825da2a7ebb72410bc528683ba54c140436baa0b924b7cab02ec0919fe64a04a546f482a75f5fd570b77884f9826764a95f2fd88265e61dcb70db
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
   languageName: node
   linkType: hard
 
@@ -5179,12 +5179,12 @@ fsevents@~2.3.1:
     "@chakra-ui/react": ^1.6.10
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@hcaptcha/react-hcaptcha": ^0.3.7
+    "@hcaptcha/react-hcaptcha": ^0.3.8
     "@iconify/react": ^3.0.1
     "@types/nodemailer": ^6.4.4
-    "@types/react": ^17.0.31
+    "@types/react": ^17.0.33
     "@typescript-eslint/eslint-plugin": ^4.33.0
-    axios: ^0.23.0
+    axios: ^0.24.0
     eslint: 7.32.0
     eslint-config-next: 11.1.2
     eslint-config-prettier: ^8.3.0
