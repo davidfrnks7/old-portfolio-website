@@ -10,9 +10,9 @@ const Bio = (): JSX.Element => {
       spacing={4}
       h="auto"
       w="100%"
-      px={{ base: 6 }}
-      pr={{ md: 6 }}
-      pl={{ md: 0 }}
+      px={{ base: 6, lg: 0 }}
+      pr={{ lg: 6 }}
+      pl={{ lg: 0 }}
       pt={6}
       pb={8}
     >
