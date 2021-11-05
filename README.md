@@ -130,6 +130,8 @@ NEXT_PUBLIC_ACCESS_KEY Keys have to match. This one only shows on the front end.
 NEXT_PUBLIC_HCAPTCHA_KEY hCaptca key for development
 
 test key: 10000000-ffff-ffff-ffff-000000000001
+
+ACCESS_KEY The key to be used for developments builds. Using this key will allow the test of contact form, api route, and validation. It will not send any emails through nodemailer.
 ```
 
 - .env.production
