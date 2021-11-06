@@ -134,6 +134,9 @@ test key: 10000000-ffff-ffff-ffff-000000000001
 ACCESS_KEY The key to be used for developments builds. Using this key will allow the test of contact form, api route, and validation. It will not send any emails through nodemailer.
 ```
 
+**If you choose to replace the current one with your own then please update the email function in:**
+`pages/api/contact/index.ts`
+
 - .env.production
 
 ```
