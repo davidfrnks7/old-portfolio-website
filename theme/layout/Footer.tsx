@@ -7,11 +7,11 @@ import {
   Link,
   Image,
   Button,
-  BoxProps
+  BoxProps,
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import BackToTopButton from "./BackToTopButton";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export const MotionBox = motion<BoxProps>(Box);
 
@@ -90,10 +90,7 @@ const Footer = (): JSX.Element => {
           </Link>
         </HStack>
         <VStack spacing={2}>
-          <MotionBox
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <MotionBox whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <Link
               href="https://github.com/davidfrnks7/portfolio-website"
               target="_blank"
