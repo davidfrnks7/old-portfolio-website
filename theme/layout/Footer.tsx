@@ -7,9 +7,13 @@ import {
   Link,
   Image,
   Button,
+  BoxProps
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import BackToTopButton from "./BackToTopButton";
+import { motion } from 'framer-motion';
+
+export const MotionBox = motion<BoxProps>(Box);
 
 const Footer = (): JSX.Element => {
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
@@ -86,19 +90,24 @@ const Footer = (): JSX.Element => {
           </Link>
         </HStack>
         <VStack spacing={2}>
-          <Link
-            href="https://github.com/davidfrnks7/portfolio-website"
-            target="_blank"
-            rel="noopener"
+          <MotionBox
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <Button
-              color="whiteAlpha"
-              variant="credits"
-              leftIcon={<Icon icon="akar-icons:github-fill" />}
+            <Link
+              href="https://github.com/davidfrnks7/portfolio-website"
+              target="_blank"
+              rel="noopener"
             >
-              View Codebase
-            </Button>
-          </Link>
+              <Button
+                color="whiteAlpha"
+                variant="credits"
+                leftIcon={<Icon icon="akar-icons:github-fill" />}
+              >
+                View Codebase
+              </Button>
+            </Link>
+          </MotionBox>
           <Text color="brand.footerText" fontSize="xs">
             <span role="img" aria-label="copyright">
               ©

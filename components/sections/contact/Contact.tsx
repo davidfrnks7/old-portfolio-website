@@ -10,12 +10,17 @@ import {
   Heading,
   Text,
   Link,
+  Box,
+  BoxProps,
 } from "@chakra-ui/react";
 import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
 import axios from "axios";
 import Captcha from "./Captcha";
+import { motion } from "framer-motion";
+
+export const MotionBox = motion<BoxProps>(Box);
 
 const Contact = (): JSX.Element => {
   const environment = process.env.NODE_ENV || "development";
@@ -579,15 +584,20 @@ const Contact = (): JSX.Element => {
                       shouldReset={reset}
                       updateReset={setReset}
                     />
-                    <Button
-                      variant="submit"
-                      isDisabled={!valid}
-                      background={valid ? "brand.valid" : "brand.danger"}
-                      isLoading={props.isSubmitting}
-                      type="submit"
+                    <MotionBox
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
                     >
-                      Submit
-                    </Button>
+                      <Button
+                        variant="submit"
+                        isDisabled={!valid}
+                        background={valid ? "brand.valid" : "brand.danger"}
+                        isLoading={props.isSubmitting}
+                        type="submit"
+                      >
+                        Submit
+                      </Button>
+                    </MotionBox>
                   </VStack>
                 </VStack>
               </VStack>
