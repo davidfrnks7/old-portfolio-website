@@ -32,6 +32,9 @@ const MobileNav: FC<MobileNavProps> = ({ updateOpen }: MobileNavProps) => {
             w="auto"
             h="auto"
             p={0}
+            _hover={{
+              backgroundColor: "none",
+            }}
           >
             <Link onClick={() => updateOpen(false)} href={navItem[1]}>
               {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
