@@ -20,15 +20,13 @@ const BackToTopButton: FC<BackToTopButtonProps> = ({
       right={{ base: "1.25rem", sm: "2rem", md: "3rem" }}
     >
       <Link href="/#top">
-        <MotionBox
-          whileTap={{ scale: 0.9 }}
-        >
+        <MotionBox whileTap={{ scale: 0.9 }}>
           <Button variant="backToTop">
             <Icon icon="akar-icons:chevron-up" />
           </Button>
         </MotionBox>
       </Link>
-    </Flex >
+    </Flex>
   );
 };
 
