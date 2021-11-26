@@ -32,7 +32,7 @@ const MobileNav: FC<MobileNavProps> = ({ updateOpen }: MobileNavProps) => {
             w="auto"
             h="auto"
             p={0}
-            _hover={{
+            _focus={{
               backgroundColor: "none",
             }}
           >
