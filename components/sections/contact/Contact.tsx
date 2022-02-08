@@ -9,7 +9,6 @@ import {
   Textarea,
   Heading,
   Text,
-  Link,
   Box,
   BoxProps
 } from "@chakra-ui/react";
@@ -188,7 +187,6 @@ const Contact = (): JSX.Element => {
       id="contact"
       px={{ base: 3, md: 8, "2xl": "10%" }}
     >
-      <Link name="contact" />
       <VStack
         boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
         borderRadius="2xl"
@@ -542,7 +540,6 @@ const Contact = (): JSX.Element => {
                         required
                         {...fieldTheme}
                         {...field}
-                        type="text"
                         isDisabled={form.isSubmitting}
                         id="message"
                         rows={4}
