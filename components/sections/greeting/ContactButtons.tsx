@@ -4,7 +4,7 @@ import {
   Link,
   Button,
   IconButton,
-  Tooltip,
+  Tooltip
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 

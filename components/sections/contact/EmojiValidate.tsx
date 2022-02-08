@@ -5,7 +5,7 @@ interface EmojiValidateProps {
 }
 
 const EmojiValidate: FC<EmojiValidateProps> = ({
-  type,
+  type
 }: EmojiValidateProps) => {
   interface Validations {
     [key: string]: JSX.Element;
@@ -26,7 +26,7 @@ const EmojiValidate: FC<EmojiValidateProps> = ({
       <span role="img" aria-label="Check">
         ✔
       </span>
-    ),
+    )
   };
 
   return validations[`${type}`];

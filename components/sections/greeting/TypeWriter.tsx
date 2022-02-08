@@ -16,11 +16,11 @@ const TypeWriter = (): JSX.Element => {
             "Dedicated",
             "Reliable",
             "Motivated",
-            "Gamer",
+            "Gamer"
           ],
           autoStart: true,
           loop: true,
-          cursor: "_",
+          cursor: "_"
         }}
       />
     </Heading>

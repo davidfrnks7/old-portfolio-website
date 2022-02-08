@@ -73,7 +73,7 @@ const contact = (
         const validFields: Validate = {
           name: false,
           email: false,
-          subject: false,
+          subject: false
         };
 
         if (!/[\d]/gi.test(name)) {
@@ -137,10 +137,10 @@ const contact = (
               host: "smtp.gmail.com",
               auth: {
                 user: process.env.EMAIL_ACCOUNT,
-                pass: process.env.EMAIL_PASSWORD,
+                pass: process.env.EMAIL_PASSWORD
               },
               secure: true,
-              requireTLS: true,
+              requireTLS: true
             };
             const transporter = nodemailer.createTransport(transporterData);
 
@@ -150,7 +150,7 @@ const contact = (
               replyTo: `"${name}" <${email}>`,
               subject: newSubject,
               text: message,
-              html: `<div>${message}</div>`,
+              html: `<div>${message}</div>`
             };
 
             transporter.sendMail(mailData, (err, info) => {
