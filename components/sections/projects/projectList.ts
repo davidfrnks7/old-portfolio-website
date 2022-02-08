@@ -26,13 +26,13 @@ export const projects: Project[] = [
       "hCaptcha for bot defence and human validation/detection within the form",
       "Nodemailer to send forms through email",
       "RESTful API to receive from data",
-      "Axios to make requests to an API on form submit",
+      "Axios to make requests to an API on form submit"
     ],
     deployed: "It was deployed on Vercel and only has a frontend.",
     links: {
       github: "https://github.com/davidfrnks7/portfolio-website",
-      website: "https://davidfrnks7.dev",
-    },
+      website: "https://davidfrnks7.dev"
+    }
   },
   {
     name: "Plexus Create",
@@ -48,20 +48,20 @@ export const projects: Project[] = [
       "Cloudinary for user submitted pictures",
       "GraphQL for interfacing and transactions with the database",
       "NextAuth for passwordless authentication",
-      "TypeORM for the database transactions",
+      "TypeORM for the database transactions"
     ],
     role: [
       "Setup NextAuth and links the NextAuth tables to a profiles table",
       "Create a user flow after first signin to allow users to customize their profile",
       "Setup Cloudinary and links submissions to front end to allow users to submit custom pictures for their profile or app",
-      "Setup a search feature using regex and added filters for the search",
+      "Setup a search feature using regex and added filters for the search"
     ],
     deployed: "It was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
     links: {
       github: "https://github.com/davidfrnks7/plexus-create",
-      website: "https://www.plexuscreate.com/",
-    },
+      website: "https://www.plexuscreate.com/"
+    }
   },
   {
     name: "Beastie Booze",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
       "Mongoose for transaction with the database",
       "Passport for passwordless authentication",
       "RESTful API for interfacing with the database",
-      "Axios to make requests to the api",
+      "Axios to make requests to the api"
     ],
     expanded: [
       "Added the ability to register a business within the app",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
       "See which business sells which drink on their menu",
       "Search for businesses",
       "Implemented a simple point of sales system that tracked the volume of drinks sold",
-      "Keep track of sales by quantity",
+      "Keep track of sales by quantity"
     ],
     role: [
       "Create a way to register a business",
@@ -93,11 +93,11 @@ export const projects: Project[] = [
       "Used moment.js to filter and sort transactions by date",
       "Totalled the sorted transaction",
       "Used the totalled transactions to display statistics on a bar chart using chart.js",
-      "Separated charts and stats by weekly and monthly basis",
+      "Separated charts and stats by weekly and monthly basis"
     ],
     deployed:
       "The expanded app was deployed on GCloud (Google Cloud) and used MongoDB for the database.",
-    links: { github: "https://github.com/davidfrnks7/BeastieBooze" },
+    links: { github: "https://github.com/davidfrnks7/BeastieBooze" }
   },
   {
     name: "Trailz",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
       "Mongoose for transaction with the database",
       "Passport for passwordless authentication",
       "RESTful API for interfacing with the database",
-      "Axios to make requests to the api",
+      "Axios to make requests to the api"
     ],
     role: [
       "Rendered Google Maps to the app",
@@ -121,9 +121,9 @@ export const projects: Project[] = [
       "Added the ability for users to drop custom pins onto the map",
       "Allowed users to add the custom pins to their favorites and create events at them",
       "Rendered custom icons on the map to represent if the type of event planned at parks and trails",
-      "Made the app responsive to screen size",
+      "Made the app responsive to screen size"
     ],
     deployed: "This app was not deployed, but used MongoDB for the database.",
-    links: { github: "https://github.com/davidfrnks7/trailz" },
-  },
+    links: { github: "https://github.com/davidfrnks7/trailz" }
+  }
 ];

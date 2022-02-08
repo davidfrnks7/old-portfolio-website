@@ -1,12 +1,11 @@
 import React from "react";
-import { Box, Heading, Link, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
 
 const Projects = (): JSX.Element => {
   return (
     <Box py="10vh" id="skills" textAlign="center" w="100%" h="auto">
-      <Link name="projects" />
       <Heading as="h3" size="xl" mb={12}>
         Projects
       </Heading>

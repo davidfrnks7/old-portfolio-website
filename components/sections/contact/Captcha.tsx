@@ -11,7 +11,7 @@ interface CaptchaProps {
 const Captcha = ({
   updateToken,
   shouldReset,
-  updateReset,
+  updateReset
 }: CaptchaProps): JSX.Element => {
   const captchaRef = useRef<HCaptcha>(null);
 

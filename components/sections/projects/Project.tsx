@@ -10,7 +10,7 @@ import {
   Link,
   HStack,
   Box,
-  BoxProps,
+  BoxProps
 } from "@chakra-ui/react";
 import { Project as SingleProject } from "./projectList";
 import { Icon } from "@iconify/react";
@@ -37,7 +37,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
     role,
     deployed,
     // logo,
-    links,
+    links
   } = project;
 
   return (

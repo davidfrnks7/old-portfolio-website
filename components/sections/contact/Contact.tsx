@@ -9,9 +9,8 @@ import {
   Textarea,
   Heading,
   Text,
-  Link,
   Box,
-  BoxProps,
+  BoxProps
 } from "@chakra-ui/react";
 import { Field, Form, Formik, FieldProps } from "formik";
 import React, { useEffect, useState } from "react";
@@ -166,15 +165,15 @@ const Contact = (): JSX.Element => {
     bg: "gray.900",
     borderColor: "white",
     _placeholder: {
-      color: "white",
+      color: "white"
     },
     _focus: {
       bg: "#000",
       color: "#FFF",
       borderColor: "#63b3ed",
       boxShadow: "0 0 0 1px #63b3ed",
-      zIndex: "1",
-    },
+      zIndex: "1"
+    }
   };
 
   return (
@@ -188,7 +187,6 @@ const Contact = (): JSX.Element => {
       id="contact"
       px={{ base: 3, md: 8, "2xl": "10%" }}
     >
-      <Link name="contact" />
       <VStack
         boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
         borderRadius="2xl"
@@ -207,7 +205,7 @@ const Contact = (): JSX.Element => {
             name: "",
             email: "",
             subject: "",
-            message: "",
+            message: ""
           }}
           onSubmit={(data, actions) => {
             handleSubmit(data)
@@ -218,8 +216,8 @@ const Contact = (): JSX.Element => {
                     name: "",
                     email: "",
                     subject: "",
-                    message: "",
-                  },
+                    message: ""
+                  }
                 });
                 setReset(true);
               })
@@ -234,7 +232,7 @@ const Contact = (): JSX.Element => {
             <Form
               style={{
                 width: "90%",
-                height: "100%",
+                height: "100%"
               }}
             >
               <VStack h="auto" w="100%" spacing={6}>
@@ -290,8 +288,8 @@ const Contact = (): JSX.Element => {
                                 boxShadow: "0 0 0 1px #00c17c",
                                 _hover: {
                                   borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c",
-                                },
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
                             : "")}
                         />
@@ -339,8 +337,8 @@ const Contact = (): JSX.Element => {
                                 boxShadow: "0 0 0 1px #00c17c",
                                 _hover: {
                                   borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c",
-                                },
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
                             : "")}
                         />
@@ -399,8 +397,8 @@ const Contact = (): JSX.Element => {
                                 boxShadow: "0 0 0 1px #00c17c",
                                 _hover: {
                                   borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c",
-                                },
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
                             : "")}
                         />
@@ -448,8 +446,8 @@ const Contact = (): JSX.Element => {
                                 boxShadow: "0 0 0 1px #00c17c",
                                 _hover: {
                                   borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c",
-                                },
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
                             : "")}
                         />
@@ -501,8 +499,8 @@ const Contact = (): JSX.Element => {
                               boxShadow: "0 0 0 1px #00c17c",
                               _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                              },
+                                boxShadow: "0 0 0 1px #00c17c"
+                              }
                             }
                           : "")}
                       />
@@ -542,7 +540,6 @@ const Contact = (): JSX.Element => {
                         required
                         {...fieldTheme}
                         {...field}
-                        type="text"
                         isDisabled={form.isSubmitting}
                         id="message"
                         rows={4}
@@ -553,8 +550,8 @@ const Contact = (): JSX.Element => {
                               boxShadow: "0 0 0 1px #00c17c",
                               _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                              },
+                                boxShadow: "0 0 0 1px #00c17c"
+                              }
                             }
                           : "")}
                       />
