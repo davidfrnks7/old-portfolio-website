@@ -6,7 +6,7 @@ import {
   IconButton,
   Flex,
   Menu,
-  MenuButton,
+  MenuButton
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
@@ -63,7 +63,7 @@ const Header = (): JSX.Element => {
     const iconType = {
       default: <Icon icon="bx:bx-menu-alt-right" />,
       hover: <Icon icon="bx:bx-menu" />,
-      open: <Icon icon="bx:bx-x" />,
+      open: <Icon icon="bx:bx-x" />
     };
 
     if (open) {
@@ -107,7 +107,7 @@ const Header = (): JSX.Element => {
           ? "none"
           : stickyNavbar
           ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
-          : "none",
+          : "none"
       }}
       h={open ? "125px" : "auto"}
     >
