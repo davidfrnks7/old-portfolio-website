@@ -4,7 +4,7 @@ import buttons from "./components/buttonStyles";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
-  useSystemColorMode: false,
+  useSystemColorMode: false
 };
 
 const breakpoints = createBreakpoints({
@@ -12,7 +12,7 @@ const breakpoints = createBreakpoints({
   md: "48em",
   lg: "75em",
   xl: "85em",
-  "2xl": "100em",
+  "2xl": "100em"
 });
 
 const AppTheme = extendTheme({
@@ -28,20 +28,20 @@ const AppTheme = extendTheme({
       valid: "#00c17c",
       footer: "#0097a7",
       footerText: "black",
-      content: "#2d3748",
-    },
+      content: "#2d3748"
+    }
   },
   styles: {
     global: {
       body: {
-        bg: "gray.900",
-      },
-    },
+        bg: "gray.900"
+      }
+    }
   },
   components: {
-    Button: buttons,
+    Button: buttons
   },
-  breakpoints,
+  breakpoints
 });
 
 export default AppTheme;
