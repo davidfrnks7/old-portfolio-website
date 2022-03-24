@@ -6,7 +6,7 @@ const navItems: NavItems = [
   ["About", "#about"],
   ["Skills", "#skills"],
   ["Projects", "#projects"],
-  ["Contact", "#contact"],
+  ["Contact", "#contact"]
 ];
 
 export default navItems;

@@ -9,9 +9,14 @@ import {
   Collapse,
   Link,
   HStack,
+  Box,
+  BoxProps
 } from "@chakra-ui/react";
 import { Project as SingleProject } from "./projectList";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
+export const MotionBox = motion<BoxProps>(Box);
 
 interface ProjectProps {
   project: SingleProject;
@@ -32,7 +37,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
     role,
     deployed,
     // logo,
-    links,
+    links
   } = project;
 
   return (
@@ -142,23 +147,27 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
         </VStack>
       </VStack>
       <HStack h="auto" w="min-content" spacing={3}>
-        <Link href={links.github} rel="noopener" target="_blank">
-          <Button
-            leftIcon={<Icon icon="akar-icons:github-fill" />}
-            variant="project"
-          >
-            View Source Code
-          </Button>
-        </Link>
-        {links.website && (
-          <Link href={links.website} rel="noopener" target="_blank">
+        <MotionBox whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <Link href={links.github} rel="noopener" target="_blank">
             <Button
-              leftIcon={<Icon icon="akar-icons:globe" />}
+              leftIcon={<Icon icon="akar-icons:github-fill" />}
               variant="project"
             >
-              View Live
+              View Source Code
             </Button>
           </Link>
+        </MotionBox>
+        {links.website && (
+          <MotionBox whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Link href={links.website} rel="noopener" target="_blank">
+              <Button
+                leftIcon={<Icon icon="akar-icons:globe" />}
+                variant="project"
+              >
+                View Live
+              </Button>
+            </Link>
+          </MotionBox>
         )}
       </HStack>
     </VStack>

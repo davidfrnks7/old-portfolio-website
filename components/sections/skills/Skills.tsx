@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Box, SimpleGrid, Link } from "@chakra-ui/react";
+import { Heading, Box, SimpleGrid } from "@chakra-ui/react";
 import icons, { IconTuple } from "./Icons";
 
 const Skills = (): JSX.Element => {
@@ -14,7 +14,6 @@ const Skills = (): JSX.Element => {
       h="auto"
       px={{ "2xl": "10%" }}
     >
-      <Link name="skills" />
       <Heading as="h3" size="xl" mb="10vh">
         Skills
       </Heading>

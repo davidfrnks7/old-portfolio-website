@@ -1,13 +1,16 @@
 import React, { FC } from "react";
-import { Button, Flex, Link } from "@chakra-ui/react";
+import { Button, Flex, Link, Box, BoxProps } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
+export const MotionBox = motion<BoxProps>(Box);
 
 interface BackToTopButtonProps {
   show: boolean;
 }
 
 const BackToTopButton: FC<BackToTopButtonProps> = ({
-  show,
+  show
 }: BackToTopButtonProps) => {
   return (
     <Flex
@@ -17,9 +20,11 @@ const BackToTopButton: FC<BackToTopButtonProps> = ({
       right={{ base: "1.25rem", sm: "2rem", md: "3rem" }}
     >
       <Link href="/#top">
-        <Button variant="backToTop">
-          <Icon icon="akar-icons:chevron-up" />
-        </Button>
+        <MotionBox whileTap={{ scale: 0.9 }}>
+          <Button variant="backToTop">
+            <Icon icon="akar-icons:chevron-up" />
+          </Button>
+        </MotionBox>
       </Link>
     </Flex>
   );

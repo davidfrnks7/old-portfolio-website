@@ -9,7 +9,7 @@ import "../styles/scrollbar.css";
 
 function DavidPortfolioWebsite({
   Component,
-  pageProps,
+  pageProps
 }: AppProps): JSX.Element {
   return (
     <ChakraProvider theme={AppTheme}>
