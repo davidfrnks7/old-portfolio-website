@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading, Box, SimpleGrid } from "@chakra-ui/react";
-import icons, { IconTuple } from "./Icons";
+import icons, { IconTuple, Icons } from "./Icons";
 
 const Skills = (): JSX.Element => {
   return (
@@ -24,23 +24,25 @@ const Skills = (): JSX.Element => {
         alignContent="center"
         // d={{ base: "none", md: "grid" }}
       >
-        {icons.map((icon: IconTuple): JSX.Element => {
-          return (
-            <Box key={icon[0]} h="auto" mx="10px" mb="30px">
-              <Box
-                h="100px"
-                w="80px"
-                fontSize="75px"
-                color="blackAlpha.700"
-                margin="auto"
-              >
-                {icon[1]}
+        {icons.map((iconsArr: Icons): JSX.Element[] => {
+          return iconsArr.map((icon: IconTuple) => {
+            return (
+              <Box key={icon[0]} h="auto" mx="10px" mb="30px">
+                <Box
+                  h="100px"
+                  w="80px"
+                  fontSize="75px"
+                  color="blackAlpha.700"
+                  margin="auto"
+                >
+                  {icon[1]}
+                </Box>
+                <Heading w="100%" textAlign="center" as="h4" size="md">
+                  {icon[0]}
+                </Heading>
               </Box>
-              <Heading w="100%" textAlign="center" as="h4" size="md">
-                {icon[0]}
-              </Heading>
-            </Box>
-          );
+            );
+          });
         })}
       </SimpleGrid>
     </Box>
