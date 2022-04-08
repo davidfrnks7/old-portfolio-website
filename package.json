@@ -14,16 +14,16 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11.8.2",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@hcaptcha/react-hcaptcha": "^1.1.1",
-    "@iconify/react": "^3.2.0",
-    "@types/react": "^17.0.42",
+    "@iconify/react": "^3.2.1",
+    "@types/react": "^17.0.44",
     "axios": "^0.26.1",
     "formik": "^2.2.9",
-    "framer-motion": "^6.2.8",
-    "next": "12.1.0",
+    "framer-motion": "^6.2.9",
+    "next": "12.1.4",
     "nodemailer": "^6.7.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -39,7 +39,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "<7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.2",
     "typescript": "<4.6.0"
   }
 }
