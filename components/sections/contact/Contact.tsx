@@ -219,6 +219,7 @@ const Contact = (): JSX.Element => {
                     message: ""
                   }
                 });
+                setToken(null);
                 setReset(true);
               })
               .catch(() => {
