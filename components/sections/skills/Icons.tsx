@@ -19,6 +19,7 @@ const icons: Icons = [
     "TypeScript",
     <Icon key="TypeScript" color={iconsColor} icon="cib:typescript" />
   ],
+  ["Java", <Icon key="Java" color={iconsColor} icon="cib:java" />],
   [
     "Python",
     <Icon key="Python" color={iconsColor} icon="akar-icons:python-fill" />
