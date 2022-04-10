@@ -5,7 +5,7 @@ import Project from "./Project";
 
 const Projects = (): JSX.Element => {
   return (
-    <Box py="10vh" id="skills" textAlign="center" w="100%" h="auto">
+    <Box py="10vh" id="projects" textAlign="center" w="100%" h="auto">
       <Heading as="h3" size="xl" mb={12}>
         Projects
       </Heading>
