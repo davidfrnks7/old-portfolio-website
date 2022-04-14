@@ -15,7 +15,7 @@ const Skills = (): JSX.Element => {
       px={{ "2xl": "10%" }}
     >
       <Heading as="h3" size="xl" mb="10vh">
-        Skills
+        {"Skills"}
       </Heading>
       <SimpleGrid
         columns={{ base: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
