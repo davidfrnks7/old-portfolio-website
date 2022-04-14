@@ -94,8 +94,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
           {expanded && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
-                My team expaned the app by adding the following featured and
-                functionality:
+                {"My team expaned the app by adding the following featured and functionality:"}
               </Text>
               <Collapse in={showExpanded}>
                 <UnorderedList
@@ -121,7 +120,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
           {role && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
-                My role in this project was to:
+                {"My role in this project was to:"}
               </Text>
               <Collapse in={showRole}>
                 <UnorderedList
@@ -153,7 +152,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
               leftIcon={<Icon icon="akar-icons:github-fill" />}
               variant="project"
             >
-              View Source Code
+              {"View Source Code"}
             </Button>
           </Link>
         </MotionBox>
@@ -164,7 +163,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 leftIcon={<Icon icon="akar-icons:globe" />}
                 variant="project"
               >
-                View Live
+                {"View Live"}
               </Button>
             </Link>
           </MotionBox>

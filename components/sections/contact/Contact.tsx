@@ -198,7 +198,7 @@ const Contact = (): JSX.Element => {
         bg="brand.content"
       >
         <Heading as="h3" size="xl" mb={6}>
-          Contact Me
+          {"Contact Me"}
         </Heading>
         <Formik
           initialValues={{
@@ -238,7 +238,7 @@ const Contact = (): JSX.Element => {
             >
               <VStack h="auto" w="100%" spacing={6}>
                 <Heading as="h4" size="md">
-                  Required fields indicated with{" "}
+                  {"Required fields indicated with: "}
                   <EmojiValidate type="Required" />
                 </Heading>
 
@@ -263,7 +263,7 @@ const Contact = (): JSX.Element => {
                           alignItems="flex-start"
                         >
                           <FormLabel htmlFor="name" mr={2}>
-                            Name
+                            {"Name"}
                           </FormLabel>
                           {!form.touched.name && (
                             <EmojiValidate type="Required" />
@@ -312,7 +312,7 @@ const Contact = (): JSX.Element => {
                           alignItems="flex-start"
                         >
                           <FormLabel htmlFor="email" mr={2}>
-                            Email
+                            {"Email"}
                           </FormLabel>
                           {!form.touched.email && (
                             <EmojiValidate type="Required" />
@@ -372,7 +372,7 @@ const Contact = (): JSX.Element => {
                           alignItems="flex-start"
                         >
                           <FormLabel htmlFor="name" mr={2}>
-                            Name
+                            {"Name"}
                           </FormLabel>
                           {!form.touched.name && (
                             <EmojiValidate type="Required" />
@@ -421,7 +421,7 @@ const Contact = (): JSX.Element => {
                           alignItems="flex-start"
                         >
                           <FormLabel htmlFor="email" mr={2}>
-                            Email
+                            {"Email"}
                           </FormLabel>
                           {!form.touched.email && (
                             <EmojiValidate type="Required" />
@@ -474,7 +474,7 @@ const Contact = (): JSX.Element => {
                         alignItems="flex-start"
                       >
                         <FormLabel htmlFor="subject" mr={2}>
-                          Subject
+                          {"Subject"}
                         </FormLabel>
                         {!form.touched.subject && (
                           <EmojiValidate type="Required" />
@@ -525,7 +525,7 @@ const Contact = (): JSX.Element => {
                         alignItems="flex-start"
                       >
                         <FormLabel htmlFor="message" mr={2}>
-                          Message
+                          {"Message"}
                         </FormLabel>
                         {!form.touched.message && (
                           <EmojiValidate type="Required" />
@@ -564,11 +564,11 @@ const Contact = (): JSX.Element => {
                   <VStack h="auto" w="100%" spacing={2}>
                     <strong>
                       <Text fontSize="sm" color="brand.danger">
-                        Do not contact with unsolicited services or offers
+                        {"Do not contact with unsolicited services or offers"}
                       </Text>
                     </strong>
                     <Text fontSize="sm">
-                      Form ready to submit:{" "}
+                      {"Form ready to submit? "}
                       {valid ? (
                         <EmojiValidate type="Valid" />
                       ) : (
@@ -593,7 +593,7 @@ const Contact = (): JSX.Element => {
                         isLoading={props.isSubmitting}
                         type="submit"
                       >
-                        Submit
+                        {"Submit"}
                       </Button>
                     </MotionBox>
                   </VStack>
