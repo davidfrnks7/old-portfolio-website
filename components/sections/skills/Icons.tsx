@@ -34,8 +34,16 @@ const languages: Icons = [
 
 const libraries: Icons = [
   [
-    "React | React Hooks | React Router",
+    "React | React Hooks",
     <Icon key="React" color={iconsColor} icon="akar-icons:react-fill" />
+  ],
+  [
+    "React Router",
+    <Icon key="React Router" color={iconsColor} icon="simple-icons:reactrouter" />
+  ],
+  [
+    "React Redux",
+    <Icon key="React Redux" color={iconsColor}  icon="akar-icons:redux-fill" />
   ],
   [
     "JQuery",
