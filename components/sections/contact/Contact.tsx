@@ -165,7 +165,8 @@ const Contact = (): JSX.Element => {
     bg: "gray.900",
     borderColor: "white",
     _placeholder: {
-      color: "white"
+      color: "gray.400",
+      fontWeight: "light"
     },
     _focus: {
       bg: "#000",

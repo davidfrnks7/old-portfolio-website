@@ -94,7 +94,9 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
           {expanded && (
             <VStack w="100%" h="auto" spacing={2}>
               <Text textAlign="center" w="100%">
-                {"My team expaned the app by adding the following featured and functionality:"}
+                {
+                  "My team expaned the app by adding the following featured and functionality:"
+                }
               </Text>
               <Collapse in={showExpanded}>
                 <UnorderedList
