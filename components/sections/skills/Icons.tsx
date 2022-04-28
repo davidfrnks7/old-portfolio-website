@@ -39,11 +39,15 @@ const libraries: Icons = [
   ],
   [
     "React Router",
-    <Icon key="React Router" color={iconsColor} icon="simple-icons:reactrouter" />
+    <Icon
+      key="React Router"
+      color={iconsColor}
+      icon="simple-icons:reactrouter"
+    />
   ],
   [
     "React Redux",
-    <Icon key="React Redux" color={iconsColor}  icon="akar-icons:redux-fill" />
+    <Icon key="React Redux" color={iconsColor} icon="akar-icons:redux-fill" />
   ],
   [
     "JQuery",
