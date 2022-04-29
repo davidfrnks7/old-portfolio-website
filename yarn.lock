@@ -1432,10 +1432,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^17.0.25":
-  version: 17.0.29
-  resolution: "@types/node@npm:17.0.29"
-  checksum: bb9d7bce9d6d3882efd9d63b773b548dce98df4bd57eff8ceaa316aa2f3346e36d3618764cc93da84bbff92005174a35eec3465cde91ee973ef1c351ffa40074
+"@types/node@npm:^17.0.30":
+  version: 17.0.30
+  resolution: "@types/node@npm:17.0.30"
+  checksum: b3cd2db6474aae3ddac5a312f340f6e4ca200429371e62cb74698fe7f23d7414d0200f643204ddfaa797846328539359e3797d7f2baaf3cdd643b159cf53baa6
   languageName: node
   linkType: hard
 
@@ -4006,10 +4006,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.7.3":
-  version: 6.7.3
-  resolution: "nodemailer@npm:6.7.3"
-  checksum: b94d099f00f25666fc96a7cb498045e7428045b8cc0245ce10522190fd513b586d6e31305afd019f6878f1540d14d169d0dbe2e1f77385795c7054912d822ec0
+"nodemailer@npm:^6.7.4":
+  version: 6.7.4
+  resolution: "nodemailer@npm:6.7.4"
+  checksum: e3e89869b8e73b4ffd8214c7b2da38907b8a4c6948dd6283d83f063c62acd666179f2f36610eff5671542be3195687e5564b57435378602ab4356174d4c6638f
   languageName: node
   linkType: hard
 
@@ -4274,7 +4274,7 @@ __metadata:
     "@emotion/styled": ^11.8.1
     "@hcaptcha/react-hcaptcha": ^1.3.0
     "@iconify/react": ^3.2.1
-    "@types/node": ^17.0.25
+    "@types/node": ^17.0.30
     "@types/nodemailer": ^6.4.4
     "@types/react": <18.0.0
     "@typescript-eslint/eslint-plugin": ^5.21.0
@@ -4288,12 +4288,12 @@ __metadata:
     formik: ^2.2.9
     framer-motion: ^6.3.3
     next: 12.1.5
-    nodemailer: ^6.7.3
+    nodemailer: ^6.7.4
     prettier: ^2.6.2
     react: <18.0.0
     react-dom: <18.0.0
     sharp: ^0.30.4
-    typescript: ^4.6.3
+    typescript: <4.6.0
     typewriter-effect: ^2.18.2
   languageName: unknown
   linkType: soft
@@ -5253,23 +5253,23 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-typescript@^4.6.3:
-  version: 4.6.3
-  resolution: "typescript@npm:4.6.3"
+typescript@<4.6.0:
+  version: 4.5.5
+  resolution: "typescript@npm:4.5.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
+  checksum: 506f4c919dc8aeaafa92068c997f1d213b9df4d9756d0fae1a1e7ab66b585ab3498050e236113a1c9e57ee08c21ec6814ca7a7f61378c058d79af50a4b1f5a5e
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
-  version: 4.6.3
-  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=32657b"
+"typescript@patch:typescript@<4.6.0#~builtin<compat/typescript>":
+  version: 4.5.5
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=32657b"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 59346df396432a7dc69f86776acadbe61d1f1faf8bbecf6dadc3bd95d2a70808a40a65dc17699b8aec74902edca2d49aa7373bb61443705d7c3e56dd2757d5c3
+  checksum: ed34e0986bc395da29a9a749fc980741fcbf698c205d6dc282310a652ee4ae61b571c26fd62c8a264ec26ff23ef12d888d5db7b41031cfaad1798db0d090f5c3
   languageName: node
   linkType: hard
 
