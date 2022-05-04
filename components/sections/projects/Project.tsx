@@ -74,11 +74,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 {"The app was build on " + tech[0] + " and used:"}
               </Text>
               <Collapse in={showTech}>
-                <UnorderedList
-                  w="100%"
-                  h="auto"
-                  textAlign="center"
-                >
+                <UnorderedList>
                   {tech.slice(1).map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
@@ -97,11 +93,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 }
               </Text>
               <Collapse in={showExpanded}>
-                <UnorderedList
-                  w="100%"
-                  h="auto"
-                  textAlign="center"
-                >
+                <UnorderedList>
                   {expanded.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
@@ -111,7 +103,7 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 variant="collapse"
                 onClick={() => setShowExpanded(!showExpanded)}
               >
-                {showTech ? "...See Less" : "See More..."}
+                {showExpanded ? "...See Less" : "See More..."}
               </Button>
             </VStack>
           )}
@@ -121,18 +113,14 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 {"My role in this project was to:"}
               </Text>
               <Collapse in={showRole}>
-                <UnorderedList
-                  w="100%"
-                  h="auto"
-                  textAlign="center"
-                >
+                <UnorderedList>
                   {role?.map((line: string) => (
                     <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
               </Collapse>
               <Button variant="collapse" onClick={() => setShowRole(!showRole)}>
-                {showTech ? "...See Less" : "See More..."}
+                {showRole ? "...See Less" : "See More..."}
               </Button>
             </VStack>
           )}

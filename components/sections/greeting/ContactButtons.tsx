@@ -22,7 +22,7 @@ const ContactButtons = (): JSX.Element => {
             ml="-px"
             borderRadius="4px 0px 0px 4px"
           >
-            {"Connect with me"}
+            {"Connect With Me"}
           </Button>
         </Link>
         <Tooltip
@@ -54,7 +54,7 @@ const ContactButtons = (): JSX.Element => {
             ml="-px"
             borderRadius="4px 0px 0px 4px"
           >
-            {"View my work"}
+            {"View My Work"}
           </Button>
         </Link>
         <Tooltip
