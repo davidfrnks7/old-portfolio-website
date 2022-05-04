@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "RESTful API to receive from data",
       "Axios to make requests to an API on form submit"
     ],
-    deployed: "It was deployed on Vercel and only has a frontend.",
+    deployed: "The app was deployed on Vercel and only has a frontend.",
     links: {
       github: "https://github.com/davidfrnks7/portfolio-website",
       website: "https://davidfrnks7.dev"
@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "Setup Cloudinary and links submissions to front end to allow users to submit custom pictures for their profile or app",
       "Setup a search feature using regex and added filters for the search"
     ],
-    deployed: "It was deployed on Vercel and used PostgreSQL for the database",
+    deployed: "The app was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
     links: {
       github: "https://github.com/davidfrnks7/plexus-create",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     name: "Beastie Booze",
     date: "2021 - 2021",
     description:
-      "BeastieBooze is a legacy to lookup drinks and how to make them. You can add your own concoctions to the website and add your favorites to your account.",
+      "BeastieBooze is a legacy app to lookup drinks and how to make them. You can add your own concoctions to the website and add your favorites to your account.",
     tech: [
       "React.js in JavaScript",
       "Bootstrap for styling",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Rendered custom icons on the map to represent if the type of event planned at parks and trails",
       "Made the app responsive to screen size"
     ],
-    deployed: "This app was not deployed, but used MongoDB for the database.",
+    deployed: "The app was not deployed, but used MongoDB for the database.",
     links: { github: "https://github.com/davidfrnks7/trailz" }
   }
 ];
