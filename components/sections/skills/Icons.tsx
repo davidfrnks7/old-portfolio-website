@@ -59,6 +59,10 @@ const frameworks: Icons = [
   [
     "Next.js",
     <Icon key="Next.js" color={iconsColor} icon="akar-icons:nextjs-fill" />
+  ],
+  [
+    "Angular",
+    <Icon key="Angular" color={iconsColor} icon="akar-icons:angular-fill" />
   ]
 ];
 
