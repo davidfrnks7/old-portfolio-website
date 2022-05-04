@@ -75,8 +75,6 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
               </Text>
               <Collapse in={showTech}>
                 <UnorderedList
-                  m={0}
-                  spacing={2}
                   w="100%"
                   h="auto"
                   textAlign="center"
@@ -100,8 +98,6 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
               </Text>
               <Collapse in={showExpanded}>
                 <UnorderedList
-                  m={0}
-                  spacing={2}
                   w="100%"
                   h="auto"
                   textAlign="center"
@@ -126,8 +122,6 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
               </Text>
               <Collapse in={showRole}>
                 <UnorderedList
-                  m={0}
-                  spacing={2}
                   w="100%"
                   h="auto"
                   textAlign="center"
