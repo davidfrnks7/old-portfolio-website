@@ -74,9 +74,9 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 {"The app was build on " + tech[0] + " and used:"}
               </Text>
               <Collapse in={showTech}>
-                <UnorderedList>
+                <UnorderedList textAlign="center" width="100%" m="auto">
                   {tech.slice(1).map((line: string) => (
-                    <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
+                    <ListItem textAlign="left" ml={5} key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
               </Collapse>
@@ -93,9 +93,9 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 }
               </Text>
               <Collapse in={showExpanded}>
-                <UnorderedList>
-                  {expanded.map((line: string) => (
-                    <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
+              <UnorderedList textAlign="center" width="100%" m="auto">
+                  {expanded?.map((line: string) => (
+                    <ListItem textAlign="left" ml={5} key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
               </Collapse>
@@ -113,9 +113,9 @@ const Project: FC<ProjectProps> = ({ project }: ProjectProps) => {
                 {"My role in this project was to:"}
               </Text>
               <Collapse in={showRole}>
-                <UnorderedList>
+              <UnorderedList textAlign="center" width="100%" m="auto">
                   {role?.map((line: string) => (
-                    <ListItem key={line.replace(" ", "-")}>{line}</ListItem>
+                    <ListItem textAlign="left" ml={5} key={line.replace(" ", "-")}>{line}</ListItem>
                   ))}
                 </UnorderedList>
               </Collapse>
