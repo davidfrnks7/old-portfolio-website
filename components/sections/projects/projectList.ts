@@ -56,7 +56,8 @@ export const projects: Project[] = [
       "Setup Cloudinary and links submissions to front end to allow users to submit custom pictures for their profile or app",
       "Setup a search feature using regex and added filters for the search"
     ],
-    deployed: "The app was deployed on Vercel and used PostgreSQL for the database",
+    deployed:
+      "The app was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
     links: {
       github: "https://github.com/davidfrnks7/plexus-create",
