@@ -32,7 +32,7 @@ While this app **is not** meant to be used as a template, I do encourage taking 
 
 [![Next.js](https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg)](https://nextjs.org/)
 
-[Next.js](https://nextjs.org/) is a serverless, zero config React framework.
+> [Next.js](https://nextjs.org/) is a serverless, zero config React framework.
 
 The React Framework for Production
 
