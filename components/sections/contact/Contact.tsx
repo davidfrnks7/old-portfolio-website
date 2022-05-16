@@ -295,7 +295,11 @@ const Contact = (): JSX.Element => {
                               }
                             : "")}
                         />
-                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                        <FormErrorMessage>
+                          {typeof form.errors.name === "string"
+                            ? form.errors.name
+                            : ""}
+                        </FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -344,7 +348,11 @@ const Contact = (): JSX.Element => {
                               }
                             : "")}
                         />
-                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                        <FormErrorMessage>
+                          {typeof form.errors.email === "string"
+                            ? form.errors.email
+                            : ""}
+                        </FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -404,7 +412,11 @@ const Contact = (): JSX.Element => {
                               }
                             : "")}
                         />
-                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                        <FormErrorMessage>
+                          {typeof form.errors.name === "string"
+                            ? form.errors.name
+                            : ""}
+                        </FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -453,7 +465,11 @@ const Contact = (): JSX.Element => {
                               }
                             : "")}
                         />
-                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                        <FormErrorMessage>
+                          {typeof form.errors.email === "string"
+                            ? form.errors.email
+                            : ""}
+                        </FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
@@ -506,7 +522,11 @@ const Contact = (): JSX.Element => {
                             }
                           : "")}
                       />
-                      <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
+                      <FormErrorMessage>
+                        {typeof form.errors.subject === "string"
+                          ? form.errors.subject
+                          : ""}
+                      </FormErrorMessage>
                     </FormControl>
                   )}
                 </Field>
@@ -557,7 +577,11 @@ const Contact = (): JSX.Element => {
                             }
                           : "")}
                       />
-                      <FormErrorMessage>{form.errors.message}</FormErrorMessage>
+                      <FormErrorMessage>
+                        {typeof form.errors.message === "string"
+                          ? form.errors.message
+                          : ""}
+                      </FormErrorMessage>
                     </FormControl>
                   )}
                 </Field>
