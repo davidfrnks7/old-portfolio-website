@@ -63,7 +63,8 @@ const frameworks: Icons = [
   [
     "Angular",
     <Icon key="Angular" color={iconsColor} icon="akar-icons:angular-fill" />
-  ]
+  ],
+  ["Spring", <Icon key="Spring" color={iconsColor} icon="cib:spring" />]
 ];
 
 const runtime: Icons = [

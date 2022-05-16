@@ -14,7 +14,7 @@ const BackToTopButton: FC<BackToTopButtonProps> = ({
 }: BackToTopButtonProps) => {
   return (
     <Flex
-      d={show ? "flex" : "none"}
+      display={show ? "flex" : "none"}
       pos="fixed"
       top="85vh"
       right={{ base: "1.25rem", sm: "2rem", md: "3rem" }}
