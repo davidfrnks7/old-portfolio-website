@@ -565,7 +565,7 @@ const Contact = (): JSX.Element => {
                         isDisabled={form.isSubmitting}
                         id="message"
                         rows={4}
-                        placeholder="I like your portfolio website and your list of stills. I am contacting you to discuss..."
+                        placeholder="I like your portfolio website and your list of skills. I am contacting you to discuss..."
                         {...(!form.errors.message && form.touched.message
                           ? {
                               borderColor: "brand.valid",
