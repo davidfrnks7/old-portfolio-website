@@ -10,7 +10,7 @@ const DesktopNav: FC<DesktopNavProps> = ({ sticky }: DesktopNavProps) => {
   return (
     <HStack
       as="nav"
-      d={{ base: "none", lg: "flex" }}
+      display={{ base: "none", lg: "flex" }}
       h="auto"
       w="auto"
       spacing={4}

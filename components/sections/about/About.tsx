@@ -26,7 +26,7 @@ const About = (): JSX.Element => {
         m="auto"
         h="auto"
         w="100%"
-        d={{ base: "none", lg: "flex" }}
+        display={{ base: "none", lg: "flex" }}
         bg="brand.content"
         spacing={0}
       >
@@ -48,7 +48,7 @@ const About = (): JSX.Element => {
         m="auto"
         h="auto"
         w="100%"
-        d={{ base: "flex", lg: "none" }}
+        display={{ base: "flex", lg: "none" }}
         bg="brand.content"
       >
         <Box mt={12} w={{ base: "80%", sm: "60%", md: "40%" }} h="auto">

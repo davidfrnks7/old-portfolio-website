@@ -96,7 +96,7 @@ const Header = (): JSX.Element => {
           ? "rgba(49, 56, 220, 0.9)"
           : "transparent"
       }
-      d={
+      display={
         scrollDirection === "up" || scrollDirection === "top" ? "block" : "none"
       }
       transition=".5s ease"
@@ -120,7 +120,7 @@ const Header = (): JSX.Element => {
         top={0}
         position="absolute"
         ml={4}
-        d={{ base: "flex", lg: "none" }}
+        display={{ base: "flex", lg: "none" }}
       >
         <Heading as="h1" fontSize="lg">
           David Franks Portfolio Website
@@ -141,7 +141,7 @@ const Header = (): JSX.Element => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Box w="100%" d={{ base: "none", lg: "flex" }} m="auto">
+          <Box w="100%" display={{ base: "none", lg: "flex" }} m="auto">
             <Heading as="h1" size="md">
               David Franks Portfolio Website
             </Heading>
@@ -156,7 +156,7 @@ const Header = (): JSX.Element => {
             onClick={() => setOpen(!open)}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            d={{ base: "inline-flex", lg: "none" }}
+            display={{ base: "inline-flex", lg: "none" }}
             variant="mobileNav"
             bg={stickyNavbar ? "transparent" : "rgba(255, 255, 255, .15)"}
             type="button"

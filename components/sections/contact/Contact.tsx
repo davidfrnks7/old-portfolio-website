@@ -244,7 +244,7 @@ const Contact = (): JSX.Element => {
                 </Heading>
 
                 <HStack
-                  d={{ base: "none", lg: "flex" }}
+                  display={{ base: "none", lg: "flex" }}
                   h="auto"
                   w="100%"
                   alignItems="flex-start"
@@ -353,7 +353,7 @@ const Contact = (): JSX.Element => {
                 {/* Not duped components!! Different layouts for responsiveness. */}
 
                 <VStack
-                  d={{ base: "flex", lg: "none" }}
+                  display={{ base: "flex", lg: "none" }}
                   h="auto"
                   w="100%"
                   alignItems="flex-start"

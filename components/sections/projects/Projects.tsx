@@ -14,7 +14,7 @@ const Projects = (): JSX.Element => {
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-        d={{ base: "none", md: "grid" }}
+        display={{ base: "none", md: "grid" }}
         w="100%"
         spacing={8}
         px={{ base: 3, md: 8, "2xl": "10%" }}
@@ -30,7 +30,7 @@ const Projects = (): JSX.Element => {
         h="auto"
         alignContent="center"
         justifyContent="center"
-        d={{ base: "flex", md: "none" }}
+        display={{ base: "flex", md: "none" }}
         spacing={10}
         px={{ base: 3, md: 8 }}
       >

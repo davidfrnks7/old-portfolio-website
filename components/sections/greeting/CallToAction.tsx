@@ -6,7 +6,7 @@ const CallToAction = (): JSX.Element => {
   return (
     <Fragment>
       <HStack
-        d={{ base: "none", md: "flex" }}
+        display={{ base: "none", md: "flex" }}
         h="auto"
         w="100%"
         spacing="6"
@@ -16,7 +16,7 @@ const CallToAction = (): JSX.Element => {
         <ContactButtons />
       </HStack>
       <VStack
-        d={{ base: "flex", md: "none" }}
+        display={{ base: "flex", md: "none" }}
         h="auto"
         w="100%"
         spacing="4"
