@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import davidFImage from "../../../public/images/davidFImage.jpg";
+import davidFImage from "../../../../public/images/davidFImage.jpg";
 import Bio from "./Bio";
 
 const About = (): JSX.Element => {
