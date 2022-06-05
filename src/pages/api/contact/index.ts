@@ -7,19 +7,17 @@ const contact = (
   res: NextApiResponse
 ): Promise<unknown> => {
   return new Promise((resolve) => {
+    // Environment
     const environment = process.env.NODE_ENV || "development";
 
+    // Body and Headers
     const { body, headers } = req;
-    const parsedBody = JSON.stringify(body);
 
-    const { key, name, email, subject, message } = body;
+    // Access key from headers
+    const key = headers["x-api-key"];
 
-    // Prevent original object from being modified
-    const newBody = Object(body);
-    // Removing access key to prevent it from showing up in logs
-    delete newBody.key;
-    // Parsed newBody
-    const sanitizedBody = JSON.stringify(newBody);
+    // Deconstruct the body
+    const { name, email, subject, message } = body;
 
     // IP of the client
     const reqIP =
@@ -36,7 +34,7 @@ const contact = (
           "Body of request:\n" +
           JSON.stringify(body) +
           "\nInfo of the request:\n" +
-          parsedBody
+          body
       );
       res
         .setHeader("Content-Type", "text/plain")
@@ -45,7 +43,7 @@ const contact = (
       return resolve("Access key required!");
     } else if (
       key === process.env.ACCESS_KEY ||
-      (key === "ABc123$%^" && environment === "development")
+      (key === "ABc123@&!" && environment === "development")
     ) {
       // Key authenticated
       console.info(reqIP + " accessed /api/contact with a valid access key.");
@@ -54,7 +52,7 @@ const contact = (
         console.info(
           reqIP +
             " did not provide appropriate form info. Info provided:\n" +
-            sanitizedBody
+            body
         );
 
         res
@@ -102,7 +100,7 @@ const contact = (
 
         if (validate()) {
           // Validating info
-          if (key === "ABc123$%^" && environment === "development") {
+          if (key === "ABc123@&!" && environment === "development") {
             // Check the key for Dev/Preview key.
             console.info(
               "Dev/Preview key used. All forms validated. Email not sent."
@@ -116,7 +114,7 @@ const contact = (
             return resolve(
               "Dev/Preview key used. All forms validated. Email would have sent if environment was set to production."
             );
-          } else if (key === "ABc123$%^" && environment !== "development") {
+          } else if (key === "ABc123@&!" && environment !== "development") {
             console.warn(
               reqIP +
                 " Used dev/Preview key used while not in production. Form validation was started!! Email not sent."
@@ -171,7 +169,7 @@ const contact = (
 
                 console.info(
                   "Email sent successfully with:\n" +
-                    sanitizedBody +
+                    body +
                     "\n\nThe response information is:\n" +
                     parsedTransportInfo
                 );
@@ -186,9 +184,7 @@ const contact = (
         } else {
           // Forms did not validate
           console.info(
-            reqIP +
-              " did not provide valid form info. Info provided:\n" +
-              sanitizedBody
+            reqIP + " did not provide valid form info. Info provided:\n" + body
           );
           res
             .setHeader("Content-Type", "text/plain")
@@ -196,7 +192,7 @@ const contact = (
             .end("Invalid form data. Please check that all fields are valid.");
         }
       }
-    } else if (key === "ABc123$%^" && environment !== "development") {
+    } else if (key === "ABc123@&!" && environment !== "development") {
       // Dev/Preview key used on Prod
       console.info(
         reqIP +
@@ -228,7 +224,7 @@ const contact = (
         "An unknown error occurred.\nRequest:\n" +
           req +
           "Request body:\n" +
-          parsedBody +
+          body +
           "Client ip: " +
           reqIP
       );

@@ -128,17 +128,18 @@ const Contact = (): JSX.Element => {
 
   const handleSubmit = (input: FormFields): Promise<unknown> => {
     return new Promise((resolve, reject) => {
-      interface Body extends FormFields {
-        key?: string;
-      }
-      const body: Body = input;
-      body.key =
+      const body: FormFields = input;
+      const key =
         environment === "development"
-          ? "ABc123$%^"
+          ? "ABc123@&!"
           : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
-        .post("/api/contact", body)
+        .post("/api/contact", body, {
+          headers: {
+            "x-api-key": key || ""
+          }
+        })
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return resolve(response.statusText);
