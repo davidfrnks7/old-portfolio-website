@@ -136,7 +136,7 @@ const Contact = (): JSX.Element => {
           : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
-        .put("/api/contact", body, {
+        .post("/api/contact", body, {
           headers: {
             "x-api-key": key || ""
           }
@@ -228,7 +228,7 @@ const Contact = (): JSX.Element => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
-                console.warn(err.error);
+                console.warn(err);
               });
           }}
         >
