@@ -25,8 +25,6 @@ const Contact = (): JSX.Element => {
   // Environment
   const environment = process.env.NODE_ENV || "development";
 
-  console.log(process.env.NODE_ENV );
-
   // Form field valid statuses.
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
