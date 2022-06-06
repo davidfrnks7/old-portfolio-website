@@ -131,7 +131,7 @@ const Contact = (): JSX.Element => {
     return new Promise((resolve, reject) => {
       const body: FormFields = input;
       const key =
-        environment === "development"
+        environment !== "production"
           ? "ABc123@&!"
           : process.env.NEXT_PUBLIC_ACCESS_KEY;
 

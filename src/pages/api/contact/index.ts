@@ -94,7 +94,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is NOT development.
-  if (headerKey === "ABc123@&!" && environment !== "development") {
+  if (headerKey === "ABc123@&!" && environment === "production") {
     resString =
       "Dev/Preview key used in production mode. This key is not allowed in production mode. Your IP Address has been logged!";
     validKey = false;
@@ -114,7 +114,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is development.
-  if (headerKey === "ABc123@&!" && environment === "development") {
+  if (headerKey === "ABc123@&!" && (environment === "development" || environment === "test")) {
     validKey = true;
     validationType = "development";
 
