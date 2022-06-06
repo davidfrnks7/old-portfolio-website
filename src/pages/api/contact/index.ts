@@ -230,7 +230,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     return;
   }
 
-  // * Sending Messasge * //
+  // * Sending Message * //
 
   const transportData = {
     port: 465,
@@ -254,7 +254,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     html: `<div>${message}</div>`
   };
 
-  transporter.sendMail(mailData, (err, info) => {
+  return transporter.sendMail(mailData, (err, info) => {
     // Error sending
     if (err) {
       resString =
@@ -285,25 +285,6 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
     return;
   });
-
-  resString =
-    "An unknown error occurred. Please try again. If the issue persists please open a GitHub issue.";
-
-  console.error(
-    "An unknown error occurred.\nBody:\n" +
-      bodyString +
-      "\nKey:" +
-      headerKey +
-      "Client ip:" +
-      reqIP
-  );
-
-  res
-    .status(500)
-    .setHeader("Content-Type", "application/json")
-    .json(errResponse());
-
-  return;
 };
 
 export default contact;
