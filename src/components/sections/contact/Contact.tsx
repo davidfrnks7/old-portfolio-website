@@ -131,7 +131,7 @@ const Contact = (): JSX.Element => {
     return new Promise((resolve, reject) => {
       const body: FormFields = input;
       const key =
-        environment === "development"
+        environment !== "production"
           ? "ABc123@&!"
           : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
@@ -141,13 +141,15 @@ const Contact = (): JSX.Element => {
             "x-api-key": key || ""
           }
         })
-        .then((response) => {
-          if (response.status >= 200 && response.status <= 299) {
-            return resolve(response.statusText);
-          } else if (response.status >= 400 && response.status <= 499) {
-            return reject(response.statusText);
-          } else if (response.status >= 500 && response.status <= 599) {
-            return reject(response.statusText);
+        .then((data) => {
+          const { status, responseText } = data.request;
+
+          if (status >= 200 && status <= 299) {
+            return resolve(responseText);
+          } else if (status >= 400 && status <= 499) {
+            return reject(responseText);
+          } else if (status >= 500 && status <= 599) {
+            return reject(responseText);
           } else {
             return reject("An unknown error occurred");
           }
@@ -228,7 +230,7 @@ const Contact = (): JSX.Element => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
-                console.warn(err);
+                console.warn(err.error);
               });
           }}
         >
