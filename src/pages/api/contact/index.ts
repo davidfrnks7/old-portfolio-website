@@ -10,7 +10,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   const { body, headers, method } = req;
 
   // Stringified body for the logs
-  const bodyString = JSON.stringify(body);
+  const bodyString: string = JSON.stringify(body);
 
   // Access key from headers
   const headerKey = headers["x-api-key"];
@@ -114,7 +114,10 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is development.
-  if (headerKey === "ABc123@&!" && (environment === "development" || environment === "test")) {
+  if (
+    headerKey === "ABc123@&!" &&
+    (environment === "development" || environment === "test")
+  ) {
     validKey = true;
     validationType = "development";
 
