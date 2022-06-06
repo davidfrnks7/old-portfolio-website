@@ -141,13 +141,15 @@ const Contact = (): JSX.Element => {
             "x-api-key": key || ""
           }
         })
-        .then((response) => {
-          if (response.status >= 200 && response.status <= 299) {
-            return resolve(response.statusText);
-          } else if (response.status >= 400 && response.status <= 499) {
-            return reject(response.statusText);
-          } else if (response.status >= 500 && response.status <= 599) {
-            return reject(response.statusText);
+        .then((data) => {
+          const { status, responseText } = data.request;
+
+          if (status >= 200 && status <= 299) {
+            return resolve(responseText);
+          } else if (status >= 400 && status <= 499) {
+            return reject(responseText);
+          } else if (status >= 500 && status <= 599) {
+            return reject(responseText);
           } else {
             return reject("An unknown error occurred");
           }
@@ -228,7 +230,7 @@ const Contact = (): JSX.Element => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
-                console.warn(err);
+                console.warn(err.error);
               });
           }}
         >
@@ -288,13 +290,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
-                              borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
-                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -341,13 +343,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
-                              borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
-                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -405,13 +407,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
-                              borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
-                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -458,13 +460,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
-                              borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
+                                boxShadow: "0 0 0 1px #00c17c",
+                                _hover: {
+                                  borderColor: "brand.valid",
+                                  boxShadow: "0 0 0 1px #00c17c"
+                                }
                               }
-                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -515,13 +517,13 @@ const Contact = (): JSX.Element => {
                         isDisabled={form.isSubmitting}
                         {...(!form.errors.subject && form.touched.subject
                           ? {
-                            borderColor: "brand.valid",
-                            boxShadow: "0 0 0 1px #00c17c",
-                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c"
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c"
+                              }
                             }
-                          }
                           : "")}
                       />
                       <FormErrorMessage>
@@ -570,13 +572,13 @@ const Contact = (): JSX.Element => {
                         placeholder="I like your portfolio website and your list of skills. I am contacting you to discuss..."
                         {...(!form.errors.message && form.touched.message
                           ? {
-                            borderColor: "brand.valid",
-                            boxShadow: "0 0 0 1px #00c17c",
-                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c"
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
+                                borderColor: "brand.valid",
+                                boxShadow: "0 0 0 1px #00c17c"
+                              }
                             }
-                          }
                           : "")}
                       />
                       <FormErrorMessage>
