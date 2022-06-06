@@ -53,7 +53,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     );
 
     res
-      .status(404)
+      .status(405)
       .setHeader("Content-Type", "application/json")
       .json(errResponse());
 
