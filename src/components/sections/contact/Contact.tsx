@@ -22,9 +22,10 @@ import { motion } from "framer-motion";
 export const MotionBox = motion<BoxProps>(Box);
 
 const Contact = (): JSX.Element => {
+  // Environment
   const environment = process.env.NODE_ENV || "development";
 
-  // Validate
+  // Form field valid statuses.
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
   const [validSubject, setValidSubject] = useState<boolean>(false);
@@ -128,17 +129,18 @@ const Contact = (): JSX.Element => {
 
   const handleSubmit = (input: FormFields): Promise<unknown> => {
     return new Promise((resolve, reject) => {
-      interface Body extends FormFields {
-        key?: string;
-      }
-      const body: Body = input;
-      body.key =
+      const body: FormFields = input;
+      const key =
         environment === "development"
-          ? "ABc123$%^"
+          ? "ABc123@&!"
           : process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
-        .post("/api/contact", body)
+        .post("/api/contact", body, {
+          headers: {
+            "x-api-key": key || ""
+          }
+        })
         .then((response) => {
           if (response.status >= 200 && response.status <= 299) {
             return resolve(response.statusText);
@@ -151,8 +153,7 @@ const Contact = (): JSX.Element => {
           }
         })
         .catch((err) => {
-          console.warn(err);
-          return reject(err);
+          return reject(err.response.data);
         });
     });
   };
@@ -223,10 +224,11 @@ const Contact = (): JSX.Element => {
                 setToken(null);
                 setReset(true);
               })
-              .catch(() => {
+              .catch((err) => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
+                console.warn(err);
               });
           }}
         >
@@ -286,13 +288,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -339,13 +341,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -403,13 +405,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -456,13 +458,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -513,13 +515,13 @@ const Contact = (): JSX.Element => {
                         isDisabled={form.isSubmitting}
                         {...(!form.errors.subject && form.touched.subject
                           ? {
+                            borderColor: "brand.valid",
+                            boxShadow: "0 0 0 1px #00c17c",
+                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
-                                borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
-                              }
+                              boxShadow: "0 0 0 1px #00c17c"
                             }
+                          }
                           : "")}
                       />
                       <FormErrorMessage>
@@ -568,13 +570,13 @@ const Contact = (): JSX.Element => {
                         placeholder="I like your portfolio website and your list of skills. I am contacting you to discuss..."
                         {...(!form.errors.message && form.touched.message
                           ? {
+                            borderColor: "brand.valid",
+                            boxShadow: "0 0 0 1px #00c17c",
+                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
-                                borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
-                              }
+                              boxShadow: "0 0 0 1px #00c17c"
                             }
+                          }
                           : "")}
                       />
                       <FormErrorMessage>
