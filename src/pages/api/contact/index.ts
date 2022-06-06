@@ -141,7 +141,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     console.warn(
       reqIP +
         " tried to access /api/contact with an invalid API key! API key provided: " +
-        headerKey
+        headerKey +
+        `API key expected: ${envKey}`
     );
 
     res
