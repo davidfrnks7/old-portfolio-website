@@ -52,10 +52,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         headerKey
     );
 
-    res
-      .status(404)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(404).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -85,10 +82,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         JSON.stringify(body)
     );
 
-    res
-      .status(401)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(401).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -105,10 +99,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         headerKey
     );
 
-    res
-      .status(403)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(403).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -125,10 +116,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         " Used dev/Preview key used while not in production. Email not sent."
     );
 
-    res
-      .status(403)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(403).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -161,10 +149,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
       reqIP + " did not provide a completed form. Info provided:\n" + bodyString
     );
 
-    res
-      .status(400)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(400).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -206,10 +191,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   if (!validate()) {
     resString = "Invalid form data. Please check that all fields are valid.";
 
-    res
-      .status(400)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
+    res.status(400).setHeader("Content-Type", "application/json").json(errResponse());
 
     return;
   }
@@ -257,10 +239,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo.";
       console.warn("Failed to send the form:\n" + err);
 
-      res
-        .status(500)
-        .setHeader("Content-Type", "application/json")
-        .json(errResponse());
+      res.status(500).setHeader("Content-Type", "application/json").json(errResponse());
 
       return;
     }
@@ -294,10 +273,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
       reqIP
   );
 
-  res
-    .status(500)
-    .setHeader("Content-Type", "application/json")
-    .json(errResponse());
+  res.status(500).setHeader("Content-Type", "application/json").json(errResponse());
 
   return;
 };
