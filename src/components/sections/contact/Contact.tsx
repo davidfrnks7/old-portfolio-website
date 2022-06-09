@@ -606,7 +606,7 @@ const Contact = (): JSX.Element => {
                     </strong>
                     <Text fontSize="sm">
                       {"Form ready to submit? "}
-                      {valid ? (
+                      {validForm ? (
                         <EmojiValidate type="Valid" />
                       ) : (
                         <EmojiValidate type="Error" />
