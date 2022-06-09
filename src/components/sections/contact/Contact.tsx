@@ -33,7 +33,12 @@ const Contact = (): JSX.Element => {
 
   // Captcha
   const [token, setToken] = useState<null | string>(null);
+  // Captcha reset
+  const [reset, setReset] = useState<boolean>(false);
 
+  // * Form validation * //
+
+  // Name validation
   const validateName = (inputName: string | undefined): string | undefined => {
     let nameError;
 
@@ -50,6 +55,7 @@ const Contact = (): JSX.Element => {
     return nameError;
   };
 
+  // Email validation
   const validateEmail = (
     inputEmail: string | undefined
   ): string | undefined => {
@@ -67,6 +73,7 @@ const Contact = (): JSX.Element => {
     return emailError;
   };
 
+  // Message validation
   const validateMessage = (
     inputMessage: string | undefined
   ): string | undefined => {
@@ -82,6 +89,7 @@ const Contact = (): JSX.Element => {
     return messageError;
   };
 
+  // Subject validation
   const validateSubject = (
     inputLine: string | undefined
   ): string | undefined => {
@@ -101,8 +109,10 @@ const Contact = (): JSX.Element => {
     return subjectError;
   };
 
-  const [valid, setValid] = useState<boolean>(false);
+  // Entire form valid
+  const [validForm, setValidForm] = useState<boolean>(false);
 
+  // Validate the fields when any of them change.
   useEffect(() => {
     if (
       !validEmail ||
@@ -111,15 +121,16 @@ const Contact = (): JSX.Element => {
       !validSubject ||
       token === null
     ) {
-      setValid(false);
+      setValidForm(false);
     }
 
     if (validEmail && validMessage && validName && validSubject && token) {
-      setValid(true);
+      setValidForm(true);
     }
   }, [validEmail, validMessage, validName, validSubject, token]);
 
-  // Email the form
+  // * Email the form *//
+
   interface FormFields {
     name: string;
     email: string;
@@ -159,9 +170,6 @@ const Contact = (): JSX.Element => {
         });
     });
   };
-
-  // Captcha reset
-  const [reset, setReset] = useState<boolean>(false);
 
   // Field theme
   const fieldTheme = {
@@ -617,8 +625,8 @@ const Contact = (): JSX.Element => {
                     >
                       <Button
                         variant="submit"
-                        isDisabled={!valid}
-                        background={valid ? "brand.valid" : "brand.danger"}
+                        isDisabled={!validForm}
+                        background={validForm ? "brand.valid" : "brand.danger"}
                         isLoading={props.isSubmitting}
                         type="submit"
                       >

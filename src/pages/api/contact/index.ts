@@ -37,7 +37,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
   // * Check method of the request * //
 
-  // If method is not POST
+  // If method is not POST.
   if (method !== "POST") {
     resString = "This method is not allowed on this endpoint";
 
@@ -72,7 +72,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
   validationType = "validating";
 
-  // Checking if a key was provided
+  // Checking if a key was provided.
   if (!headerKey) {
     resString = "API key required!";
     validKey = false;
@@ -87,6 +87,27 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
     res
       .status(401)
+      .setHeader("Content-Type", "application/json")
+      .json(errResponse());
+
+    return;
+  }
+
+  // Checking if the keys don't match.
+  if (envKey !== headerKey) {
+    resString = "Wrong API key!";
+    validKey = false;
+    validationType = "invalid";
+
+    console.warn(
+      reqIP +
+        " tried to access /api/contact with an invalid API key! API key provided: " +
+        headerKey +
+        `API key expected: ${envKey}`
+    );
+
+    res
+      .status(403)
       .setHeader("Content-Type", "application/json")
       .json(errResponse());
 
@@ -126,6 +147,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     );
   }
 
+  // Checking the keys match and the environment is production.
   if (headerKey === envKey && environment === "production") {
     validKey = true;
     validationType = "valid";
@@ -133,27 +155,6 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     console.info(
       `${reqIP} accessed /api/context with the valid api key in production mode.`
     );
-  }
-
-  // Checking if the keys don't match
-  if (envKey !== headerKey) {
-    resString = "Wrong API key!";
-    validKey = false;
-    validationType = "invalid";
-
-    console.warn(
-      reqIP +
-        " tried to access /api/contact with an invalid API key! API key provided: " +
-        headerKey +
-        `API key expected: ${envKey}`
-    );
-
-    res
-      .status(403)
-      .setHeader("Content-Type", "application/json")
-      .json(errResponse());
-
-    return;
   }
 
   // * Validating Form * //
@@ -188,27 +189,36 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     subject: false
   };
 
+  // Check name field doesn't have numbers within it.
   if (!/[\d]/gi.test(name)) {
     validFields.name = true;
   }
 
+  // Checking the email is in a valid format.
   if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
     validFields.email = true;
   }
 
+  // Prepending the portfolio website info the the subject.
   const newSubject = "Portfolio Website Contact | " + subject;
 
-  if (newSubject.length < 200) {
+  // Checking that the subject length is less than 200 characters.
+  if (newSubject.length <= 200) {
     validFields.subject = true;
   }
 
+  // Check all fields are valid function.
   const validate = (): boolean => {
     return Object.values(validFields).every((e) => e);
   };
 
-  // Invalid form fields
+  // Checking the fields are valid.
   if (!validate()) {
     resString = "Invalid form data. Please check that all fields are valid.";
+
+    console.info(
+      reqIP + " did not provide a valid form. Info provided:\n" + bodyString
+    );
 
     res
       .status(400)
@@ -218,6 +228,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     return;
   }
 
+  // If in dev mode then don't submit transport the email.
   if (validKey && validationType === "development") {
     resString =
       "Dev key validated in dev mode. Form validated. Message not sent.";
@@ -255,7 +266,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   };
 
   return transporter.sendMail(mailData, (err, info) => {
-    // Error sending
+    // Error with sending the message sending.
     if (err) {
       resString =
         "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo.";
@@ -271,7 +282,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
     resString = "Message sent!";
 
-    // Stringify the transporter info
+    // Stringify the transporter info.
     const transporterInfoString: string = JSON.stringify(info);
 
     console.info(
