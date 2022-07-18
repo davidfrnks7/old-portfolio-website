@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
 const TimelineEntry = (): JSX.Element => {
   return (
@@ -13,15 +13,28 @@ const TimelineEntry = (): JSX.Element => {
     >
       <HStack
         bg="brand.content"
-        h="auto"
+        h="100%"
         py={6}
         px={4}
         justifyContent="center"
         alignContent="center"
         spacing={0}
+        border="solid #0086ff"
+        borderWidth="0px 0px 0px 1px"
       >
+        <Flex h="2.88rem" w="1.17rem" direction="column">
+          <Box
+            bg="brand.primary"
+            h="100%"
+            w="100%"
+            borderRadius="50%"
+            ml="-25px"
+            mb="30px"
+            boxShadow="rgba(0, 134, 255, 0.8) 0px 0px 15px, rgba(0, 134, 255, 0.65) 0px 0px 3px 1px"
+          ></Box>
+        </Flex>
         {/* Year and Location/Place */}
-        <VStack w="12vw" h="auto" justifyContent="center" alignContent="center">
+        <VStack w="10vw" h="auto" justifyContent="center" alignContent="center">
           <Heading as="h3" size="md">
             {"Operation Spark"}
           </Heading>
