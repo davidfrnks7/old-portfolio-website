@@ -1,10 +1,10 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import About from "../components/sections/about/About";
-import Greeting from "../components/sections/greeting/Greeting";
-import Skills from "../components/sections/skills/Skills";
-import Projects from "../components/sections/projects/Projects";
-import Contact from "../components/sections/contact/Contact";
+import About from "../components/sections/about";
+import Greeting from "../components/sections/greeting";
+import Skills from "../components/sections/skills";
+import Projects from "../components/sections/projects";
+import Contact from "../components/sections/contact";
 import Education from "../components/sections/education";
 import WorkHistory from "../components/sections/work";
 
