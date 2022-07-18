@@ -22,7 +22,6 @@ const Skills = (): JSX.Element => {
         h="auto"
         justifyContent="flex-start"
         alignContent="center"
-        // d={{ base: "none", md: "grid" }}
       >
         {icons.map((iconsArr: Icons): JSX.Element[] => {
           return iconsArr.map((icon: IconTuple) => {

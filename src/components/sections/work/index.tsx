@@ -5,7 +5,7 @@ import TimelineEntry from "../../timeline-entry";
 const WorkHistory = (): JSX.Element => {
   return (
     <Box>
-      <Heading>{"Work History Section"}</Heading>
+      <Heading mb={12}>{"Work History Section"}</Heading>
       <TimelineEntry />
     </Box>
   );

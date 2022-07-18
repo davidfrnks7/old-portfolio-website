@@ -11,15 +11,19 @@ import WorkHistory from "../components/sections/work";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <PillPity pattern="circuit-board" as={Box} patternFill="brand.primary" patternOpacity={0.2} bgColor="" textAlign="center" w="100%" h="auto" pb="10vh">
-      <Greeting />
-      <About />
-      <Education />
-      <WorkHistory />
-      <Skills />
-      <Projects />
-      <Contact />
-    </PillPity>
+    <Box>
+      <PillPity pattern="circuit-board" as={Box} patternFill="brand.primary" patternOpacity={0.2} bgColor="" pos="fixed" h="100%" w="100%" zIndex={0}>
+      </PillPity>
+      <Box textAlign="center" w="100%" h="auto" pb="10vh" pos="sticky" zIndex={1}>
+        <Greeting />
+        <About />
+        <Education />
+        <WorkHistory />
+        <Skills />
+        <Projects />
+        <Contact />
+      </Box>
+    </Box>
   );
 };
 
