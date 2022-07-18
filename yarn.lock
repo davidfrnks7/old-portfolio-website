@@ -4583,6 +4583,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pill-pity@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "pill-pity@npm:0.2.3"
+  peerDependencies:
+    "@chakra-ui/react": ">=1.6.2"
+    react: ">=16"
+  checksum: 8972c3eb2007cbb3144ec7984cc78e97e19d88e08c1efec87f56a0cba97476b268bb250faa5ebe9e06f3517efaf82f90ed853b5f6e97e6dceb12bacf0c29a1c9
+  languageName: node
+  linkType: hard
+
 "popmotion@npm:11.0.3":
   version: 11.0.3
   resolution: "popmotion@npm:11.0.3"
@@ -4619,6 +4629,7 @@ __metadata:
     framer-motion: ^6.5.1
     next: 12.2.2
     nodemailer: ^6.7.7
+    pill-pity: ^0.2.3
     prettier: ^2.7.1
     react: ^18.2.0
     react-dom: ^18.2.0

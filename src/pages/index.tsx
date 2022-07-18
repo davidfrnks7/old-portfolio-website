@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
+import PillPity from 'pill-pity';
 import About from "../components/sections/about";
 import Greeting from "../components/sections/greeting";
 import Skills from "../components/sections/skills";
@@ -10,7 +11,7 @@ import WorkHistory from "../components/sections/work";
 
 const IndexPage = (): JSX.Element => {
   return (
-    <Box textAlign="center" w="100%" h="auto" pb="10vh">
+    <PillPity pattern="circuit-board" as={Box} patternFill="brand.primary" patternOpacity={0.2} bgColor="" textAlign="center" w="100%" h="auto" pb="10vh">
       <Greeting />
       <About />
       <Education />
@@ -18,7 +19,7 @@ const IndexPage = (): JSX.Element => {
       <Skills />
       <Projects />
       <Contact />
-    </Box>
+    </PillPity>
   );
 };
 
