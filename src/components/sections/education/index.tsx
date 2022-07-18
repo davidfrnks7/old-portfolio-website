@@ -5,7 +5,10 @@ import TimelineEntry from "../../timeline-entry";
 const Education = (): JSX.Element => {
   return (
     <Box>
-      <Heading mb={12}>{"Education Section"}</Heading>
+      <Heading as="h2" mb={12}>
+        {"Education Section"}
+      </Heading>
+      <TimelineEntry />
       <TimelineEntry />
     </Box>
   );

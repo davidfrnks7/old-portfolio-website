@@ -1,57 +1,42 @@
 import React from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
 const TimelineEntry = (): JSX.Element => {
   return (
     <HStack
       w="100%"
-      h="auto"
+      h="100%"
       px="10vw"
       justifyContent="center"
       alignContent="center"
+      spacing={0}
     >
-      <VStack
-        w="fit-content"
-        h="5vh"
-        spacing={0}
-        p={0}
-        m={0}
+      <HStack
+        bg="brand.content"
+        h="auto"
+        py={6}
+        px={4}
         justifyContent="center"
         alignContent="center"
+        spacing={0}
       >
-        {/* Line Before */}
-        <Box
-          w={0}
-          h="auto"
-          p={0}
-          pt={2}
-          m={0}
-          ml="1px"
-          border="solid #FFF"
-          borderWidth="0px 1px 0px 0px"
-        >
-        </Box>
-        {/* Bullet Point */}
-        <Box
-          h="2rem"
-          w="1.1rem"
-          bg="brand.secondary"
-          borderRadius="50%"
-        >
-        </Box>
-        {/* Line After */}
-        <Box
-          w={0}
-          h="100%"
-          p={0}
-          m={0}
-          ml="1px"
-          border="solid #FFF"
-          borderWidth="0px 1px 0px 0px"
-        >
-        </Box>
-      </VStack>
-    </HStack >
+        {/* Year and Location/Place */}
+        <VStack w="12vw" h="auto" justifyContent="center" alignContent="center">
+          <Heading as="h3" size="md">
+            {"Operation Spark"}
+          </Heading>
+          <Text>{"2021"}</Text>
+        </VStack>
+        {/* Description */}
+        <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
+          <Text>
+            {
+              "1000 hour software engineering bootbamp derived from Hack Reactor, utilizing a lot of the same principals, methodologies, and material, focusing on functional webapp development in Javascript utilizing frameworks such as React, Angular, and Typescript. The course focused heavily on teamwork and working with a team to build projects and apps."
+            }
+          </Text>
+        </VStack>
+      </HStack>
+    </HStack>
   );
 };
 
