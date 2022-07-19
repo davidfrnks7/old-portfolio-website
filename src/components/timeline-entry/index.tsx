@@ -39,7 +39,12 @@ const TimelineEntry = ({
         border="solid #0086ff"
         borderWidth="0px 0px 0px 1px"
       >
-        <Flex h="2.88rem" w="1.17rem" direction="column">
+        <Flex
+          h="2.88rem"
+          w="1.17rem"
+          direction="column"
+          display={{ base: "none", sm: "flex" }}
+        >
           <Box
             bg="brand.primary"
             h="100%"
