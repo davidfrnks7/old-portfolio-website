@@ -1,14 +1,28 @@
 import React from "react";
 import { Box, Heading } from "@chakra-ui/react";
 import TimelineEntry from "../../timeline-entry";
+import work, { WorkPlace } from "./work";
 
 const WorkHistory = (): JSX.Element => {
   return (
-    <Box>
+    <Box w="100%" h="auto" py="10vh" id="work">
       <Heading as="h2" mb={12}>
-        {"Work History Section"}
+        {"Work Experience"}
       </Heading>
-      <TimelineEntry />
+      {work.map((entry: WorkPlace) => {
+        const { name, yearStart, yearEnd, role, desc } = entry;
+
+        return (
+          <TimelineEntry
+            key={name.replace(" ", "") + yearStart + yearEnd}
+            name={name}
+            yearStart={yearStart}
+            yearEnd={yearEnd}
+            role={role}
+            desc={desc}
+          />
+        );
+      })}
     </Box>
   );
 };

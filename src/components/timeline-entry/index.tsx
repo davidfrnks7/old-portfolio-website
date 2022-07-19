@@ -1,12 +1,28 @@
 import React from "react";
 import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
-const TimelineEntry = (): JSX.Element => {
+interface TimelineEntryProps {
+  name: string; // name of school, program, or workplace
+  year?: number; // year completed school or program
+  desc: string; // desc of program or work role
+  role?: string; // title of the role
+  yearStart?: number; // year started working
+  yearEnd?: number | null; // year completed working
+}
+
+const TimelineEntry = ({
+  name,
+  year,
+  desc,
+  role,
+  yearStart,
+  yearEnd
+}: TimelineEntryProps): JSX.Element => {
   return (
     <HStack
       w="100%"
       h="100%"
-      px="10vw"
+      px={{ base: 3, md: 8, "2xl": "10%" }}
       justifyContent="center"
       alignContent="center"
       spacing={0}
@@ -14,6 +30,7 @@ const TimelineEntry = (): JSX.Element => {
       <HStack
         bg="brand.content"
         h="100%"
+        w="100%"
         py={6}
         px={4}
         justifyContent="center"
@@ -34,19 +51,42 @@ const TimelineEntry = (): JSX.Element => {
           ></Box>
         </Flex>
         {/* Year and Location/Place */}
-        <VStack w="10vw" h="auto" justifyContent="center" alignContent="center">
+        <VStack
+          w={{ base: "fit-contnet", md: "10vw" }}
+          h="auto"
+          justifyContent="center"
+          alignContent="center"
+        >
           <Heading as="h3" size="md">
-            {"Operation Spark"}
+            {name}
           </Heading>
-          <Text>{"2021"}</Text>
+          {role && (
+            <Heading as="h4" size="sm">
+              {role}
+            </Heading>
+          )}
+          {year && <Text>{year}</Text>}
+          {yearStart && (
+            <HStack
+              w="100%"
+              h="100%"
+              justifyContent="center"
+              alignContent="center"
+              spacing={2}
+            >
+              <Text>{yearStart}</Text>
+              <Text>{"-"}</Text>
+              {yearEnd === null ? (
+                <Text>{"present"}</Text>
+              ) : (
+                <Text>{yearEnd}</Text>
+              )}
+            </HStack>
+          )}
         </VStack>
         {/* Description */}
         <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
-          <Text>
-            {
-              "1000 hour software engineering bootbamp derived from Hack Reactor, utilizing a lot of the same principals, methodologies, and material, focusing on functional webapp development in Javascript utilizing frameworks such as React, Angular, and Typescript. The course focused heavily on teamwork and working with a team to build projects and apps."
-            }
-          </Text>
+          <Text>{desc}</Text>
         </VStack>
       </HStack>
     </HStack>

@@ -11,7 +11,7 @@ const About = (): JSX.Element => {
       py="10vh"
       id="about"
       textAlign="center"
-      w={"100%"}
+      w="100%"
       h="auto"
     >
       <Heading as="h3" size="xl" mb={12}>
