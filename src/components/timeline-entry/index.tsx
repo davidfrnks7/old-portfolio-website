@@ -40,8 +40,8 @@ const TimelineEntry = ({
         borderWidth="0px 0px 0px 1px"
       >
         <Flex
-          h="2.88rem"
-          w="1.17rem"
+          h="44px"
+          w="16px"
           direction="column"
           display={{ base: "none", md: "flex" }}
         >
