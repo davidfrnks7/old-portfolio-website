@@ -42,7 +42,14 @@ const Footer = (): JSX.Element => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <Box bg="brand.footer" as="footer" w="100%" h="auto">
+    <Box
+      bg="brand.footer"
+      as="footer"
+      w="100%"
+      h="auto"
+      pos="sticky"
+      zIndex={1}
+    >
       <BackToTopButton show={showBackToTop} />
       <VStack
         h="auto"
