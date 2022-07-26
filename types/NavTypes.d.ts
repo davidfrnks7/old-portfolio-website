@@ -1,8 +1,8 @@
 type RefNames =
-| "Greeting"
-| "About"
-| "Education"
-| "Work"
-| "Skills"
-| "Projects"
-| "Contact";
+  | "Greeting"
+  | "About"
+  | "Education"
+  | "Work"
+  | "Skills"
+  | "Projects"
+  | "Contact";

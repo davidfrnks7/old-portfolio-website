@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { AppProps } from "next/app";
 import { Box } from "@chakra-ui/react";
 import Layout from "../theme/layout/Layout";
