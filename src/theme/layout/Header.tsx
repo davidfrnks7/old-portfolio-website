@@ -12,7 +12,20 @@ import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-const Header = (): JSX.Element => {
+type RefNames =
+  | "Greeting"
+  | "About"
+  | "Education"
+  | "Work"
+  | "Skills"
+  | "Projects"
+  | "Contact";
+
+interface HeaderProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const Header = ({ navTo }: HeaderProps): JSX.Element => {
   // Sticky Navbar, Scroll Direction, and Back to Top Button Visibility
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
   const lastScroll = useRef<number>(0);
@@ -75,6 +88,17 @@ const Header = (): JSX.Element => {
     }
   };
 
+  // Handle Nav
+
+  const handleDesktopNav = (string: RefNames): void => {
+    navTo(string);
+  };
+
+  const handleMobileNav = (string: RefNames): void => {
+    navTo(string);
+    setOpen(false);
+  };
+
   return (
     <Box
       zIndex={1000000}
@@ -86,15 +110,15 @@ const Header = (): JSX.Element => {
         open
           ? "none"
           : stickyNavbar
-          ? "rgba(0, 134, 255, 0.75) 0px 0px 15px, rgba(0, 134, 255, 0.5) 0px 0px 3px 1px"
-          : "none"
+            ? "rgba(0, 134, 255, 0.75) 0px 0px 15px, rgba(0, 134, 255, 0.5) 0px 0px 3px 1px"
+            : "none"
       }
       bg={
         open
           ? "brand.main"
           : stickyNavbar
-          ? "rgba(49, 56, 220, 0.9)"
-          : "transparent"
+            ? "rgba(49, 56, 220, 0.9)"
+            : "transparent"
       }
       display={
         scrollDirection === "up" || scrollDirection === "top" ? "block" : "none"
@@ -106,8 +130,8 @@ const Header = (): JSX.Element => {
         boxShadow: open
           ? "none"
           : stickyNavbar
-          ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
-          : "none"
+            ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
+            : "none"
       }}
       h={open ? "125px" : "auto"}
     >
@@ -146,7 +170,7 @@ const Header = (): JSX.Element => {
               David Franks Portfolio Website
             </Heading>
           </Box>
-          <DesktopNav sticky={stickyNavbar} />
+          <DesktopNav handleNav={handleDesktopNav} sticky={stickyNavbar} />
         </HStack>
         <Menu isLazy lazyBehavior="unmount" isOpen={open}>
           <MenuButton
@@ -163,7 +187,7 @@ const Header = (): JSX.Element => {
             border={stickyNavbar ? "1px solid #0068ff" : "none"}
             id="mobile-menu-button"
           />
-          <MobileNav updateOpen={setOpen} />
+          <MobileNav handleNav={handleMobileNav} />
         </Menu>
       </HStack>
     </Box>

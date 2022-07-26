@@ -8,11 +8,19 @@ import {
 } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
+type RefNames =
+  | "Greeting"
+  | "About"
+  | "Education"
+  | "Work"
+  | "Skills"
+  | "Projects"
+  | "Contact";
 interface MobileNavProps {
-  updateOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleNav: (string: RefNames) => void;
 }
 
-const MobileNav: FC<MobileNavProps> = ({ updateOpen }: MobileNavProps) => {
+const MobileNav: FC<MobileNavProps> = ({ handleNav }: MobileNavProps) => {
   return (
     <MenuList
       as="nav"
@@ -39,13 +47,17 @@ const MobileNav: FC<MobileNavProps> = ({ updateOpen }: MobileNavProps) => {
               backgroundColor: "none"
             }}
           >
-            <Link onClick={() => updateOpen(false)} href={navItem[1]}>
-              {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
-              <Button w="100vw" variant={"nav"} p={0} m="auto">
-                {navItem[0]}
-              </Button>
-              <MenuDivider />
-            </Link>
+            {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
+            <Button
+              w="100vw"
+              variant={"nav"}
+              p={0}
+              m="auto"
+              onClick={() => handleNav(navItem[1])}
+            >
+              {navItem[0]}
+            </Button>
+            <MenuDivider />
           </MenuItem>
         );
       })}
