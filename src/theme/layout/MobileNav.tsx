@@ -1,11 +1,5 @@
 import React, { FC, Fragment } from "react";
-import {
-  Button,
-  Link,
-  MenuDivider,
-  MenuItem,
-  MenuList
-} from "@chakra-ui/react";
+import { Button, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
 type RefNames =

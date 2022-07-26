@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Button, HStack, Link } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
 type RefNames =

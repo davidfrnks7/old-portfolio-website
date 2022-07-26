@@ -110,15 +110,15 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
         open
           ? "none"
           : stickyNavbar
-            ? "rgba(0, 134, 255, 0.75) 0px 0px 15px, rgba(0, 134, 255, 0.5) 0px 0px 3px 1px"
-            : "none"
+          ? "rgba(0, 134, 255, 0.75) 0px 0px 15px, rgba(0, 134, 255, 0.5) 0px 0px 3px 1px"
+          : "none"
       }
       bg={
         open
           ? "brand.main"
           : stickyNavbar
-            ? "rgba(49, 56, 220, 0.9)"
-            : "transparent"
+          ? "rgba(49, 56, 220, 0.9)"
+          : "transparent"
       }
       display={
         scrollDirection === "up" || scrollDirection === "top" ? "block" : "none"
@@ -130,8 +130,8 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
         boxShadow: open
           ? "none"
           : stickyNavbar
-            ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
-            : "none"
+          ? "rgba(0, 134, 255, 0.9) 0px 0px 15px, rgba(0, 134, 255, 0.7) 0px 0px 3px 1px"
+          : "none"
       }}
       h={open ? "125px" : "auto"}
     >

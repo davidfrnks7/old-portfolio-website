@@ -15,7 +15,19 @@ import { motion } from "framer-motion";
 
 export const MotionBox = motion<BoxProps>(Box);
 
-const Footer = (): JSX.Element => {
+type RefNames =
+  | "Greeting"
+  | "About"
+  | "Education"
+  | "Work"
+  | "Skills"
+  | "Projects"
+  | "Contact";
+interface FooterProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const Footer = ({ navTo }: FooterProps): JSX.Element => {
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
   const lastScroll = useRef<number>(0);
 
@@ -50,7 +62,7 @@ const Footer = (): JSX.Element => {
       pos="sticky"
       zIndex={1}
     >
-      <BackToTopButton show={showBackToTop} />
+      <BackToTopButton show={showBackToTop} navTo={navTo} />
       <VStack
         h="auto"
         w="auto"
