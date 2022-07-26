@@ -620,7 +620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/react@npm:^2.2.4":
+"@chakra-ui/react@npm:<2.2.5":
   version: 2.2.4
   resolution: "@chakra-ui/react@npm:2.2.4"
   dependencies:
@@ -4609,7 +4609,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio-website@workspace:."
   dependencies:
-    "@chakra-ui/react": ^2.2.4
+    "@chakra-ui/react": <2.2.5
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
     "@hcaptcha/react-hcaptcha": ^1.4.4
