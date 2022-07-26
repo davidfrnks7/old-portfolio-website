@@ -1,12 +1,16 @@
 import React, { FC } from "react";
-import { Button, HStack, Link } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
 interface DesktopNavProps {
   sticky?: boolean;
+  handleNav: (string: RefNames) => void;
 }
 
-const DesktopNav: FC<DesktopNavProps> = ({ sticky }: DesktopNavProps) => {
+const DesktopNav: FC<DesktopNavProps> = ({
+  sticky,
+  handleNav
+}: DesktopNavProps) => {
   return (
     <HStack
       as="nav"
@@ -14,16 +18,20 @@ const DesktopNav: FC<DesktopNavProps> = ({ sticky }: DesktopNavProps) => {
       h="auto"
       w="auto"
       spacing={4}
-      // m="auto"
       justifyContent="center"
       alignContent="center"
       alignItems="center"
     >
       {navItems.map((navItem: NavItem) => {
         return (
-          <Link id={"dekstop-" + navItem[0]} key={navItem[0]} href={navItem[1]}>
-            <Button variant={sticky ? "stickyNav" : "nav"}>{navItem[0]}</Button>
-          </Link>
+          <Button
+            id={"dekstop-" + navItem[0]}
+            key={navItem[0]}
+            variant={sticky ? "stickyNav" : "nav"}
+            onClick={() => handleNav(navItem[1])}
+          >
+            {navItem[0]}
+          </Button>
         );
       })}
     </HStack>

@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from "react";
-
 import type { AppProps } from "next/app";
 import Header from "./Header";
 import { Box } from "@chakra-ui/layout";
@@ -8,17 +7,18 @@ import Footer from "./Footer";
 interface LayoutProps {
   children: ReactNode;
   elementType?: string;
+  navTo: (refName: RefNames) => void;
 }
 
 const Layout: FC<LayoutProps> = (
-  { children }: LayoutProps,
+  { children, navTo }: LayoutProps,
   { pageProps }: AppProps
 ) => {
   return (
     <Box w="100%">
-      <Header {...pageProps} />
+      <Header {...pageProps} navTo={navTo} />
       <main>{children}</main>
-      <Footer />
+      <Footer navTo={navTo} />
     </Box>
   );
 };

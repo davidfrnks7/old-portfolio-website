@@ -12,7 +12,11 @@ import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-const Header = (): JSX.Element => {
+interface HeaderProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const Header = ({ navTo }: HeaderProps): JSX.Element => {
   // Sticky Navbar, Scroll Direction, and Back to Top Button Visibility
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
   const lastScroll = useRef<number>(0);
@@ -74,6 +78,18 @@ const Header = (): JSX.Element => {
       return iconType.default;
     }
   };
+
+  // Handle Nav
+  const handleDesktopNav = (string: RefNames): void => {
+    navTo(string);
+  };
+
+  const handleMobileNav = (string: RefNames): void => {
+    navTo(string);
+    setOpen(false);
+  };
+
+  // Highlight Menu Items
 
   return (
     <Box
@@ -146,7 +162,7 @@ const Header = (): JSX.Element => {
               David Franks Portfolio Website
             </Heading>
           </Box>
-          <DesktopNav sticky={stickyNavbar} />
+          <DesktopNav handleNav={handleDesktopNav} sticky={stickyNavbar} />
         </HStack>
         <Menu isLazy lazyBehavior="unmount" isOpen={open}>
           <MenuButton
@@ -163,7 +179,7 @@ const Header = (): JSX.Element => {
             border={stickyNavbar ? "1px solid #0068ff" : "none"}
             id="mobile-menu-button"
           />
-          <MobileNav updateOpen={setOpen} />
+          <MobileNav handleNav={handleMobileNav} />
         </Menu>
       </HStack>
     </Box>
