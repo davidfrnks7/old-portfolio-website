@@ -2,14 +2,6 @@ import React, { FC } from "react";
 import { Button, HStack } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
 interface DesktopNavProps {
   sticky?: boolean;
   handleNav: (string: RefNames) => void;

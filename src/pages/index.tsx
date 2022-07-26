@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { AppProps } from "next/app";
 import { Box } from "@chakra-ui/react";
 import Layout from "../theme/layout/Layout";
@@ -20,15 +20,6 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
-
-  type RefNames =
-    | "Greeting"
-    | "About"
-    | "Education"
-    | "Work"
-    | "Skills"
-    | "Projects"
-    | "Contact";
 
   const navTo = (refName: RefNames): void => {
     switch (refName) {

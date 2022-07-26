@@ -2,14 +2,6 @@ import React, { FC, Fragment } from "react";
 import { Button, MenuDivider, MenuItem, MenuList } from "@chakra-ui/react";
 import navItems, { NavItem } from "./navItems";
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
 interface MobileNavProps {
   handleNav: (string: RefNames) => void;
 }

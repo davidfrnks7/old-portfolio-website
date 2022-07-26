@@ -10,15 +10,6 @@ interface LayoutProps {
   navTo: (refName: RefNames) => void;
 }
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
-
 const Layout: FC<LayoutProps> = (
   { children, navTo }: LayoutProps,
   { pageProps }: AppProps

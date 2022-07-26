@@ -12,15 +12,6 @@ import { Icon } from "@iconify/react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
-
 interface HeaderProps {
   navTo: (refName: RefNames) => void;
 }
@@ -89,7 +80,6 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
   };
 
   // Handle Nav
-
   const handleDesktopNav = (string: RefNames): void => {
     navTo(string);
   };
@@ -98,6 +88,8 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
     navTo(string);
     setOpen(false);
   };
+
+  // Highlight Menu Items
 
   return (
     <Box

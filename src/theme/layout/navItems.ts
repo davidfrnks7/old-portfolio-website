@@ -1,11 +1,3 @@
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
 export type NavItem = [string, RefNames];
 export type NavItems = NavItem[];
 

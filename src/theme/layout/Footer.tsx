@@ -15,14 +15,6 @@ import { motion } from "framer-motion";
 
 export const MotionBox = motion<BoxProps>(Box);
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
 interface FooterProps {
   navTo: (refName: RefNames) => void;
 }

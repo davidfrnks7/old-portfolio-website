@@ -5,14 +5,6 @@ import { motion } from "framer-motion";
 
 export const MotionBox = motion<BoxProps>(Box);
 
-type RefNames =
-  | "Greeting"
-  | "About"
-  | "Education"
-  | "Work"
-  | "Skills"
-  | "Projects"
-  | "Contact";
 interface BackToTopButtonProps {
   show: boolean;
   navTo: (refName: RefNames) => void;
