@@ -1,14 +1,13 @@
 import React from "react";
-import { Box, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, SimpleGrid, VStack } from "@chakra-ui/react";
 import { projects, Project as SingleProject } from "./projectList";
 import Project from "./Project";
+import Heading from "../../heading/Heading";
 
 const Projects = (): JSX.Element => {
   return (
     <Box id="projects" textAlign="center" w="100%" h="auto">
-      <Heading as="h3" size="xl" mb={12}>
-        Projects
-      </Heading>
+      <Heading heading="Projects" />
       <SimpleGrid
         columns={{ base: 2, xl: 3 }}
         h="auto"

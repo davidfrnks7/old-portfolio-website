@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import davidFImage from "../../../../public/images/davidFImage.jpg";
 import Bio from "./Bio";
+import Heading from "../../heading/Heading";
 
 const About = (): JSX.Element => {
   return (
@@ -13,9 +14,7 @@ const About = (): JSX.Element => {
       w="100%"
       h="auto"
     >
-      <Heading as="h3" size="xl" mb={12}>
-        {"About Me"}
-      </Heading>
+      <Heading heading="About Me" />
       <HStack
         boxShadow="rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px"
         borderRadius="2xl"
