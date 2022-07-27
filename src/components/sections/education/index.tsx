@@ -1,14 +1,13 @@
 import React from "react";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import TimelineEntry from "../../timeline-entry";
 import education, { Program } from "./education";
+import Heading from "../../heading/Heading";
 
 const Education = (): JSX.Element => {
   return (
     <Box w="100%" h="auto" id="education">
-      <Heading as="h2" mb={12}>
-        {"Education"}
-      </Heading>
+      <Heading heading="Education" />
       {education.map((entry: Program) => {
         const { name, year, desc } = entry;
         return (
