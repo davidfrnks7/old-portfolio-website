@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml"><img alt="CI Status Badge" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg" /></a>
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml"><img alt="CodeQL Analysis" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml/badge.svg?branch=main" /></a>
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml"><img alt="CodeQL Analysis" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml/badge.svg?branch=main" /></a>
+  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml"><img alt="Node.js CI status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg" /></a>
+  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml"><img alt="CodeQL Analysis status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml/badge.svg?branch=main" /></a>
+  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml"><img alt="njsscan sarif status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml/badge.svg?branch=main" /></a>
 </p>
 
-# [David Franks Portfolio Website](https://davidfrnks7.dev/)
+<h1> [David Franks Portfolio Website](https://davidfrnks7.dev/)</h1>
 
 ## About
 
@@ -178,7 +178,7 @@ To start the app run:
 yarn run
 ```
 
-##### It is recommended that the app is deployed using the [Vercel Platform](https://vercel.com/new). Vercel is optimized to dynamically serve static, dynamic, and hybrid pages based on the needs of each individual page that is built. It deploys in less than a minute and can be linked to a Github repo to keep the production server up do date with the most recent pushes to your main or production branch. It automatically provides SSL and CDN to each app and scales automatically. Vercel also monitors all branched and deploys preview builds for those branches to test fixes, refactors, and new content live.
+##### It is recommended that the app is deployed using the [Vercel Platform](https://vercel.com/new). Vercel is optimized to dynamically serve static, dynamic, and hybrid pages based on the needs of each individual page that is built. It deploys in less than a minute and can be linked to a Github repo to keep the production server up do date with the most recent pushes to your main or production branch. It automatically provides SSL and CDN to each app and scales automatically. Vercel also monitors all branched and deploys preview builds for those branches to test fixes, refactors, and new content live
 
 # Development Features
 
