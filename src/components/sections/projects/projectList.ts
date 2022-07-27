@@ -61,7 +61,7 @@ export const projects: Project[] = [
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
     links: {
       github: "https://github.com/davidfrnks7/plexus-create",
-      website: "https://www.plexuscreate.com/"
+      // website: "https://www.plexuscreate.com/"
     }
   },
   {
