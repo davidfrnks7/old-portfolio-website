@@ -8,15 +8,16 @@ interface LayoutProps {
   children: ReactNode;
   elementType?: string;
   navTo: (refName: RefNames) => void;
+  highlight: RefNames | undefined;
 }
 
 const Layout: FC<LayoutProps> = (
-  { children, navTo }: LayoutProps,
+  { children, navTo, highlight }: LayoutProps,
   { pageProps }: AppProps
 ) => {
   return (
     <Box w="100%">
-      <Header {...pageProps} navTo={navTo} />
+      <Header {...pageProps} navTo={navTo} highlight={highlight} />
       <main>{children}</main>
       <Footer navTo={navTo} />
     </Box>

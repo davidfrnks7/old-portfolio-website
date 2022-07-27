@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AppProps } from "next/app";
 import { Box } from "@chakra-ui/react";
 import Layout from "../theme/layout/Layout";
@@ -21,6 +21,7 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
+  // Handles scrolling to specific sections of the page.
   const navTo = (refName: RefNames): void => {
     switch (refName) {
       case "Greeting":
@@ -68,8 +69,71 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
     }
   };
 
+  // Menu Item Highlight
+
+  const [visibleSection, setVisibleSection] = useState<RefNames | undefined>();
+
+  const getSectionDimensions = (
+    ele: HTMLDivElement
+  ): { height: number; offsetTop: number; offsetBottom: number } => {
+    const { height } = ele.getBoundingClientRect();
+    const offsetTop = ele.offsetTop;
+    const offsetBottom = offsetTop + height;
+
+    return {
+      height,
+      offsetTop,
+      offsetBottom
+    };
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Sections
+      const sectionRefs: {
+        section: RefNames;
+        ref: React.MutableRefObject<HTMLDivElement | null>;
+      }[] = [
+        { section: "Greeting", ref: greetingRef },
+        { section: "About", ref: aboutRef },
+        { section: "Education", ref: educationRef },
+        { section: "Work", ref: workRef },
+        { section: "Skills", ref: skillsRef },
+        { section: "Projects", ref: projectsRef },
+        { section: "Contact", ref: contactRef }
+      ];
+
+      // Current Scroll Position
+      const scrollPosition = window.scrollY + 200;
+
+      // Find the selected ref
+      const selected = sectionRefs.find(({ ref }) => {
+        const ele = ref.current;
+
+        if (ele !== null) {
+          const { offsetBottom, offsetTop } = getSectionDimensions(ele);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+
+      // Set the selected section.
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section);
+      } else if (!selected && visibleSection) {
+        setVisibleSection(undefined);
+      }
+    };
+
+    // Invoke function and pass it into an event listener on scroll.
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [visibleSection]);
+
   return (
-    <Layout {...pageProps} navTo={navTo}>
+    <Layout {...pageProps} navTo={navTo} highlight={visibleSection}>
       <PillPity
         pattern="circuit-board"
         as={Box}
