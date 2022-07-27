@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AppProps } from "next/app";
-import { Box } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import Layout from "../theme/layout/Layout";
 import PillPity from "pill-pity";
 import Greeting from "../components/sections/greeting";
@@ -94,14 +94,14 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
         section: RefNames;
         ref: React.MutableRefObject<HTMLDivElement | null>;
       }[] = [
-        { section: "Greeting", ref: greetingRef },
-        { section: "About", ref: aboutRef },
-        { section: "Education", ref: educationRef },
-        { section: "Work", ref: workRef },
-        { section: "Skills", ref: skillsRef },
-        { section: "Projects", ref: projectsRef },
-        { section: "Contact", ref: contactRef }
-      ];
+          { section: "Greeting", ref: greetingRef },
+          { section: "About", ref: aboutRef },
+          { section: "Education", ref: educationRef },
+          { section: "Work", ref: workRef },
+          { section: "Skills", ref: skillsRef },
+          { section: "Projects", ref: projectsRef },
+          { section: "Contact", ref: contactRef }
+        ];
 
       // Current Scroll Position
       const scrollPosition = window.scrollY + 200;
@@ -145,36 +145,38 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
         w="100%"
         zIndex={0}
       ></PillPity>
-      <Box
-        textAlign="center"
+      <VStack
         w="100%"
         h="auto"
-        pb="10vh"
+        pb="15vh"
         pos="sticky"
         zIndex={1}
+        justifyItems="center"
+        alignContent="center"
+        spacing="15vh"
       >
-        <Box m={0} p={0} ref={greetingRef}>
+        <Box m={0} p={0} w="100%" ref={greetingRef}>
           <Greeting />
         </Box>
-        <Box m={0} p={0} ref={aboutRef}>
+        <Box m={0} p={0} w="100%" ref={aboutRef}>
           <About />
         </Box>
-        <Box m={0} p={0} ref={educationRef}>
+        <Box m={0} p={0} w="100%" ref={educationRef}>
           <Education />
         </Box>
-        <Box m={0} p={0} ref={workRef}>
+        <Box m={0} p={0} w="100%" ref={workRef}>
           <WorkHistory />
         </Box>
-        <Box m={0} p={0} ref={skillsRef}>
+        <Box m={0} p={0} w="100%" ref={skillsRef}>
           <Skills />
         </Box>
-        <Box m={0} p={0} ref={projectsRef}>
+        <Box m={0} p={0} w="100%" ref={projectsRef}>
           <Projects />
         </Box>
-        <Box m={0} p={0} ref={contactRef}>
+        <Box m={0} p={0} w="100%" ref={contactRef}>
           <Contact />
         </Box>
-      </Box>
+      </VStack>
     </Layout>
   );
 };
