@@ -60,8 +60,8 @@ export const projects: Project[] = [
       "The app was deployed on Vercel and used PostgreSQL for the database",
     logo: "https://raw.githubusercontent.com/davidfrnks7/plexus-create/main/public/favicon.ico",
     links: {
-      github: "https://github.com/davidfrnks7/plexus-create",
-      website: "https://www.plexuscreate.com/"
+      github: "https://github.com/davidfrnks7/plexus-create"
+      // website: "https://www.plexuscreate.com/"
     }
   },
   {

@@ -5,7 +5,7 @@ import education, { Program } from "./education";
 
 const Education = (): JSX.Element => {
   return (
-    <Box w="100%" h="auto" py="10vh" id="education">
+    <Box w="100%" h="auto" id="education">
       <Heading as="h2" mb={12}>
         {"Education"}
       </Heading>

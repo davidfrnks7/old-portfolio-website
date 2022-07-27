@@ -6,7 +6,6 @@ const Skills = (): JSX.Element => {
   return (
     <Box
       bg="brand.content"
-      my="7vh"
       py="3vh"
       id="skills"
       textAlign="center"

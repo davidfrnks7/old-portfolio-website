@@ -69,7 +69,7 @@ const buttonStyles = {
       fontSize: "md",
       px: "2",
       _hover: {
-        textDecoration: "underline"
+        color: "brand.hover"
       }
     }),
     credits: (props: Dict<never> | StyleFunctionProps) => ({

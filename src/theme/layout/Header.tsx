@@ -14,15 +14,16 @@ import MobileNav from "./MobileNav";
 
 interface HeaderProps {
   navTo: (refName: RefNames) => void;
+  highlight: RefNames | undefined;
 }
 
-const Header = ({ navTo }: HeaderProps): JSX.Element => {
+const Header = ({ navTo, highlight }: HeaderProps): JSX.Element => {
   // Sticky Navbar, Scroll Direction, and Back to Top Button Visibility
   const [stickyNavbar, setStickyNavbar] = useState<boolean>(false);
   const lastScroll = useRef<number>(0);
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
-    "top"
-  );
+  const [, /*scrollDirection*/ setScrollDirection] = useState<
+    "up" | "down" | "top"
+  >("top");
   // const [scroll, setScroll] = useState<number>(0);
 
   const handleScroll = (): void => {
@@ -89,8 +90,6 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
     setOpen(false);
   };
 
-  // Highlight Menu Items
-
   return (
     <Box
       zIndex={1000000}
@@ -111,9 +110,6 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
           : stickyNavbar
           ? "rgba(49, 56, 220, 0.9)"
           : "transparent"
-      }
-      display={
-        scrollDirection === "up" || scrollDirection === "top" ? "block" : "none"
       }
       transition=".5s ease"
       borderRadius="0px 0px 10px 10px"
@@ -162,7 +158,11 @@ const Header = ({ navTo }: HeaderProps): JSX.Element => {
               David Franks Portfolio Website
             </Heading>
           </Box>
-          <DesktopNav handleNav={handleDesktopNav} sticky={stickyNavbar} />
+          <DesktopNav
+            handleNav={handleDesktopNav}
+            sticky={stickyNavbar}
+            highlight={highlight}
+          />
         </HStack>
         <Menu isLazy lazyBehavior="unmount" isOpen={open}>
           <MenuButton
