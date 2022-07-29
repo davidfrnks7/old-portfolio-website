@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AppProps } from "next/app";
 import { Box, VStack } from "@chakra-ui/react";
-import Layout from "../theme/layout/Layout";
+import Layout from "../theme/layout";
 import PillPity from "pill-pity";
 import Greeting from "../components/sections/greeting";
 import About from "../components/sections/about";
@@ -156,7 +156,7 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
         spacing="15vh"
       >
         <Box m={0} p={0} w="100%" ref={greetingRef}>
-          <Greeting />
+          <Greeting navTo={navTo} />
         </Box>
         <Box m={0} p={0} w="100%" ref={aboutRef}>
           <About />

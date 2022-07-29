@@ -2,7 +2,7 @@ import React from "react";
 import { Heading as ChokHeading } from "@chakra-ui/react";
 
 interface HeadingProps {
-  heading: string
+  heading: string;
 }
 
 const Heading = ({ heading }: HeadingProps): JSX.Element => {
