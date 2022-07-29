@@ -3,14 +3,18 @@ import React from "react";
 import CallToAction from "./CallToAction";
 import TypeWriter from "./TypeWriter";
 
-const Greeting = (): JSX.Element => {
+interface GreetingProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const Greeting = ({ navTo }: GreetingProps): JSX.Element => {
   return (
     <Box w="100%" h="100vh" textAlign="center" className="background">
       <Heading pt="35vh" as="h2" size="lg">
         {"Hello, I am David Franks"}
       </Heading>
       <TypeWriter />
-      <CallToAction />
+      <CallToAction navTo={navTo} />
     </Box>
   );
 };

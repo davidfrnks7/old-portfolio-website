@@ -8,7 +8,11 @@ import {
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 
-const ContactButtons = (): JSX.Element => {
+interface ContactButtonsProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const ContactButtons = ({ navTo }: ContactButtonsProps): JSX.Element => {
   return (
     <Fragment>
       <ButtonGroup variant="contactPrimary" isAttached boxShadow="xl">
@@ -33,14 +37,12 @@ const ContactButtons = (): JSX.Element => {
           color="whiteAlpha"
           fontSize="md"
         >
-          <Link href="/#contact">
-            <IconButton
-              borderRadius="0px 4px 4px 0px"
-              aria-label="Go to email form"
-              // mr="-px"
-              icon={<Icon icon="clarity:email-solid" />}
-            />
-          </Link>
+          <IconButton
+            borderRadius="0px 4px 4px 0px"
+            aria-label="Go to email form"
+            icon={<Icon icon="clarity:email-solid" />}
+            onClick={() => navTo("Contact")}
+          />
         </Tooltip>
       </ButtonGroup>
       <ButtonGroup variant="contactSecondary" isAttached boxShadow="xl">
@@ -65,14 +67,12 @@ const ContactButtons = (): JSX.Element => {
           color="whiteAlpha"
           fontSize="md"
         >
-          <Link href="/#projects">
-            <IconButton
-              borderRadius="0px 4px 4px 0px"
-              aria-label="Go to projects section"
-              // mr="-px"
-              icon={<Icon icon="akar-icons:chevron-down" />}
-            />
-          </Link>
+          <IconButton
+            borderRadius="0px 4px 4px 0px"
+            aria-label="Go to projects section"
+            icon={<Icon icon="akar-icons:chevron-down" />}
+            onClick={() => navTo("Projects")}
+          />
         </Tooltip>
       </ButtonGroup>
     </Fragment>

@@ -2,7 +2,11 @@ import React, { Fragment } from "react";
 import { HStack, VStack } from "@chakra-ui/react";
 import ContactButtons from "./ContactButtons";
 
-const CallToAction = (): JSX.Element => {
+interface CallToActionProps {
+  navTo: (refName: RefNames) => void;
+}
+
+const CallToAction = ({ navTo }: CallToActionProps): JSX.Element => {
   return (
     <Fragment>
       <HStack
@@ -13,7 +17,7 @@ const CallToAction = (): JSX.Element => {
         justifyContent="center"
         alignContent="center"
       >
-        <ContactButtons />
+        <ContactButtons navTo={navTo} />
       </HStack>
       <VStack
         display={{ base: "flex", md: "none" }}
@@ -23,7 +27,7 @@ const CallToAction = (): JSX.Element => {
         justifyContent="center"
         alignContent="center"
       >
-        <ContactButtons />
+        <ContactButtons navTo={navTo} />
       </VStack>
     </Fragment>
   );
