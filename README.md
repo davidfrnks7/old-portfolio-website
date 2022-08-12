@@ -4,7 +4,7 @@
   <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml"><img alt="njsscan sarif status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml/badge.svg?branch=main" /></a>
 </p>
 
-<h1> [David Franks Portfolio Website](https://davidfrnks7.dev/)</h1>
+# [David Franks Portfolio Website](https://davidfrnks7.dev/)
 
 ## About
 
