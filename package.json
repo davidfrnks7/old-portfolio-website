@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": true,
   "author": {
     "name": "David F",
@@ -11,8 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pretty": "prettier --write .",
-    "up": "ncu -u && npm up && npm install"
+    "pretty": "prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.4",
@@ -44,5 +43,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
-  }
+  },
+  "packageManager": "yarn@3.2.2"
 }
