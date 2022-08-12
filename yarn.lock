@@ -1446,14 +1446,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.6.3":
+"@types/node@npm:*, @types/node@npm:^18.7.2":
   version: 18.7.2
   resolution: "@types/node@npm:18.7.2"
   checksum: 422cf95dea09959d0e809d24280b76948f60ea805e20d38f07bf9eeafeb413513b9cc365404766f7752bef9cafb8301a882d9d097f780e13f2bedf507459ebc5
   languageName: node
   linkType: hard
 
-"@types/nodemailer@npm:^6.4.4":
+"@types/nodemailer@npm:^6.4.5":
   version: 6.4.5
   resolution: "@types/nodemailer@npm:6.4.5"
   dependencies:
@@ -1476,7 +1476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.15":
+"@types/react@npm:^18.0.17":
   version: 18.0.17
   resolution: "@types/react@npm:18.0.17"
   dependencies:
@@ -4240,9 +4240,9 @@ __metadata:
     "@emotion/styled": ^11.10.0
     "@hcaptcha/react-hcaptcha": ^1.4.4
     "@iconify/react": ^3.2.2
-    "@types/node": ^18.6.3
-    "@types/nodemailer": ^6.4.4
-    "@types/react": ^18.0.15
+    "@types/node": ^18.7.2
+    "@types/nodemailer": ^6.4.5
+    "@types/react": ^18.0.17
     "@typescript-eslint/eslint-plugin": ^5.31.0
     axios: ^0.27.2
     eslint: ^8.21.0
