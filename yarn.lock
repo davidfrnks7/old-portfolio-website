@@ -2860,9 +2860,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "framer-motion@npm:7.1.0"
+"framer-motion@npm:<7.1.0":
+  version: 7.0.3
+  resolution: "framer-motion@npm:7.0.3"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
@@ -2877,7 +2877,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 499eddd14a0d72c41ddb0e9a3ced5021c1cd25695f98ab7b81659df60e14380f62e5bf45d2c49466a85ce64b33ae79b3fd760374f215abdb3818450d54f3f9be
+  checksum: 372e433cb328a770d1f884eeb0fa004778439fb8daa8a29bfc9261f062eb7ac8a5514af7174be153f7d8d343a2f5b6311c17ff9a6195cd1c5f9db26090f78943
   languageName: node
   linkType: hard
 
@@ -4252,7 +4252,7 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
     formik: ^2.2.9
-    framer-motion: ^7.1.0
+    framer-motion: <7.1.0
     next: 12.2.5
     nodemailer: ^6.7.8
     pill-pity: ^0.2.3
