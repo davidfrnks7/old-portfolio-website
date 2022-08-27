@@ -14,14 +14,14 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.2.6",
+    "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@hcaptcha/react-hcaptcha": "^1.4.4",
     "@iconify/react": "^3.2.2",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
-    "framer-motion": "<7.1.0",
+    "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "nodemailer": "^6.7.8",
     "pill-pity": "^0.2.3",
