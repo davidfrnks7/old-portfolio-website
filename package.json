@@ -14,20 +14,20 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.3.1",
+    "@chakra-ui/react": "^2.3.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@hcaptcha/react-hcaptcha": "^1.4.4",
-    "@iconify/react": "^3.2.2",
-    "axios": "^0.27.2",
+    "@iconify/react": "^4.0.0",
+    "axios": "^1.1.2",
     "formik": "^2.2.9",
-    "framer-motion": "^7.2.1",
-    "next": "12.2.5",
-    "nodemailer": "^6.7.8",
+    "framer-motion": "^7.5.3",
+    "next": "12.3.1",
+    "nodemailer": "^6.8.0",
     "pill-pity": "^0.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.30.7",
+    "sharp": "^0.31.1",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
