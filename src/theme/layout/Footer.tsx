@@ -71,7 +71,7 @@ const Footer = ({ navTo }: FooterProps): JSX.Element => {
             target="_blank"
             rel="noopener"
           >
-            <Icon fontSize="2.75rem" icon="logos:nextjs" />
+            <Icon fontSize="1.6rem" icon="logos:nextjs" />
           </Link>
         </HStack>
         <HStack color="brand.footerText" spacing={2}>
