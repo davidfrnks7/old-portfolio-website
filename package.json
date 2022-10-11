@@ -31,9 +31,9 @@
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.14",
-    "@types/nodemailer": "^6.4.5",
-    "@types/react": "^18.0.18",
+    "@types/node": "^18.8.4",
+    "@types/nodemailer": "^6.4.6",
+    "@types/react": "^18.0.21",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "eslint": "^8.23.0",
     "eslint-config-next": "12.2.5",
