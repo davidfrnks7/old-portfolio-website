@@ -14,7 +14,8 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.1",
+    "@chakra-ui/react": "^2.4.9",
+    "@ctrl/tinycolor": "^3.5.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@hcaptcha/react-hcaptcha": "^1.4.4",
