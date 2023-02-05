@@ -92,7 +92,12 @@ const TimelineEntry = ({
             )}
           </VStack>
           {/* Description */}
-          <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
+          <VStack
+            w="100%"
+            h="auto"
+            justifyContent="center"
+            alignContent="center"
+          >
             <Text>{desc}</Text>
           </VStack>
         </HStack>
@@ -171,7 +176,12 @@ const TimelineEntry = ({
             )}
           </VStack>
           {/* Description */}
-          <VStack w="100%" h="auto" justifyContent="center" alignContent="center">
+          <VStack
+            w="100%"
+            h="auto"
+            justifyContent="center"
+            alignContent="center"
+          >
             <Text>{desc}</Text>
           </VStack>
         </VStack>
