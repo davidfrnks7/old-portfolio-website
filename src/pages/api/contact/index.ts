@@ -72,6 +72,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
   validationType = "validating";
 
+  const devKey = "ABc123@&!";
+
   // Checking if a key was provided.
   if (!headerKey) {
     resString = "API key required!";
@@ -115,7 +117,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is NOT development.
-  if (headerKey === "ABc123@&!" && environment === "production") {
+  if (headerKey === devKey && environment === "production") {
     resString =
       "Dev/Preview key used in production mode. This key is not allowed in production mode. Your IP Address has been logged!";
     validKey = false;
@@ -136,7 +138,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
 
   // Check if the key is the dev or preview key and the environment is development.
   if (
-    headerKey === "ABc123@&!" &&
+    headerKey === devKey &&
     (environment === "development" || environment === "test")
   ) {
     validKey = true;
