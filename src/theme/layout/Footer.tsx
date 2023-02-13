@@ -85,7 +85,7 @@ const Footer = ({ navTo }: FooterProps): JSX.Element => {
             <Image
               alt="Chakra UI Logo"
               h="2rem"
-              src="https://gist.githubusercontent.com/navin-moorthy/d4c5fe7f384a106ba8171eee77b45623/raw/3e4d37340270a38367bfe94dd2f7daea2a0537a2/chakra-ui-logo.svg"
+              src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/media/logo-colored@2x.png?raw=true"
             />
           </Link>
         </HStack>
