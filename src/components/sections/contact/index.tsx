@@ -12,12 +12,13 @@ import {
   Box,
   BoxProps
 } from "@chakra-ui/react";
-import { Field, Form, Formik, FieldProps } from "formik";
+import { Field, Form, Formik, FieldProps, ErrorMessage } from "formik";
 import React, { useEffect, useState } from "react";
 import EmojiValidate from "./EmojiValidate";
 import axios from "axios";
 import Captcha from "./Captcha";
 import { motion } from "framer-motion";
+import FormAlert from "./FormAlert";
 
 export const MotionBox = motion<BoxProps>(Box);
 
@@ -138,7 +139,14 @@ const Contact = (): JSX.Element => {
     message: string;
   }
 
-  const handleSubmit = (input: FormFields): Promise<unknown> => {
+  // * Response Handing * //
+
+  const [resData, setResData] = useState<{
+    UIMessage: string;
+    resCode: number;
+  }>({ UIMessage: "", resCode: 0 });
+
+  const handleSubmit = (input: FormFields): Promise<number> => {
     return new Promise((resolve, reject) => {
       const body: FormFields = input;
       const key =
@@ -153,20 +161,42 @@ const Contact = (): JSX.Element => {
           }
         })
         .then((data) => {
+          console.info("data:" + data);
           const { status, responseText } = data.request;
+          const { resString, UIMessage } = JSON.parse(responseText);
 
           if (status >= 200 && status <= 299) {
-            return resolve(responseText);
-          } else if (status >= 400 && status <= 499) {
-            return reject(responseText);
-          } else if (status >= 500 && status <= 599) {
-            return reject(responseText);
+            setResData({ resCode: status, UIMessage });
+            return resolve(status);
           } else {
+            setResData({
+              resCode: 1,
+              UIMessage: `An unknown error occurred. Please try again.\nIf the error persists contact me directly at ${process.env.NEXT_PUBLIC_EMAIL}}`
+            });
+            console.error(resString);
             return reject("An unknown error occurred");
           }
         })
         .catch((err) => {
-          return reject(err.response.data);
+          const { status, data: error } = err.response;
+          const { errorMessage, UIMessage } = error;
+
+          if (status >= 400 && status <= 499) {
+            setResData({ resCode: status, UIMessage });
+            console.error(errorMessage);
+            return reject(status);
+          } else if (status >= 500 && status <= 599) {
+            setResData({ resCode: status, UIMessage });
+            console.error(errorMessage);
+            return reject(status);
+          } else {
+            setResData({
+              resCode: 1,
+              UIMessage: `An unknown error occurred. Please try again.\nIf the error persists contact me directly at ${process.env.NEXT_PUBLIC_EMAIL}`
+            });
+            console.error("Unknown Error:");
+            return reject("An unknown error occurred");
+          }
         });
     });
   };
@@ -211,6 +241,12 @@ const Contact = (): JSX.Element => {
         <Heading as="h3" size="xl" mb={6}>
           {"Contact Me"}
         </Heading>
+        {resData.resCode > 0 && (
+          <FormAlert
+            responseCode={resData.resCode}
+            UIMessage={resData.UIMessage}
+          />
+        )}
         <Formik
           initialValues={{
             name: "",
@@ -220,16 +256,18 @@ const Contact = (): JSX.Element => {
           }}
           onSubmit={(data, actions) => {
             handleSubmit(data)
-              .then(() => {
+              .then((status) => {
                 actions.setSubmitting(false);
-                actions.resetForm({
-                  values: {
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: ""
-                  }
-                });
+                if (status >= 200 && status <= 299) {
+                  actions.resetForm({
+                    values: {
+                      name: "",
+                      email: "",
+                      subject: "",
+                      message: ""
+                    }
+                  });
+                }
                 setToken(null);
                 setReset(true);
               })
@@ -237,7 +275,6 @@ const Contact = (): JSX.Element => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
-                console.warn(err.error);
               });
           }}
         >
@@ -297,13 +334,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -350,13 +387,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -414,13 +451,13 @@ const Contact = (): JSX.Element => {
                           placeholder="David Franks"
                           {...(!form.errors.name && form.touched.name
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -467,13 +504,13 @@ const Contact = (): JSX.Element => {
                           isDisabled={form.isSubmitting}
                           {...(!form.errors.email && form.touched.email
                             ? {
+                              borderColor: "brand.valid",
+                              boxShadow: "0 0 0 1px #00c17c",
+                              _hover: {
                                 borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c",
-                                _hover: {
-                                  borderColor: "brand.valid",
-                                  boxShadow: "0 0 0 1px #00c17c"
-                                }
+                                boxShadow: "0 0 0 1px #00c17c"
                               }
+                            }
                             : "")}
                         />
                         <FormErrorMessage>
@@ -524,13 +561,13 @@ const Contact = (): JSX.Element => {
                         isDisabled={form.isSubmitting}
                         {...(!form.errors.subject && form.touched.subject
                           ? {
+                            borderColor: "brand.valid",
+                            boxShadow: "0 0 0 1px #00c17c",
+                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
-                                borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
-                              }
+                              boxShadow: "0 0 0 1px #00c17c"
                             }
+                          }
                           : "")}
                       />
                       <FormErrorMessage>
@@ -579,13 +616,13 @@ const Contact = (): JSX.Element => {
                         placeholder="I like your portfolio website and your list of skills. I am contacting you to discuss..."
                         {...(!form.errors.message && form.touched.message
                           ? {
+                            borderColor: "brand.valid",
+                            boxShadow: "0 0 0 1px #00c17c",
+                            _hover: {
                               borderColor: "brand.valid",
-                              boxShadow: "0 0 0 1px #00c17c",
-                              _hover: {
-                                borderColor: "brand.valid",
-                                boxShadow: "0 0 0 1px #00c17c"
-                              }
+                              boxShadow: "0 0 0 1px #00c17c"
                             }
+                          }
                           : "")}
                       />
                       <FormErrorMessage>
