@@ -29,17 +29,21 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     req.socket.remoteAddress ||
     req.connection.remoteAddress;
 
-  // Response string
+  // Response strings
   let resString = "";
+  let UIMessage = "";
 
   // Error response
-  const errResponse = () => Object.assign({ error: resString });
+  const errResponse = () =>
+    Object.assign({ errorMessage: resString, UIMessage });
 
   // * Check method of the request * //
 
   // If method is not POST.
   if (method !== "POST") {
     resString = "This method is not allowed on this endpoint";
+    UIMessage =
+      "An unexpected HTTP request was used.\nPlease try again or open a GitHub issue about this error.";
 
     console.info(
       reqIP +
@@ -77,6 +81,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   // Checking if a key was provided.
   if (!headerKey) {
     resString = "API key required!";
+    UIMessage =
+      "An API key was not provided.\nPlease try again or open a GitHub issue about this error.";
     validKey = false;
     validationType = "invalid";
 
@@ -98,6 +104,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   // Checking if the keys don't match.
   if (envKey !== headerKey) {
     resString = "Wrong API key!";
+    UIMessage =
+      "An invalid API key was used.\nPlease try again or open a GitHub issue about this error.";
     validKey = false;
     validationType = "invalid";
 
@@ -120,6 +128,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   if (headerKey === devKey && environment === "production") {
     resString =
       "Dev/Preview key used in production mode. This key is not allowed in production mode. Your IP Address has been logged!";
+    UIMessage =
+      "The Dev/Preview API key was used in production mode.\nPlease try again or open a GitHub issue about this error.";
     validKey = false;
     validationType = "invalid";
 
@@ -165,6 +175,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   if (!name || !email || !subject || !message) {
     resString =
       "Invalid form data. Please make sure all form fields are filled out.";
+    UIMessage =
+      "Invalid form data\nPlease make sure all form fields are filled out.";
 
     console.info(
       reqIP + " did not provide a completed form. Info provided:\n" + bodyString
@@ -217,6 +229,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   // Checking the fields are valid.
   if (!validate()) {
     resString = "Invalid form data. Please check that all fields are valid.";
+    UIMessage = "Invalid form data.\nPlease check that all fields are valid.";
 
     console.info(
       reqIP + " did not provide a valid form. Info provided:\n" + bodyString
@@ -234,11 +247,16 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   if (validKey && validationType === "development") {
     resString =
       "Dev key validated in dev mode. Form validated. Message not sent.";
+    UIMessage =
+      "Dev key validated in dev mode. Form validated.\nMessage not sent.";
     console.info(
       "Form validated in development mode with a valid key. Message not sent."
     );
 
-    res.status(200).setHeader("Content-Type", "text/plain").send(resString);
+    res
+      .status(200)
+      .setHeader("Content-Type", "text/plain")
+      .json({ resString, UIMessage });
 
     return;
   }
@@ -272,6 +290,8 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     if (err) {
       resString =
         "An error occurred while trying to send this email. If the error persists please open an issue on the GitHub repo.";
+      UIMessage =
+        "An error occurred while trying to send this email.\nIf the error persists please open an issue on the GitHub repo.";
       console.warn("Failed to send the form:\n" + err);
 
       res
@@ -283,6 +303,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     }
 
     resString = "Message sent!";
+    UIMessage = "Message sent!";
 
     // Stringify the transporter info.
     const transporterInfoString: string = JSON.stringify(info);
@@ -294,7 +315,10 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
         transporterInfoString
     );
 
-    res.status(202).setHeader("Content-Type", "text/plain").send(resString);
+    res
+      .status(202)
+      .setHeader("Content-Type", "text/plain")
+      .json({ resString, UIMessage });
 
     return;
   });

@@ -18,13 +18,11 @@ import EmojiValidate from "./EmojiValidate";
 import axios from "axios";
 import Captcha from "./Captcha";
 import { motion } from "framer-motion";
+import FormAlert from "./FormAlert";
 
 export const MotionBox = motion<BoxProps>(Box);
 
 const Contact = (): JSX.Element => {
-  // Environment
-  const environment = process.env.NODE_ENV || "development";
-
   // Form field valid statuses.
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
@@ -138,13 +136,17 @@ const Contact = (): JSX.Element => {
     message: string;
   }
 
-  const handleSubmit = (input: FormFields): Promise<unknown> => {
+  // * Response Handing * //
+
+  const [resData, setResData] = useState<{
+    UIMessage: string;
+    resCode: number;
+  }>({ UIMessage: "", resCode: 0 });
+
+  const handleSubmit = (input: FormFields): Promise<number> => {
     return new Promise((resolve, reject) => {
       const body: FormFields = input;
-      const key =
-        environment !== "production"
-          ? "ABc123@&!"
-          : process.env.NEXT_PUBLIC_ACCESS_KEY;
+      const key = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
         .post("/api/contact", body, {
@@ -153,20 +155,42 @@ const Contact = (): JSX.Element => {
           }
         })
         .then((data) => {
+          console.info("data:" + data);
           const { status, responseText } = data.request;
+          const { resString, UIMessage } = JSON.parse(responseText);
 
           if (status >= 200 && status <= 299) {
-            return resolve(responseText);
-          } else if (status >= 400 && status <= 499) {
-            return reject(responseText);
-          } else if (status >= 500 && status <= 599) {
-            return reject(responseText);
+            setResData({ resCode: status, UIMessage });
+            return resolve(status);
           } else {
+            setResData({
+              resCode: 1,
+              UIMessage: `An unknown error occurred. Please try again.\nIf the error persists contact me directly at ${process.env.NEXT_PUBLIC_EMAIL}}`
+            });
+            console.error(resString);
             return reject("An unknown error occurred");
           }
         })
         .catch((err) => {
-          return reject(err.response.data);
+          const { status, data: error } = err.response;
+          const { errorMessage, UIMessage } = error;
+
+          if (status >= 400 && status <= 499) {
+            setResData({ resCode: status, UIMessage });
+            console.error(errorMessage);
+            return reject(status);
+          } else if (status >= 500 && status <= 599) {
+            setResData({ resCode: status, UIMessage });
+            console.error(errorMessage);
+            return reject(status);
+          } else {
+            setResData({
+              resCode: 1,
+              UIMessage: `An unknown error occurred. Please try again.\nIf the error persists contact me directly at ${process.env.NEXT_PUBLIC_EMAIL}`
+            });
+            console.error("Unknown Error:");
+            return reject("An unknown error occurred");
+          }
         });
     });
   };
@@ -211,6 +235,12 @@ const Contact = (): JSX.Element => {
         <Heading as="h3" size="xl" mb={6}>
           {"Contact Me"}
         </Heading>
+        {resData.resCode > 0 && (
+          <FormAlert
+            responseCode={resData.resCode}
+            UIMessage={resData.UIMessage}
+          />
+        )}
         <Formik
           initialValues={{
             name: "",
@@ -220,24 +250,25 @@ const Contact = (): JSX.Element => {
           }}
           onSubmit={(data, actions) => {
             handleSubmit(data)
-              .then(() => {
+              .then((status) => {
                 actions.setSubmitting(false);
-                actions.resetForm({
-                  values: {
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: ""
-                  }
-                });
+                if (status >= 200 && status <= 299) {
+                  actions.resetForm({
+                    values: {
+                      name: "",
+                      email: "",
+                      subject: "",
+                      message: ""
+                    }
+                  });
+                }
                 setToken(null);
                 setReset(true);
               })
-              .catch((err) => {
+              .catch(() => {
                 actions.setSubmitting(false);
                 setToken(null);
                 setReset(true);
-                console.warn(err.error);
               });
           }}
         >
