@@ -23,9 +23,6 @@ import FormAlert from "./FormAlert";
 export const MotionBox = motion<BoxProps>(Box);
 
 const Contact = (): JSX.Element => {
-  // Environment
-  const environment = process.env.NODE_ENV || "development";
-
   // Form field valid statuses.
   const [validName, setValidName] = useState<boolean>(false);
   const [validEmail, setValidEmail] = useState<boolean>(false);
@@ -149,10 +146,7 @@ const Contact = (): JSX.Element => {
   const handleSubmit = (input: FormFields): Promise<number> => {
     return new Promise((resolve, reject) => {
       const body: FormFields = input;
-      const key =
-        environment !== "production"
-          ? "ABc123@&!"
-          : process.env.NEXT_PUBLIC_ACCESS_KEY;
+      const key = process.env.NEXT_PUBLIC_ACCESS_KEY;
 
       axios
         .post("/api/contact", body, {
