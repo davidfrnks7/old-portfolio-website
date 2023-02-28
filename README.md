@@ -12,8 +12,7 @@ This app is meant to not only showcase a list of skills and projects David Frank
 
 More information to be added:
 
-- Work History
-- Education History & Certifications
+- Certifications
 - Access link to a sanitized version of David's most recent resume
   - Sanitized meaning personal email and phone number removed from the resume
 
@@ -39,7 +38,7 @@ The React Framework for Production
 
 ## Chakra UI
 
-[<img src="https://gist.githubusercontent.com/navin-moorthy/d4c5fe7f384a106ba8171eee77b45623/raw/3e4d37340270a38367bfe94dd2f7daea2a0537a2/chakra-ui-logo.svg" height="75px" alt="Chakra UI" >](https://chakra-ui.com/)
+[<img src="https://raw.githubusercontent.com/chakra-ui/chakra-ui/main/media/logo-colored@2x.png?raw=true" height=75px >](https://chakra-ui.com/)
 
 > [Chakra UI](https://chakra-ui.com/) is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
 
@@ -59,7 +58,7 @@ The React Framework for Production
 
 ## hCaptcha
 
-[<img src="https://assets-global.website-files.com/5c73e7ea3f8bb2a85d2781db/5c73e7ea3f8bb23b4c278261_hcaptcha-logo-landscape.svg" height=75px alt="hCaptcha" >](https://www.hcaptcha.com/)
+[<img src="https://assets-global.website-files.com/629d9c19da6544f17c9cbb3e/629d9c19da6544bd939cbbec_hcaptcha-logo-landscape.svg" height=75px alt="hCaptcha" >](https://www.hcaptcha.com/)
 
 > [hCaptcha](https://www.hcaptcha.com/) is an anti-bot solution that protects user privacy and rewards websites. It is the most popular reCAPTCHA alternative.
 
@@ -84,24 +83,27 @@ The app was built on and is tested for:
 - Ubuntu 20.04
 - Node.js 14.x
 - Node.js 16.x
+- Node.js 18.x
 
-I cannot guarantee functionality or stability if used on other OSs Ubuntu versions or Node.js versions.
+I cannot guarantee functionality or stability if used on other OSs, Ubuntu versions, or Node.js versions.
 
 ## Installation
 
 After cloning the app you will need to install the dependencies and packages. The app uses Yarn v2. Run this command to install using Yarn v2:
 
-```
-Yarn install
+```bash
+yarn install
 ```
 
 ### Upgrading Packages
 
-The `upgrade-interactive` plugin has been included in this app. To ungrade packages and dependencies run the following command:
+The `upgrade-interactive` plugin has been included in this app. To upgrade packages and dependencies run the following command:
 
-```
+```bash
 yarn upgrade-interactive
 ```
+
+You might need to install this plugin on your machine before it will work.
 
 The plugin `upgrade-interactive` is a combination of the `yarn outdated` and `yarn upgrade [package...]` commands. Where `yarn outdated` displays the list of outdated packages and `yarn upgrade [package...]` can then be used to upgrade desired packages, `yarn upgrade-interactive` displays the same outdated package list and lets you immediately chose which to upgrade.
 
@@ -117,31 +119,30 @@ Copy the files and remove the `example.` prefix to use them.
 
 - .env
 
-```
+```env
 EMAIL_ACCOUNT Authentication email for smtp service (Nodemailer)
 EMAIL_PASSWORD Authentication password for smtp service (Nodemailer)
 EMAIL Where the email is "from" (Nodemailer)
-ACCESS_KEY Key to authenticate the api call (To prevent spam use of the contact api.)
-NEXT_PUBLIC_ACCESS_KEY Keys have to match. This one only shows on the front end.
+NEXT_PUBLIC_EMAIL Used for error messages. It will display your email address in the error message of the form if something goes wrong.
 ```
 
 - .env.development
 
-```
+```env
 NEXT_PUBLIC_HCAPTCHA_KEY hCaptca key for development
 
-test key: 10000000-ffff-ffff-ffff-000000000001
+test hCaptca key: 10000000-ffff-ffff-ffff-000000000001
 
 ACCESS_KEY The key to be used for developments builds. Using this key will allow the test of contact form, api route, and validation. It will not send any emails through nodemailer.
+NEXT_PUBLIC_ACCESS_KEY The key above has to match.
 ```
-
-**If you choose to replace the current test access key with your own then please update the email function in:**
-`pages/api/contact/index.ts`
 
 - .env.production
 
-```
+```env
 NEXT_PUBLIC_HCAPTCHA_KEY hCaptca key for production
+ACCESS_KEY Key to authenticate the api call (To prevent spam use of the contact api.)
+NEXT_PUBLIC_ACCESS_KEY Keys have to match. This one only shows on the front end.
 ```
 
 Development and production variables overwrite the main env variables. Development keys can be kept in the main env file to be overridden when `yarn start` is used.
@@ -150,11 +151,11 @@ Development and production variables overwrite the main env variables. Developme
 
 To start the development server run the command
 
-```
+```bash
 yarn dev
 ```
 
-## Deployment Server
+## Deploy The Server
 
 To deploy the app it must first be built.
 
@@ -164,21 +165,21 @@ If any errors are present the build is aborted.
 
 To run the build command use:
 
-```
+```bash
 yarn build
 ```
 
-If the build is successful then the deployed server needs to be started.
+If the build is successful then the compiled code needs to be started.
 
 _This will not work if the build did not complete or a build was never done._
 
 To start the app run:
 
-```
+```bash
 yarn run
 ```
 
-##### It is recommended that the app is deployed using the [Vercel Platform](https://vercel.com/new). Vercel is optimized to dynamically serve static, dynamic, and hybrid pages based on the needs of each individual page that is built. It deploys in less than a minute and can be linked to a Github repo to keep the production server up do date with the most recent pushes to your main or production branch. It automatically provides SSL and CDN to each app and scales automatically. Vercel also monitors all branched and deploys preview builds for those branches to test fixes, refactors, and new content live
+##### It is recommended that the app is deployed using the [Vercel Platform](https://vercel.com/new). Vercel is optimized to dynamically serve static, dynamic, and hybrid pages based on the needs of each individual page that is built. It deploys in less than a minute and can be linked to a Github repo to keep the production server up do date with the most recent pushes to your main or production branch. It automatically provides SSL and CDN to each app and scales automatically. Vercel also monitors all branched and deploys preview builds for those branches to test fixes, refactors, and new features as they are made and implamented.
 
 # Development Features
 
@@ -188,18 +189,18 @@ This app has the prettier code formatter built in. [More about Prettier](https:/
 
 To have Prettier update the structure of the codebase run the following command:
 
-```
+```bash
 yarn pretty
 ```
 
 ## ESLint
 
-This app has ESLIne built in to check for errors within the code.
+This app has ESLine built in to check for errors within the code.
 
 **The A11y plugin in installed to help check for and meet accessibility standards.**
 
 To lint the codebase run the following command:
 
-```
+```bash
 yarn lint
 ```
