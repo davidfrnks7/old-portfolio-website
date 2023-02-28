@@ -25,19 +25,13 @@ const FormAlert = ({
         <HStack justifyContent="center" alignContent="center">
           <AlertIcon />
           <VStack justifyContent="center" alignContent="center" spacing={0}>
-            <AlertTitle>{"Something went wrong with the server or API."}</AlertTitle>
+            <AlertTitle>
+              {"Something went wrong with the server or API."}
+            </AlertTitle>
             <AlertDescription>
-              <VStack
-                justifyContent="center" alignContent="center" spacing={0}
-              >
-                {UIMessage.split("\n").map(line => {
-                  return (
-                    <Text
-                      key={line.replace(" ", "-")}
-                    >
-                      {line}
-                    </Text>
-                  )
+              <VStack justifyContent="center" alignContent="center" spacing={0}>
+                {UIMessage.split("\n").map((line) => {
+                  return <Text key={line.replace(" ", "-")}>{line}</Text>;
                 })}
               </VStack>
             </AlertDescription>
@@ -53,19 +47,13 @@ const FormAlert = ({
         <HStack justifyContent="center" alignContent="center">
           <AlertIcon />
           <VStack justifyContent="center" alignContent="center" spacing={0}>
-            <AlertTitle>{"Something went wrong with the form or site."}</AlertTitle>
+            <AlertTitle>
+              {"Something went wrong with the form or site."}
+            </AlertTitle>
             <AlertDescription>
-              <VStack
-                justifyContent="center" alignContent="center" spacing={0}
-              >
-                {UIMessage.split("\n").map(line => {
-                  return (
-                    <Text
-                      key={line.replace(" ", "-")}
-                    >
-                      {line}
-                    </Text>
-                  )
+              <VStack justifyContent="center" alignContent="center" spacing={0}>
+                {UIMessage.split("\n").map((line) => {
+                  return <Text key={line.replace(" ", "-")}>{line}</Text>;
                 })}
               </VStack>
             </AlertDescription>
@@ -83,17 +71,9 @@ const FormAlert = ({
           <VStack justifyContent="center" alignContent="center" spacing={0}>
             <AlertTitle>{"Success!"}</AlertTitle>
             <AlertDescription>
-              <VStack
-                justifyContent="center" alignContent="center" spacing={0}
-              >
-                {UIMessage.split("\n").map(line => {
-                  return (
-                    <Text
-                      key={line.replace(" ", "-")}
-                    >
-                      {line}
-                    </Text>
-                  )
+              <VStack justifyContent="center" alignContent="center" spacing={0}>
+                {UIMessage.split("\n").map((line) => {
+                  return <Text key={line.replace(" ", "-")}>{line}</Text>;
                 })}
               </VStack>
             </AlertDescription>
@@ -111,17 +91,9 @@ const FormAlert = ({
           <VStack justifyContent="center" alignContent="center" spacing={0}>
             <AlertTitle>{"Something went wrong."}</AlertTitle>
             <AlertDescription>
-              <VStack
-                justifyContent="center" alignContent="center" spacing={0}
-              >
-                {UIMessage.split("\n").map(line => {
-                  return (
-                    <Text
-                      key={line.replace(" ", "-")}
-                    >
-                      {line}
-                    </Text>
-                  )
+              <VStack justifyContent="center" alignContent="center" spacing={0}>
+                {UIMessage.split("\n").map((line) => {
+                  return <Text key={line.replace(" ", "-")}>{line}</Text>;
                 })}
               </VStack>
             </AlertDescription>
@@ -142,7 +114,6 @@ const FormAlert = ({
   } else {
     return <Fragment></Fragment>;
   }
-
 };
 
 export default FormAlert;
