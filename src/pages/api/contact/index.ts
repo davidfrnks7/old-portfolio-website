@@ -102,7 +102,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Checking if the keys don't match.
-  if (envKey !== headerKey) {
+  if (envKey !== headerKey && headerKey !== devKey) {
     resString = "Wrong API key!";
     UIMessage =
       "An invalid API key was used.\nPlease try again or open a GitHub issue about this error.";
@@ -125,7 +125,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is NOT development.
-  if (headerKey === devKey && environment === "production") {
+  if (headerKey === devKey && environment !== "development") {
     resString =
       "Dev/Preview key used in production mode. This key is not allowed in production mode. Your IP Address has been logged!";
     UIMessage =
@@ -133,10 +133,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     validKey = false;
     validationType = "invalid";
 
-    console.warn(
-      reqIP +
-        " Used dev/Preview key used while not in production. Email not sent."
-    );
+    console.warn(reqIP + "Used dev/Preview key used while not in production.");
 
     res
       .status(403)
@@ -147,10 +144,7 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   }
 
   // Check if the key is the dev or preview key and the environment is development.
-  if (
-    headerKey === devKey &&
-    (environment === "development" || environment === "test")
-  ) {
+  if (headerKey === devKey && environment !== "production") {
     validKey = true;
     validationType = "development";
 
