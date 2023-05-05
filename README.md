@@ -84,6 +84,7 @@ The app was built on and is tested for:
 - Node.js 14.x
 - Node.js 16.x
 - Node.js 18.x
+- Node.js 20.x
 
 I cannot guarantee functionality or stability if used on other OSs, Ubuntu versions, or Node.js versions.
 
