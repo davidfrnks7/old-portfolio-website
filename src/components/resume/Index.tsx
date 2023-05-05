@@ -32,31 +32,29 @@ const ResumeComponent = (): JSX.Element => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader textAlign="center">{token !== null ? "Resume Preview" : "Captcha Challenge"}</ModalHeader>
+          <ModalHeader textAlign="center">
+            {token !== null ? "Resume Preview" : "Captcha Challenge"}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Flex alignContent="center" justifyContent="center">
-              {token === null ?
-                (
-                  <Captcha
-                    updateToken={setToken}
-                    shouldReset={reset}
-                    updateReset={setReset}
-                  />
-                )
-                :
-                (
-                  // <Box>
-                  //   <iframe src={Resume} title="My Resume" />
-                  // </Box>
-                  <Fragment></Fragment>
-                )
-              }
+              {token === null ? (
+                <Captcha
+                  updateToken={setToken}
+                  shouldReset={reset}
+                  updateReset={setReset}
+                />
+              ) : (
+                // <Box>
+                //   <iframe src={Resume} title="My Resume" />
+                // </Box>
+                <Fragment></Fragment>
+              )}
             </Flex>
           </ModalBody>
 
           <ModalFooter>
-            <Button variant='solid' colorScheme="red" mr={3} onClick={onClose}>
+            <Button variant="solid" colorScheme="red" mr={3} onClick={onClose}>
               {"Cancel"}
             </Button>
           </ModalFooter>
