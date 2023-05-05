@@ -1,5 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
+import ResumeComponent from "../../resume/Index";
 import CallToAction from "./CallToAction";
 import TypeWriter from "./TypeWriter";
 
@@ -15,6 +16,7 @@ const Greeting = ({ navTo }: GreetingProps): JSX.Element => {
       </Heading>
       <TypeWriter />
       <CallToAction navTo={navTo} />
+      <ResumeComponent />
     </Box>
   );
 };

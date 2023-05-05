@@ -13,7 +13,7 @@ const CallToAction = ({ navTo }: CallToActionProps): JSX.Element => {
         display={{ base: "none", md: "flex" }}
         h="auto"
         w="100%"
-        spacing="6"
+        spacing={5}
         justifyContent="center"
         alignContent="center"
       >
@@ -23,7 +23,7 @@ const CallToAction = ({ navTo }: CallToActionProps): JSX.Element => {
         display={{ base: "flex", md: "none" }}
         h="auto"
         w="100%"
-        spacing="4"
+        spacing={4}
         justifyContent="center"
         alignContent="center"
       >
