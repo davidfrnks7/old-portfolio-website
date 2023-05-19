@@ -9,7 +9,7 @@ interface GreetingProps {
 
 const Greeting = ({ navTo }: GreetingProps): JSX.Element => {
   return (
-    <Box w="100%" h="100vh" textAlign="center" className="background">
+    <Box w="100%" h="100vh" textAlign="center" className="greeting">
       <Heading pt="35vh" as="h2" size="lg">
         {"Hello, I am David Franks"}
       </Heading>

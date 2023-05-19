@@ -3,7 +3,8 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 import Head from "next/head";
-import "../styles/background.css";
+import "../styles/circuit-board.css";
+import "../styles/greeting.css";
 import "../styles/scrollbar.css";
 
 function DavidPortfolioWebsite({

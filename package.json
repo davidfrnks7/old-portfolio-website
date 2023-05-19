@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "private": true,
   "author": {
     "name": "David F",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",
-    "@ctrl/tinycolor": "^3.6.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@hcaptcha/react-hcaptcha": "^1.8.1",
@@ -25,7 +24,6 @@
     "framer-motion": "^10.12.12",
     "next": "13.4.3",
     "nodemailer": "^6.9.2",
-    "pill-pity": "^0.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.1",

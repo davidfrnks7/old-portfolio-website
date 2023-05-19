@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { AppProps } from "next/app";
 import { Box, VStack } from "@chakra-ui/react";
 import Layout from "../theme/layout";
-import PillPity from "pill-pity";
 import Greeting from "../components/sections/greeting";
 import About from "../components/sections/about";
 import Education from "../components/sections/education";
@@ -134,17 +133,13 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
 
   return (
     <Layout {...pageProps} navTo={navTo} highlight={visibleSection}>
-      <PillPity
-        pattern="circuit-board"
-        as={Box}
-        patternFill="brand.secondary"
-        patternOpacity={0.2}
-        bgColor=""
+      <Box
+        className="background"
         pos="fixed"
         h="100%"
         w="100%"
         zIndex={0}
-      ></PillPity>
+      ></Box>
       <VStack
         w="100%"
         h="auto"

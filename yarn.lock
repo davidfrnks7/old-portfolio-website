@@ -1248,13 +1248,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ctrl/tinycolor@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "@ctrl/tinycolor@npm:3.6.0"
-  checksum: 4d1e481b4d7f9bb23d21b5436726034d37c2a1bc751b5169ef29ead0237e96443dbccbcfa887e20c3a65ba1b5e270063bb21b4034eac97561b980cbbd5e92a16
-  languageName: node
-  linkType: hard
-
 "@emotion/babel-plugin@npm:^11.11.0":
   version: 11.11.0
   resolution: "@emotion/babel-plugin@npm:11.11.0"
@@ -4852,22 +4845,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pill-pity@npm:^0.2.3":
-  version: 0.2.3
-  resolution: "pill-pity@npm:0.2.3"
-  peerDependencies:
-    "@chakra-ui/react": ">=1.6.2"
-    react: ">=16"
-  checksum: 8972c3eb2007cbb3144ec7984cc78e97e19d88e08c1efec87f56a0cba97476b268bb250faa5ebe9e06f3517efaf82f90ed853b5f6e97e6dceb12bacf0c29a1c9
-  languageName: node
-  linkType: hard
-
 "portfolio-website@workspace:.":
   version: 0.0.0-use.local
   resolution: "portfolio-website@workspace:."
   dependencies:
     "@chakra-ui/react": ^2.6.1
-    "@ctrl/tinycolor": ^3.6.0
     "@emotion/react": ^11.11.0
     "@emotion/styled": ^11.11.0
     "@hcaptcha/react-hcaptcha": ^1.8.1
@@ -4888,7 +4870,6 @@ __metadata:
     framer-motion: ^10.12.12
     next: 13.4.3
     nodemailer: ^6.9.2
-    pill-pity: ^0.2.3
     prettier: ^2.8.8
     react: ^18.2.0
     react-dom: ^18.2.0
