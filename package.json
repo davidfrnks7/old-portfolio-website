@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "3.1.4",
+  "version": "3.1.6",
   "private": true,
   "author": {
     "name": "David F",
@@ -14,25 +14,25 @@
     "pretty": "prettier --write ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.1",
+    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@hcaptcha/react-hcaptcha": "^1.8.1",
+    "@hcaptcha/react-hcaptcha": "^1.9.2",
     "@iconify/react": "^4.1.1",
-    "axios": "^1.5.1",
+    "axios": "^1.6.2",
     "formik": "^2.4.5",
-    "framer-motion": "^10.16.4",
-    "next": "13.5.6",
-    "nodemailer": "^6.9.6",
+    "framer-motion": "^10.16.16",
+    "next": "14.0.4",
+    "nodemailer": "^6.9.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.0",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "@types/node": "^20.8.7",
-    "@types/nodemailer": "^6.4.13",
-    "@types/react": "^18.2.29",
+    "@types/node": "^20.10.4",
+    "@types/nodemailer": "^6.4.14",
+    "@types/react": "^18.2.45",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint": "^8.51.0",
@@ -41,8 +41,8 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   },
   "packageManager": "yarn@3.6.4"
 }
