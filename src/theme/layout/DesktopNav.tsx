@@ -35,15 +35,15 @@ const DesktopNav: FC<DesktopNavProps> = ({
               highlight && highlight === navItem[1] && sticky
                 ? "#00aec1"
                 : highlight && highlight === navItem[1] && !sticky
-                ? ""
-                : ""
+                  ? ""
+                  : ""
             }
             border={
               highlight && highlight === navItem[1] && sticky
                 ? "solid #00aec1"
                 : highlight && highlight === navItem[1] && !sticky
-                ? ""
-                : ""
+                  ? ""
+                  : ""
             }
             borderWidth={
               highlight && highlight === navItem[1] && sticky
