@@ -21,21 +21,21 @@
     "@iconify/react": "^4.1.1",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
-    "framer-motion": "^11.0.5",
+    "framer-motion": "^11.0.6",
     "next": "14.1.0",
-    "nodemailer": "^6.9.9",
+    "nodemailer": "^6.9.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
+    "@types/node": "^20.11.20",
     "@types/nodemailer": "^6.4.14",
-    "@types/react": "^18.2.56",
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
-    "@typescript-eslint/parser": "^7.0.1",
-    "eslint": "^8.56.0",
+    "@types/react": "^18.2.58",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
     "eslint-config-next": "<13.4.9",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -44,5 +44,5 @@
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.1.0"
 }
