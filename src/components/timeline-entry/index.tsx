@@ -59,7 +59,7 @@ const TimelineEntry = ({
           </Flex>
           {/* Year and Location/Place */}
           <VStack
-            w={{ base: "fit-contnet", md: "10vw" }}
+            w={{ base: "fit-contnet", md: "10vw", lg: "15vw" }}
             h="auto"
             justifyContent="center"
             alignContent="center"
