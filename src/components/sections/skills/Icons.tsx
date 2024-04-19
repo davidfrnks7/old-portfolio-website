@@ -29,7 +29,8 @@ const languages: Icons = [
     "HTML5",
     <Icon key="HTML5" color={iconsColor} icon="ant-design:html5-filled" />
   ],
-  ["CSS3", <Icon key="CSS3" color={iconsColor} icon="bx:bxl-css3" />]
+  ["CSS3", <Icon key="CSS3" color={iconsColor} icon="bx:bxl-css3" />],
+  ["XML", <Icon key="XML" color={iconsColor} icon="bi:filetype-xml" />]
 ];
 
 const libraries: Icons = [
@@ -52,7 +53,8 @@ const libraries: Icons = [
   [
     "JQuery",
     <Icon key="JQuery" color={iconsColor} icon="akar-icons:jquery-fill" />
-  ]
+  ],
+  ["Maven", <Icon key="Maven" color={iconsColor} icon="devicon-plain:maven" />]
 ];
 
 const frameworks: Icons = [
@@ -153,9 +155,17 @@ const ide: Icons = [
       icon="akar-icons:vscode-fill"
     />
   ],
+  ["JBOSS", <Icon key="IntelliJ IDEA" color={iconsColor} icon="mdi:redhat" />],
   [
     "IntelliJ IDEA",
     <Icon key="IntelliJ IDEA" color={iconsColor} icon="cib:intellijidea" />
+  ]
+];
+
+const software: Icons = [
+  [
+    "TFS",
+    <Icon key="IntelliJ IDEA" color={iconsColor} icon="codicon:azure-devops" />
   ]
 ];
 
@@ -163,6 +173,7 @@ const icons: IconsArr = [
   languages,
   libraries,
   frameworks,
+  software,
   runtime,
   deployment,
   codeAnalysis,

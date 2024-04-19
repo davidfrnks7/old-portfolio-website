@@ -93,14 +93,14 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
         section: RefNames;
         ref: React.MutableRefObject<HTMLDivElement | null>;
       }[] = [
-          { section: "Greeting", ref: greetingRef },
-          { section: "About", ref: aboutRef },
-          { section: "Work", ref: workRef },
-          { section: "Education", ref: educationRef },
-          { section: "Skills", ref: skillsRef },
-          { section: "Projects", ref: projectsRef },
-          { section: "Contact", ref: contactRef }
-        ];
+        { section: "Greeting", ref: greetingRef },
+        { section: "About", ref: aboutRef },
+        { section: "Work", ref: workRef },
+        { section: "Education", ref: educationRef },
+        { section: "Skills", ref: skillsRef },
+        { section: "Projects", ref: projectsRef },
+        { section: "Contact", ref: contactRef }
+      ];
 
       // Current Scroll Position
       const scrollPosition = window.scrollY + 200;
