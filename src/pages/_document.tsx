@@ -4,7 +4,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 
 const description =
-  "David Franks, A mid-level Software Engineer with experience in full-stack development, DevOps, Database Management, PEGA, managing and creating external correspondence, adhering to client design artifacts and mockups, adhering to web accessibility compliance standards, and network system administration. This website has the entire list of experience, education and training, and skills.";
+  "Mid-level Software Engineer with experience in full-stack development, DevOps, Database Management, PEGA, managing and creating external correspondence, and adhering to client design artifacts/mockups and web accessibility compliance. View my entire list of experience, education and training, and skills.";
 
 class Document extends NextDocument {
   render(): JSX.Element {
