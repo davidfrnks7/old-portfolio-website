@@ -63,8 +63,8 @@ const frameworks: Icons = [
     <Icon key="Next.js" color={iconsColor} icon="akar-icons:nextjs-fill" />
   ],
   [
-    "Angular",
-    <Icon key="Angular" color={iconsColor} icon="akar-icons:angular-fill" />
+    "Angular JS",
+    <Icon key="Angular JS" color={iconsColor} icon="akar-icons:angular-fill" />
   ],
   ["Spring", <Icon key="Spring" color={iconsColor} icon="cib:spring" />]
 ];
@@ -155,7 +155,14 @@ const ide: Icons = [
       icon="akar-icons:vscode-fill"
     />
   ],
-  ["JBOSS", <Icon key="IntelliJ IDEA" color={iconsColor} icon="mdi:redhat" />],
+  [
+    "JBOSS",
+    <Icon
+      key="Red Hat CodeReady Studio (JBOSS)"
+      color={iconsColor}
+      icon="mdi:redhat"
+    />
+  ],
   [
     "IntelliJ IDEA",
     <Icon key="IntelliJ IDEA" color={iconsColor} icon="cib:intellijidea" />
@@ -165,7 +172,23 @@ const ide: Icons = [
 const software: Icons = [
   [
     "TFS",
-    <Icon key="IntelliJ IDEA" color={iconsColor} icon="codicon:azure-devops" />
+    <Icon
+      key="Azure DevOps (TFS)"
+      color={iconsColor}
+      icon="codicon:azure-devops"
+    />
+  ],
+  [
+    "AEM",
+    <Icon
+      key="Adobe Experience Manager (AEM)"
+      color={iconsColor}
+      icon="arcticons:adobe-experience-manager"
+    />
+  ],
+  [
+    "SharePoint",
+    <Icon key="Sharepoint" color={iconsColor} icon="mdi:microsoft-sharepoint" />
   ]
 ];
 
