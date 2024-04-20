@@ -29,7 +29,8 @@ const languages: Icons = [
     "HTML5",
     <Icon key="HTML5" color={iconsColor} icon="ant-design:html5-filled" />
   ],
-  ["CSS3", <Icon key="CSS3" color={iconsColor} icon="bx:bxl-css3" />]
+  ["CSS3", <Icon key="CSS3" color={iconsColor} icon="bx:bxl-css3" />],
+  ["XML", <Icon key="XML" color={iconsColor} icon="bi:filetype-xml" />]
 ];
 
 const libraries: Icons = [
@@ -52,7 +53,8 @@ const libraries: Icons = [
   [
     "JQuery",
     <Icon key="JQuery" color={iconsColor} icon="akar-icons:jquery-fill" />
-  ]
+  ],
+  ["Maven", <Icon key="Maven" color={iconsColor} icon="devicon-plain:maven" />]
 ];
 
 const frameworks: Icons = [
@@ -61,8 +63,8 @@ const frameworks: Icons = [
     <Icon key="Next.js" color={iconsColor} icon="akar-icons:nextjs-fill" />
   ],
   [
-    "Angular",
-    <Icon key="Angular" color={iconsColor} icon="akar-icons:angular-fill" />
+    "Angular JS",
+    <Icon key="Angular JS" color={iconsColor} icon="akar-icons:angular-fill" />
   ],
   ["Spring", <Icon key="Spring" color={iconsColor} icon="cib:spring" />]
 ];
@@ -154,8 +156,39 @@ const ide: Icons = [
     />
   ],
   [
+    "JBOSS",
+    <Icon
+      key="Red Hat CodeReady Studio (JBOSS)"
+      color={iconsColor}
+      icon="mdi:redhat"
+    />
+  ],
+  [
     "IntelliJ IDEA",
     <Icon key="IntelliJ IDEA" color={iconsColor} icon="cib:intellijidea" />
+  ]
+];
+
+const software: Icons = [
+  [
+    "TFS",
+    <Icon
+      key="Azure DevOps (TFS)"
+      color={iconsColor}
+      icon="codicon:azure-devops"
+    />
+  ],
+  [
+    "AEM",
+    <Icon
+      key="Adobe Experience Manager (AEM)"
+      color={iconsColor}
+      icon="arcticons:adobe-experience-manager"
+    />
+  ],
+  [
+    "SharePoint",
+    <Icon key="Sharepoint" color={iconsColor} icon="mdi:microsoft-sharepoint" />
   ]
 ];
 
@@ -163,6 +196,7 @@ const icons: IconsArr = [
   languages,
   libraries,
   frameworks,
+  software,
   runtime,
   deployment,
   codeAnalysis,

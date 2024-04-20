@@ -10,8 +10,10 @@ const TypeWriter = (): JSX.Element => {
           strings: [
             "Software Engineer",
             "Full Stack Developer",
+            "DevOps",
             "React.js Developer",
-            "Creative Writer",
+            "Java Developer",
+            // "Creative Writer",
             "Passionate",
             "Dedicated",
             "Reliable",

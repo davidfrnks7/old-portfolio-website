@@ -35,14 +35,14 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
           block: "start"
         });
         break;
-      case "Education":
-        educationRef.current?.scrollIntoView({
+      case "Work":
+        workRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
         break;
-      case "Work":
-        workRef.current?.scrollIntoView({
+      case "Education":
+        educationRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
@@ -95,8 +95,8 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
       }[] = [
         { section: "Greeting", ref: greetingRef },
         { section: "About", ref: aboutRef },
-        { section: "Education", ref: educationRef },
         { section: "Work", ref: workRef },
+        { section: "Education", ref: educationRef },
         { section: "Skills", ref: skillsRef },
         { section: "Projects", ref: projectsRef },
         { section: "Contact", ref: contactRef }
@@ -156,11 +156,11 @@ const IndexPage = ({ pageProps }: AppProps): JSX.Element => {
         <Box m={0} p={0} w="100%" ref={aboutRef}>
           <About />
         </Box>
-        <Box m={0} p={0} w="100%" ref={educationRef}>
-          <Education />
-        </Box>
         <Box m={0} p={0} w="100%" ref={workRef}>
           <WorkHistory />
+        </Box>
+        <Box m={0} p={0} w="100%" ref={educationRef}>
+          <Education />
         </Box>
         <Box m={0} p={0} w="100%" ref={skillsRef}>
           <Skills />
