@@ -4,7 +4,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 import AppTheme from "../theme/AppTheme";
 
 const description =
-  "David Franks. A software engineer and web developer proficient in TypeScript, JavaScript, and Next.js (React.js). See all of my skills and experience on this website.";
+  "Mid-level Software Engineer with experience in full-stack development, DevOps, Database Management, PEGA, managing and creating external correspondence, and adhering to client design artifacts/mockups and web accessibility compliance. View my entire list of experience, education and training, and skills.";
 
 class Document extends NextDocument {
   render(): JSX.Element {
