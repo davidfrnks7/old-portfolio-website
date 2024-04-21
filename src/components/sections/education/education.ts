@@ -7,15 +7,15 @@ export interface Program {
 type Education = Program[];
 
 const education: Education = [
-  // {
-  //   name: "CGI Java Academy",
-  //   year: 2022,
-  //   desc: "An internal, bootcamp like course, focusing on Java, Spring, Bootstrap, Angular, and TypeScript."
-  // },
+  {
+    name: "CGI Java Training",
+    year: 2022,
+    desc: "An eight-week training program where a Full Stack Application was built, tested, and deployed. Included  instruction on core Java with a focus on applying and implementing programming concepts and OO programming, data structures, and search and sort algorithms. It Focused on hands-on labs to build and test Java programs in Java 8 and building responsive web pages including UI/UX and front-end design."
+  },
   {
     name: "Operation Spark",
     year: 2021,
-    desc: "1000 hour software engineering bootbamp derived from Hack Reactor, utilizing a lot of the same principals, methodologies, and material, focusing on functional webapp development in Javascript utilizing frameworks such as React, Angular, and Typescript. The course focused heavily on teamwork and working with a team to build projects and apps."
+    desc: "Immersive coding bootcamp derived from Hack Reactor, using a lot of the same methodologies. Putting students through 1000+ hours of hands-on coding with JavaScript starting with basics and fundamentals, then deep diving into relational and non-relational databases, node.js, app deployment, app bundling,  and frameworks JS like React.js. App development heavily focused on teamwork and pair programming."
   },
   {
     name: "John Ehret High School",
