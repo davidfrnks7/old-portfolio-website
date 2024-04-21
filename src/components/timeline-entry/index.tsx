@@ -6,8 +6,8 @@ interface TimelineEntryProps {
   year?: number; // year completed school or program
   desc: string; // desc of program or work role
   role?: string; // title of the role
-  yearStart?: number; // year started working
-  yearEnd?: number | null; // year completed working
+  yearStart?: string; // year started working
+  yearEnd?: string | null; // year completed working
 }
 
 const TimelineEntry = ({
