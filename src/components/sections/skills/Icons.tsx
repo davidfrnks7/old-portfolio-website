@@ -71,6 +71,7 @@ const frameworks: Icons = [
 
 const runtime: Icons = [
   ["Node.js", <Icon key="Node.js" color={iconsColor} icon="la:node" />],
+  ["FastAPI", <Icon key="FastAPI" color={iconsColor} icon="devicon-plain:fastapi" />],
   [
     "Apollo GraphQL",
     <Icon
@@ -126,11 +127,21 @@ const apis: Icons = [
   [
     "GraphQL",
     <Icon key="GraphQL" color={iconsColor} icon="akar-icons:graphql-fill" />
-  ] /*,
+  ],
+  [
+    "LangChain",
+    <Icon key="LangChain" color={iconsColor} icon="simple-icons:langchain" />
+  ],
+  [
+    "OpenAI",
+    <Icon key="OpenAI" color={iconsColor} icon="ri:openai-fill" />
+  ]
+  /*,
   [
     "Axios",
     <Icon key="Axios" color={iconsColor} icon="logos:axios" />
-  ]*/
+  ]
+  */
 ];
 
 const paymentGateways: Icons = [
@@ -162,11 +173,13 @@ const ide: Icons = [
       color={iconsColor}
       icon="mdi:redhat"
     />
-  ],
+  ]
+  /*
   [
     "IntelliJ IDEA",
     <Icon key="IntelliJ IDEA" color={iconsColor} icon="cib:intellijidea" />
   ]
+    */
 ];
 
 const software: Icons = [

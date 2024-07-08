@@ -15,6 +15,38 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Benefits Chat (Server)",
+    date: "2024 -  current",
+    description:
+      "Benefits chat is a single-page chat app that uses OpenAI to answer questions about benefits from a fictitious company. ",
+    tech: [
+      "Python",
+      "FastAPI as a RESTful API",
+      "LangChain for conversation history"
+    ],
+    deployed: "The app is still being developed and hasn't been deployed yet.",
+    links: {
+      github: "https://github.com/davidfrnks7/benefits-chat-server"
+      // website: "https://davidfrnks7.dev"
+    }
+  },
+  {
+    name: "Benefits Chat (Client)",
+    date: "2024 -  current",
+    description:
+      "Benefits chat is a single-page chat app that uses OpenAI to answer questions about benefits from a fictitious company. ",
+    tech: [
+      "Next.js (React.js) in TypeScript",
+      "Chakra UI for styling",
+      "Axios for API Calls to the server"
+    ],
+    deployed: "The app is still being developed and hasn't been deployed yet.",
+    links: {
+      github: "https://github.com/davidfrnks7/benefits-chat-client"
+      // website: "https://davidfrnks7.dev"
+    }
+  },
+  {
     name: "Portfolio Website",
     date: "2021 -  current",
     description:
