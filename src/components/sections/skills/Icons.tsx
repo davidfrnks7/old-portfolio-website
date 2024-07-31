@@ -71,7 +71,10 @@ const frameworks: Icons = [
 
 const runtime: Icons = [
   ["Node.js", <Icon key="Node.js" color={iconsColor} icon="la:node" />],
-  ["FastAPI", <Icon key="FastAPI" color={iconsColor} icon="devicon-plain:fastapi" />],
+  [
+    "FastAPI",
+    <Icon key="FastAPI" color={iconsColor} icon="devicon-plain:fastapi" />
+  ],
   [
     "Apollo GraphQL",
     <Icon
@@ -132,10 +135,7 @@ const apis: Icons = [
     "LangChain",
     <Icon key="LangChain" color={iconsColor} icon="simple-icons:langchain" />
   ],
-  [
-    "OpenAI",
-    <Icon key="OpenAI" color={iconsColor} icon="ri:openai-fill" />
-  ]
+  ["OpenAI", <Icon key="OpenAI" color={iconsColor} icon="ri:openai-fill" />]
   /*,
   [
     "Axios",
