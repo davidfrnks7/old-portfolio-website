@@ -18,7 +18,7 @@ const MobileNav: FC<MobileNavProps> = ({ handleNav }: MobileNavProps) => {
       border="none"
       boxShadow="none"
     >
-      {navItems.map((navItem: NavItem, index: number) => {
+      {navItems ? navItems.map((navItem: NavItem, index: number) => {
         return (
           <MenuItem
             id={"mobile-" + navItem[0]}
@@ -46,7 +46,9 @@ const MobileNav: FC<MobileNavProps> = ({ handleNav }: MobileNavProps) => {
             <MenuDivider />
           </MenuItem>
         );
-      })}
+      })
+        :
+        undefined}
     </MenuList>
   );
 };
