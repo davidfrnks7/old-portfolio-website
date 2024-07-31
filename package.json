@@ -15,14 +15,14 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@hcaptcha/react-hcaptcha": "^1.10.1",
-    "@iconify/react": "^5.0.1",
+    "@iconify/react": "^5.0.2",
     "axios": "^1.7.2",
     "formik": "^2.4.6",
-    "framer-motion": "^11.2.13",
-    "next": "14.2.4",
+    "framer-motion": "^11.3.19",
+    "next": "14.2.5",
     "nodemailer": "^6.9.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -41,8 +41,8 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.3"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   },
   "packageManager": "yarn@4.3.1"
 }
