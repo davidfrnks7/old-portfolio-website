@@ -4513,10 +4513,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.10.1":
-  version: 6.10.1
-  resolution: "nodemailer@npm:6.10.1"
-  checksum: 10/d9911701641e06143a2deb0bd5deb518310972316c6e6eabc594af24353b0d67867f26cb8d72b0cfa385abef945149ac51ae40a40d2199e1088aef5829e58a3d
+"nodemailer@npm:^7.0.7":
+  version: 7.0.10
+  resolution: "nodemailer@npm:7.0.10"
+  checksum: 10/b9b8794ffc6c0d84440a9dd422664908e9c2003a15cb0e6bdd240a3625121de3978323c2ba4af78080fd735ef514d6caed376bd5f5dd6c17cf0d2c399d0dc354
   languageName: node
   linkType: hard
 
@@ -4626,7 +4626,7 @@ __metadata:
     formik: "npm:^2.4.6"
     framer-motion: "npm:^11.18.2"
     next: "npm:14.2.33"
-    nodemailer: "npm:^6.10.1"
+    nodemailer: "npm:^7.0.7"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
