@@ -3,6 +3,25 @@ import nodemailer from "nodemailer";
 // import Mail from "nodemailer/lib/mailer";
 
 const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
+  // Response strings
+  let resString = "";
+  let UIMessage = "";
+
+  resString = "This API is deprecated.";
+  UIMessage =
+    "This API is deprecated. No action was taken. No messages was sent. It was left up so this form would continue to function.";
+
+  // Error response
+  const errResponse = () =>
+    Object.assign({ errorMessage: resString, UIMessage });
+
+  // Disable the API. Remove the following 5 lines to re-enable the api.
+  res
+    .status(410)
+    .setHeader("Content-Type", "application/json")
+    .json(errResponse());
+  return;
+
   // Environment
   const environment = process.env.NODE_ENV || "development";
 
@@ -28,14 +47,6 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     headers["x-forwarded-for"] ||
     req.socket.remoteAddress ||
     req.connection.remoteAddress;
-
-  // Response strings
-  let resString = "";
-  let UIMessage = "";
-
-  // Error response
-  const errResponse = () =>
-    Object.assign({ errorMessage: resString, UIMessage });
 
   // * Check method of the request * //
 
