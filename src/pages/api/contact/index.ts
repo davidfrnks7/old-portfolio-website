@@ -15,13 +15,6 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
   const errResponse = () =>
     Object.assign({ errorMessage: resString, UIMessage });
 
-  // Disable the API. Remove the following 5 lines to re-enable the api.
-  res
-    .status(410)
-    .setHeader("Content-Type", "application/json")
-    .json(errResponse());
-  return;
-
   // Environment
   const environment = process.env.NODE_ENV || "development";
 
@@ -48,6 +41,12 @@ const contact = (req: NextApiRequest, res: NextApiResponse<unknown>): void => {
     req.socket.remoteAddress ||
     req.connection.remoteAddress;
 
+  // Disable the API. Remove the following 5 lines to re-enable the api.
+  res
+    .status(410)
+    .setHeader("Content-Type", "application/json")
+    .json(errResponse());
+  return;
   // * Check method of the request * //
 
   // If method is not POST.

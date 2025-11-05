@@ -13,7 +13,7 @@ const TypeWriter = (): JSX.Element => {
             "DevOps",
             "React.js Developer",
             "Java Developer",
-            "AI Engingger",
+            "AI Engineer",
             // "Creative Writer",
             "Passionate",
             "Dedicated",

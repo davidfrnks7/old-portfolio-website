@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from "react";
 import type { AppProps } from "next/app";
 import Header from "./Header";
-import { Box } from "@chakra-ui/layout";
 import Footer from "./Footer";
+import { Box } from "@chakra-ui/react";
 
 interface LayoutProps {
   children: ReactNode;
