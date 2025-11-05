@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml"><img alt="Node.js CI status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/main.yml/badge.svg" /></a>
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml"><img alt="CodeQL Analysis status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/codeql-analysis.yml/badge.svg?branch=main" /></a>
-  <a href="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml"><img alt="njsscan sarif status" src="https://github.com/davidfrnks7/portfolio-website/actions/workflows/njsscan-analysis.yml/badge.svg?branch=main" /></a>
+  <a href="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/main.yml"><img alt="Node.js CI status" src="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/main.yml/badge.svg" /></a>
+  <a href="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/codeql-analysis.yml"><img alt="CodeQL Analysis status" src="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/codeql-analysis.yml/badge.svg?branch=main" /></a>
+  <a href="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/njsscan-analysis.yml"><img alt="njsscan sarif status" src="https://github.com/davidfrnks7/old-portfolio-website/actions/workflows/njsscan-analysis.yml/badge.svg?branch=main" /></a>
 </p>
 
 # [David Franks Portfolio Website](https://davidfrnks7.dev/)
