@@ -8,6 +8,9 @@
 
 name: njsscan sarif
 
+permissions:
+  security-events: write
+
 on:
   push:
     branches: [main]
@@ -30,6 +33,6 @@ jobs:
         with:
           args: ". --sarif --output results.sarif || true"
       - name: Upload njsscan report
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results.sarif

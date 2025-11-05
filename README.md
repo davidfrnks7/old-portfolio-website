@@ -81,9 +81,8 @@ The React Framework for Production
 The app was built on and is tested for:
 
 - Ubuntu 20.04
-- Node.js 14.x
-- Node.js 16.x
-- Node.js 18.x
+- Node.js 20.x
+- Node.js 22.x
 
 I cannot guarantee functionality or stability if used on other OSs, Ubuntu versions, or Node.js versions.
 

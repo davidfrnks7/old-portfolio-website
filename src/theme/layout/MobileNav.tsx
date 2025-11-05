@@ -18,37 +18,37 @@ const MobileNav: FC<MobileNavProps> = ({ handleNav }: MobileNavProps) => {
       border="none"
       boxShadow="none"
     >
-      {navItems ? navItems.map((navItem: NavItem, index: number) => {
-        return (
-          <MenuItem
-            id={"mobile-" + navItem[0]}
-            key={navItem[0]}
-            w="auto"
-            h="auto"
-            p={0}
-            _hover={{
-              backgroundColor: "none"
-            }}
-            _focus={{
-              backgroundColor: "none"
-            }}
-          >
-            {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
-            <Button
-              w="100vw"
-              variant={"nav"}
-              p={0}
-              m="auto"
-              onClick={() => handleNav(navItem[1])}
-            >
-              {navItem[0]}
-            </Button>
-            <MenuDivider />
-          </MenuItem>
-        );
-      })
-        :
-        undefined}
+      {navItems
+        ? navItems.map((navItem: NavItem, index: number) => {
+            return (
+              <MenuItem
+                id={"mobile-" + navItem[0]}
+                key={navItem[0]}
+                w="auto"
+                h="auto"
+                p={0}
+                _hover={{
+                  backgroundColor: "none"
+                }}
+                _focus={{
+                  backgroundColor: "none"
+                }}
+              >
+                {index === 0 ? <MenuDivider /> : <Fragment></Fragment>}
+                <Button
+                  w="100vw"
+                  variant={"nav"}
+                  p={0}
+                  m="auto"
+                  onClick={() => handleNav(navItem[1])}
+                >
+                  {navItem[0]}
+                </Button>
+                <MenuDivider />
+              </MenuItem>
+            );
+          })
+        : undefined}
     </MenuList>
   );
 };
